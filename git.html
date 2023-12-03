@@ -235,8 +235,28 @@
                 </tr>
                 <tr>
                     <td class="vocab"></td>
-                    <td>GitHub Pages</td>
-                    <td>A tool for publishing your website on the internet (provided by GitHub), that displays your website from the code that is saved in your GitHub repository. To view your website, within your username.github.io repo, go to Settings and scroll down to GitHub Pages (left side toolbar, “Pages”). Under Source, make sure that your repo is linked to your web page. If you see None, then select the main branch.</td>
+                    <td>GitHub Workflow</td>
+                    <td>
+                        <ol>
+                            <li>Create a branch</li>
+                            <li>Commit changes</li>
+                            <li>Create a pull request</li>
+                            <li>Review pull request</li>
+                            <li>Merge and delete branch</li>
+                        </ol>
+                        <br>With Git, each teammate can create their own branch off of the main project in order to work on bug-fixes, new features, experimental code, etc. By using separate branches, the main project remains intact and unaffected before the changes are reviewed and merged into the project.
+                        <br>
+                        <br>Pull requests on GitHub allow collaborators to review and give feedback on proposed code changes before they are merged into the main branch. Through a process of discussion and potentially some extra code changes, the pull request can be ultimately approved, which means you can merge the changes into the official project on the main branch. When creating pull requests, it’s imperative that you include as much relevant detail in the description as possible in order to save review time. Add any comments or images that might be useful for your reviewer. Lastly, you don’t want to submit a pull request with 50 files containing a plethora of changes — instead, stick to smaller-sized pull requests since they’re easier and faster to review.
+                        <br>
+                        <br>The pull request should include a description and GitHub will display all the files with the changes created. Each line of code will have a clickable “+” button where you can add a comment in regards to the line. Here are few best practices when reviewing code: 
+                        <br>
+                        <br>
+                            <ul>
+                                <li>Explain what needs to be changed, and why.</li>
+                                <li>Be clear and concise in your explanation.</li>
+                                <li>Zoom out and try to spot potential errors. Would the submitted code produce any obstacles if the project scales?</li>
+                            </ul>
+                    </td>
                 </tr>
                 <tr>
                     <td class="vocab"></td>
@@ -260,7 +280,6 @@
                             <li>Open Git Bash</li>
                             <li>Follow the instructions in GitHub</li>
                         </ol>
-                        <br>
                         <br><strong>…or create a new repository on the command line</strong>
                         <br><p>echo "# file_name" >> README.md
                             <br>git init
@@ -269,15 +288,42 @@
                             <br>git branch -M main
                             <br>git remote add origin https://github.com/ethanjaldridge/file_name.git
                             <br>git push -u origin main</p>
-                        <br>
                         <br><strong>…or push an existing repository from the command line</strong>
                         <br><p>git remote add origin https://github.com/ethanjaldridge/git_practice.git
                             <br>git branch -M main
                             <br>git push -u origin main</p>
-                        <br>
                         <br><strong>…or import code from another repository</strong>
                         <br><p>You can initialize this repository with code from a Subversion, Mercurial, or TFS project.</p>
                     </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Markdown</td>
+                    <td><strong>Text-to-HTML conversion tool for web writers.</strong> Once we add our code to GitHub, this formats the text in our repository (beyond plaintext; codeblocks, images, headings, etc.).
+                        <br>
+                        <br><em>Syntax:</em>
+                        <br>
+                        <br>
+                            <ul>
+                                <li># Heading 1</li>
+                                <li>## Heading 2</li>
+                                <li>### Heading 3</li>
+                                <li>*Italics*</li>
+                                <li>**Bold**</li>
+                                <li>~Strikethrough~</li>
+                                <li>Unordered Lists: * List Item, + List Item, - List Item</li>
+                                <li>Ordered Lists: 1. List item 1</li>
+                            </ul>
+                        <br>
+                        <br><em>Saving text with markdown syntax:</em> .markdown / .md
+                        <br>
+                        <br><em>Markdown applications:</em> use a markdown processor, or parser, that converts the markdown text into an HTML format.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>GitHub Pages</td>
+                    <td>A tool for publishing your website on the internet (provided by GitHub), that displays your website from the code that is saved in your GitHub repository. To view your website, within your username.github.io repo, go to Settings and scroll down to GitHub Pages (left side toolbar, “Pages”). Under Source, make sure that your repo is linked to your web page. If you see None, then select the main branch.</td>
                 </tr>
             </tbody>
         </table>
