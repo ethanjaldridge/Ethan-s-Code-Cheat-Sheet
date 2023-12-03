@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>JavaScript</title>
+    </head>
+    
+    <body>
+
+        <!--Header-->
+
+        <header>
+            <h1>JavaScript</h1>
+            <nav>
+                <ul>
+                    <li class ="headernav"><a href="index.html">Home</a></li>
+                    <li class ="headernav"><a href="terminology.html">Terminology</a></li>
+                    <li class ="headernav"><a href="keyboardcommands.html">Keyboard Commands</a></li>
+                    <li class ="headernav"><a href="git.html">Git & GitHub</a></li>
+                    <li class ="headernav"><a href="html.html">HTML</a></li>
+                    <li class ="headernav"><a href="css.html">CSS</a></li>
+                    <li class ="headernav"><a href="#">JavaScript</a></li>
+                    <li class ="headernav"><a href="Node.js.html">Node.js</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- How to Run JavaScript -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">How to Run JavaScript</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Runtime Environment(s)</td>
+                    <td>A <em>runtime environment</em> is where your program will be executed. It determines what global objects your program can access and it can also impact how it runs. There are 2 primary runtime environments: the runtime environment of a browser, and the runtime environment of a Node. Certain aspects of JavaScript, such as methods, can be built into the runtime environment chosen. For example, any program executed in a browser has access to the browser's runtime environment. In fact, the <em>window</em> object provides access to a huge amount of data and functionality relating to the open browser window. Applications created for and executed in the browser are known as front-end applications.
+                        <br>
+                        <br>In 2009, the Node runtime environment was created for the purpose of executing JavaScript code without a browser, thus enabling programmers to create full-stack (front-end and back-end) applications using only the JavaScript language. Node is an entirely different runtime environment, meaning that browser-environment data values and functions, like window.alert(), can’t be used. Instead, the Node runtime environment gives back-end applications access to a variety of features unavailable in a browser, such as access to the server’s file system, database, and network. This is where console.log() would be used instead of window.alert(). Some sample Node.js code: 
+                        <br><em>// my-app.js console.log(process.env.PWD);</em>. 
+                        <br>
+                        <br>In this example, <em>process</em> is an object containing data relating to the JavaScript file being executed. <em>process.env</em> is an object containing environment variables such as <em>process.env.PWD</em> which contains the current working directory (and stands for “Print Working Directory”). To execute the JavaScript code in this file, first make sure that you have set up Node on your computer. Then, open up a terminal and run the following command: 
+                        <br><em>$ node my-app.js 
+                        <br>/path/to/working/directory</em>
+                        <br>
+                        <br>The node command tells your computer to execute the my-app.js file in the Node environment. You can also use the node command without a file argument to open up the Node Read-Eval-Print-Loop (REPL):
+                        <br><em>$ node
+                        <br>> process.env.HOME
+                        <br>'/home/ccuser'</em>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Browser Console</td>
+                    <td>JS code is normally added using the HTML &lt;script&gt; element for executing in web browsers, but most modern browsers also provide a console as part of their developer tools where we can directly write and run JS, typically for testing and debugging purposes. The console is essentially a REPL (Read-Evaluate-Print-Loop) that allows us to execute JS within the context of the page, such as modifying the page’s DOM (Document Object Model) or logging to the console. The console itself is also the place to view the messages that were logged by JS code, as well as any other information that the browser had documented, including network requests and security errors.
+                        <br>
+                        <br><strong>How to Open JS in DevTools (changes are temporary):</strong>
+                        <br>
+                        <br><ul>
+                                <li>Bring up the developer tools by right clicking on a webpage and selecting <em>Inspect</em> or <em>Inspect Element</em>, and then navigate to the <em>Console</em> tab from there.</li>
+                                <li>When you pull up the console, you might see some messages that have been logged by the browser, depending on what site you’re on. If you do, feel free to run clear() first to clear the console.</li>
+                                <li>A list of the built-in functions and objects that are available to use in the console can be found in the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">MDN web docs</a>. Notice that two new lines appear after running the previous code, one preceded by the < arrow and one without. This is because console.log() simply prints the message to the console and does not return anything. Thus, the first line we see is the logged message, and the second line that starts with < is the return value, or undefined.</li>
+                                <li>What makes the console particularly useful is that we could also directly inspect and modify the page’s DOM if we wanted to. To bring up a blank page, we can enter about:blank into the browser’s address bar. We can confirm that there is no HTML inside the &lt;body&gt; element of the page by checking document.body.innerHTML in the console.</li>
+                                <li>The console also recognizes $() as an alias for document.querySelector() to select an element. This shorthand resembles jQuery syntax and helps make manipulating the DOM through the console even more efficient.</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;script src="./script.js" async&gt;&lt;/script&gt;</td>
+                    <td>Linking JavaScript to HTML</td>
+                    <td>Use &lt;script&gt; tags in the &lt;body&gt; of your HTML document. Placing these tag(s) at the end of your body should work. Alternatively, place them at the top of the body with <em>async</em> just before the &gt; of the opening tag. Another option is to use <em>defer</em> instead of async. Scripts with the defer attribute are executed in order (i.e. first script 1, then script 2). This also does not block the browser. Unlike async scripts, defer scripts are only executed after the entire document has been loaded.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Terminology -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Terminology</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab">console.log(5);</td>
+                    <td>Console</td>
+                    <td>The console is a panel that displays important messages, like errors, for developers. Much of the work the computer does with our code is invisible to us by default. If we want to see things appear on our screen, we can print, or log, to our console directly. In JavaScript, the <em>console</em> keyword refers to an object, a collection of data and actions, that we can use in our code. One action, or method, that is built into the <em>console</em> object is the <em>.log()</em> method. When we write <em>console.log()</em> what we put inside the parentheses will get printed, or logged, to the console. The example logs 5 to the console. The semicolon denotes the end of the line, or statement. Although in JavaScript your code will usually run as intended without a semicolon, we recommend ending each statement with a semicolon so you never leave one out in the few instances when they are required.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">// Prints 5 to the console ; <br> /*None of this is going to run!
+                        console.log(99)*/</td>
+                    <td>Comments</td>
+                    <td>There are two types of code comments in JavaScript: a <em>single line comment</em> will comment out a single line and is denoted with two forward slashes // preceding it. You can also use a single line comment to comment after a line of code (on the same line). A <em>multi-line comment</em> will comment out multiple lines and is denoted with /* to begin the comment, and */ to end the comment. Single line comments are great for adding context to your code. Multi-line comments are often best suited to prevent a block of code from running.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">console.log('JavaScript');</td>
+                    <td>Data Types</td>
+                    <td>Data types are the classifications we give to the different kinds of data that we use in programming. In JavaScript, there are eight fundamental data types: 
+                        <br>
+                        <br><em>Number</em>: any number, including numbers with decimals: 4, 8, 1516, 23.42. 
+                        <br>
+                        <br><em>BigInt</em>: any number, greater than 2<sup>53</sup>-1 or less than -(2<sup>53</sup>-1), with n appended to the number: 1234567890123456n. 
+                        <br>
+                        <br><em>String</em>: any grouping of characters on your keyboard (letters, numbers, spaces, symbols, etc.) surrounded by single quotes: ' ... ' or double quotes " ... ", though we prefer single quotes. Some people like to think of <em>string</em> as a fancy word for text. 
+                        <br>
+                        <br><em>Boolean</em>: this data type only has two possible values— either true or false (without quotes). It’s helpful to think of booleans as on and off switches or as the answers to a “yes” or “no” question. 
+                        <br>
+                        <br><em>Null</em>: this data type represents the intentional absence of a value, and is represented by the keyword <em>null</em> (without quotes). 
+                        <br>
+                        <br><em>Undefined</em>: this data type is denoted by the keyword <em>undefined</em> (without quotes). It also represents the absence of a value though it has a different use than null. <em>undefined</em> means that a given value does not exist. 
+                        <br>
+                        <br><em>Symbol</em>: a newer feature to the language, symbols are unique identifiers, useful in more complex coding. 
+                        <br>
+                        <br><em>Object</em>: collections of related data.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">console.log(3 <strong>+</strong> 4);</td>
+                    <td>Arithmetic Operators</td>
+                    <td>An operator is a character that performs a task in our code. JavaScript has several built-in arithmetic operators, that allow us to perform mathematical calculations on numbers. These include the following operators and their corresponding symbols: <em>add (+)</em>, <em>subtract (-)</em>, <em>multiply (*)</em>, <em>divide (/)</em>, and <em>remainder (%)</em>. The example will print 7. If we wanted to print the characters 3 + 4, we would wrap them in quotes and print them as a string. The <em>remainder operator</em>, sometimes called <em>modulo</em>, returns the number that remains after the right-hand number divides into the left-hand number as many times as it evenly can: <em>11 % 3</em> equals 2 because 3 fits into 11 three times, leaving 2 as the remainder.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">console.log(<strong>'I love to ' + 'code.'</strong>);</td>
+                    <td>String Concatenation</td>
+                    <td>When a + operator is used on two strings, it appends the right string to the left string. The example prints, I love to code. Notice that we had to include a space at the end of the first string. The computer will join the strings exactly, so we needed to make sure to include the space we wanted between the two strings. Note: if there’s a single quote character, ', in our string, we can use double quotes around the string to make sure the character prints.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">console.log('Hello'<strong>.length</strong>);</td>
+                    <td>Properties</td>
+                    <td>When you introduce a new piece of data into a JavaScript program, the browser saves it as an instance of the data type. All data types have access to specific properties that are passed down to each instance. For example, every string instance has a property called length that stores the number of characters in that string. You can retrieve property information by appending the string with a period and the property name (see example). The example prints "5", the number of characters (length) of "Hello". The . is another operator! We call it the <em>dot operator</em>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">console.log('Codecademy'<strong>.toUpperCase()</strong>);</td>
+                    <td>Methods</td>
+                    <td>Actions we can perform. Data types have access to specific methods that allow us to handle instances of that data type. JavaScript provides a number of string methods. We <em>call</em>, or use, these methods by appending an instance with: a period (the dot operator .), the name of the method (toUpperCase), and opening and closing parentheses. When we use console.log() we’re calling the .log() method on the console object. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">Learn more here</a>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">console.log(Math.random());</td>
+                    <td>Built-in Objects</td>
+                    <td>Console is an example of a built-in object. You can also build your own objects. In the example, <em>console</em> is an object, <em>Math</em> is an object, and <em>random</em> is a method. The example prints a random number between 0 and 1. To generate a random number between 0 and 50, we could multiply this result by 50, like so: <em>Math.random() * 50;</em>. The example above will likely evaluate to a decimal. To ensure the answer is a whole number, we can take advantage of another useful Math method called Math.floor() - <em>Math.floor(Math.random() * 50);</em>. <em>Math.floor()</em> takes a decimal number, and rounds down to the nearest whole number. If you wanted to see the number printed to the terminal, you would still need to use a <em>console.log()</em> statement: <em>console.log(Math.floor(Math.random() * 50));</em>. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">Learn more here</a>.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Variables -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Variables</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab">var myName = 'Arya'; 
+                        <br>console.log(myName); 
+                        <br>// Output: Arya
+                        <br>
+                        <br><strong>let</strong> and <strong>const</strong> are preferred over var
+                    </td>
+                    <td>Variables</td>
+                    <td>In the example, <em>var</em>, short for variable, is a JavaScript keyword that creates, or declares, a new variable. <em>myName</em> is the variable’s name. Capitalizing in this way is a standard convention in JavaScript called <em>camel casing</em>. In camel casing you group words into one, the first word is lowercase, then every word that follows will have its first letter uppercased. <em>=</em> is the assignment operator. It assigns the <em>value</em> ('Arya') to the <em>variable</em> (myName). You can also say that the myName variable is <em>initialized</em> with a value of 'Arya'. After the variable is declared, the string value 'Arya' is printed to the console by referencing the variable name: console.log(myName). 
+                        <br> 
+                        <br><em>Rules for naming variables</em>:
+                        <br> 
+                        <br><ul>
+                                <li>Variable names cannot start with numbers.</li>
+                                <li>Variable names are case sensitive, so myName and myname would be different variables. It is bad practice to create two variables that have the same name using different cases.</li>
+                                <li>Variable names cannot be the same as keywords.</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">let meal = 'Enchiladas';
+                        <br>
+                        <br>console.log(meal); 
+                        <br>// Output: Enchiladas
+                        <br>
+                        <br>meal = 'Burrito';
+                        <br>
+                        <br>console.log(meal); 
+                        <br>// Output: Burrito
+                    </td>
+                    <td>let</td>
+                    <td>The <em>let</em> keyword signals that the variable can be reassigned a different value. Another concept that we should be aware of when using let (and even var) is that we can declare a variable without assigning the variable a value. In such a case, the variable will be automatically initialized with a value of <em>undefined</em>.
+                    <br>
+                    <br>let price; 
+                    <br>console.log(price); // Output: undefined
+                    <br>price = 350;
+                    <br>console.log(price); // Output: 350
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const myName = 'Gilberto';
+                        <br>console.log(myName); 
+                        <br>// Output: Gilberto
+                    </td>
+                    <td>const</td>
+                    <td>Short for the word <em>constant</em>. A const variable cannot be reassigned because it is constant. If you try to reassign a const variable, you’ll get a TypeError. Constant variables must be assigned a value when declared. If you try to declare a const variable without a value, you’ll get a SyntaxError. If you need to reassign the variable, use <em>let</em>, otherwise use <em>const</em>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">let w = 4;
+                                  <br>w = w + 1;
+                                  <br>console.log(w); 
+                                  <br>// Output: 5
+                                  <br>
+                                  <br>let w = 4;
+                                  <br>w += 1;
+                                  <br>console.log(w); 
+                                  <br>// Output: 5
+                                  <br>
+                                  <br>let a = 10;
+                                  <br>a++;
+                                  <br>console.log(a); 
+                                  <br>// Output: 11
+                    </td>
+                    <td>Mathematical Assignment Operators</td>
+                    <td>In the second example, we used the += <em>assignment operator</em> to reassign w. We’re performing the mathematical operation of the first operator + using the number to the right, then reassigning w to the computed value. We also have access to other mathematical assignment operators: -=, *=, and /= which work in a similar fashion. Other mathematical assignment operators include the <em>increment operator</em> (++) and <em>decrement operator</em> (--). The increment operator will increase the value of the variable by 1. The decrement operator will decrease the value of the variable by 1.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">let myPet = 'armadillo';
+                                  <br>console.log('I own a pet ' + myPet + '.'); 
+                                  <br>// Output: 'I own a pet armadillo.'
+                    </td>
+                    <td>String Concatenation with Variables</td>
+                    <td>The + operator can be used to combine two string values even if those values are being stored in variables.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const myPet = 'armadillo';
+                                  <br>console.log(`I own a pet ${myPet}.`);
+                                  <br>// Output: I own a pet armadillo.
+                    </td>
+                    <td>String Interpolation</td>
+                    <td>In the ES6 version of JavaScript, we can insert, or <em>interpolate</em>, variables into strings using <em>template literals</em>. Notice: a template literal is wrapped by backticks ` (this key is usually located on the top of your keyboard, left of the 1 key). Inside the template literal, you’ll see a placeholder, ${myPet}. The value of myPet is inserted into the template literal.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const unknown1 = 'foo';
+                                  <br>console.log(typeof unknown1); 
+                                  <br>// Output: string
+                                  <br>
+                                  <br>if (typeof variableName === 'number') {}
+                    </td>
+                    <td>typeof operator</td>
+                    <td>While writing code, it can be useful to keep track of the data types of the variables in your program. If you need to check the data type of a variable’s value, you can use the <em>typeof operator</em>. The typeof operator checks the value to its right and returns, or passes back, a string of the data type.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Conditionals -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Conditionals</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab">if (true) {
+                        <br>console.log('This message will print!'); 
+                        <br>}
+                        <br>// Prints: This message will print!
+                    </td>
+                    <td>if</td>
+                    <td>The <em>if</em> statement is composed of: the <em>if</em> keyword followed by a set of parentheses () which is followed by a <em>code block</em>, or block statement, indicated by a set of curly braces {}. Inside the parentheses (), a condition is provided that evaluates to <em>true</em> or <em>false</em>. If the condition evaluates to true, the code inside the curly braces {} runs, or executes. If the condition evaluates to false, the block won’t execute.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">if (false) {
+                        <br>console.log('The code in this block will not run.');
+                        <br>} else {
+                        <br>console.log('But the code in this block will!');
+                        <br>}
+                        <br>// Prints: But the code in this block will!
+                    </td>
+                    <td>else</td>
+                    <td>In many cases, we’ll have code we want to run if our condition evaluates to false. An <em>else</em> statement must be paired with an <em>if</em> statement, and together they are referred to as an <em>if...else</em> statement. <em>if...else</em> statements allow us to automate solutions to yes-or-no questions, also known as <em>binary decisions</em>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">let stopLight = 'yellow';
+                        <br>
+                        <br>if (stopLight === 'red') {
+                        <br>console.log('Stop!');
+                        <br>} else if (stopLight === 'yellow') {
+                        <br>console.log('Slow down.');
+                        <br>} else if (stopLight === 'green') {
+                        <br>console.log('Go!');
+                        <br>} else {
+                        <br>console.log('Caution, unknown!');
+                        <br>}
+                    </td>
+                    <td>else if</td>
+                    <td>We can add more conditions to our <em>if...else</em> with an <em>else if</em> statement. The else if statement allows for more than two possible outcomes. You can add as many else if statements as you’d like, to make more complex conditionals! <em>The else if statement always comes after the if statement and before the else statement.</em> The else if statement <em>also takes a condition</em>. <em>if/else if/else</em> statements are read from top to bottom, so the first condition that evaluates to true from the top to bottom is the block that gets executed.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">isNightTime ? 
+                        <br>console.log('Turn on the lights!') 
+                        <br>: console.log('Turn off the lights!');
+                    </td>
+                    <td>Ternary Operator</td>
+                    <td>Can simplify an <em>if...else</em> statement. The condition, <em>isNightTime</em>, is provided before the <em>?</em>. Two expressions follow the ? and are separated by a colon : ... If the condition evaluates to true, the first expression executes. If the condition evaluates to false, the second expression executes.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">Less than: &lt;
+                        <br>Greater than: &gt;
+                        <br>Less than or equal to: &lt;=
+                        <br>Greater than or equal to: &gt;=
+                        <br>Is equal to: ===
+                        <br>Is not equal to: !==
+                        <br>
+                        <br>10 &lt; 12 
+                        <br>// Evaluates to true
+                    </td>
+                    <td>Comparison Operators</td>
+                    <td>When writing conditional statements, sometimes we need to use different types of operators to compare values. These operators are called <em>comparison operators</em>. Comparison operators compare the value on the left with the value on the right. All comparison statements evaluate to either true or false and are made up of: two values that will be compared, and an operator that separates the values and compares them accordingly (&gt;, &lt;, &lt;=, &gt;=, ===, !==).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">if (stopLight === 'green' && pedestrians === 0) {
+                        <br>console.log('Go!');
+                        <br>} else {
+                        <br>console.log('Stop');
+                        <br>}
+                        <br>
+                        <br>if (day === 'Saturday' || day === 'Sunday') {
+                        <br>console.log('Enjoy the weekend!');
+                        <br>} else {
+                        <br>console.log('Do some work.');
+                        <br>}
+                        <br>
+                        <br>let excited = true;
+                        <br>console.log(!excited); 
+                        <br>// Prints false
+                        <br>let sleepy = false;
+                        <br>console.log(!sleepy); 
+                        <br>// Prints true
+                    </td>
+                    <td>Logical Operators</td>
+                    <td>In JavaScript, there are operators that work with <em>boolean</em> values known as <em>logical operators</em>. We can use logical operators to add more sophisticated logic to our conditionals. There are three logical operators: the <em>and</em> operator (&&), the <em>or</em> operator (||), and the <em>not</em> operator, otherwise known as the <em>bang</em> operator (!). When we use the <em>&&</em> operator, we are checking that <em>two things are both true</em>. When we use the <em>||</em> operator, we are checking that <em>either of two things are true</em>. If the first condition in an || statement evaluates to true, the second condition won’t even be checked. The ! <em>not</em> operator reverses, or negates, the value of a boolean. Essentially, the ! operator will either take a true value and pass back false, or it will take a false value and pass back true.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">let myVariable = 'I Exist!';
+                        <br>
+                        <br>if (myVariable) {
+                        <br>console.log(myVariable)
+                        <br>} else {
+                        <br>console.log('The variable does not exist.')
+                        <br>}
+                    </td>
+                    <td>Truthy & Falsy</td>
+                    <td>Sometimes, you’ll want to check if a variable exists and you won’t necessarily want it to equal a specific value — you’ll only check to see if the variable has been assigned a value. The list of <em>falsy</em> values includes: <em>0</em>, <em>empty strings like "" or ''</em>, <em>null</em>, which represents when there is no value at all, <em>undefined</em>, which represents when a declared variable lacks a value, and <em>NaN</em>, or Not a Number.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">let groceryItem = 'papaya';
+                        <br>
+                        <br>switch (groceryItem) {
+                        <br> &nbsp;case 'tomato':
+                        <br> &emsp;  console.log('Tomatoes are $0.49');
+                        <br> &emsp;  break;
+                        <br>&nbsp;case 'lime':
+                        <br>&emsp;  console.log('Limes are $1.49');
+                        <br>&emsp;  break;
+                        <br>&nbsp;case 'papaya':
+                        <br>&emsp;  console.log('Papayas are $1.29');
+                        <br>&emsp;  break;
+                        <br>&nbsp;default:
+                        <br>&emsp;  console.log('Invalid item');
+                        <br>&emsp;  break;
+                        <br>}
+                        <br>
+                        <br>// Prints 'Papayas are $1.29'
+                    </td>
+                    <td>switch</td>
+                    <td>A <em>switch</em> statement provides an alternative syntax that is easier to read and write. The <em>switch</em> keyword initiates the statement and is followed by ( ... ), which contains the value that each case will compare. In the example, the <em>value</em> or expression of the switch statement is <em>groceryItem</em>. Inside the block, { ... }, there are multiple <em>cases</em>. The <em>case</em> keyword checks if the expression matches the specified value that comes after it. The value following the first case is 'tomato'. If the value of groceryItem equalled 'tomato', that case‘s console.log() would run. The value of groceryItem is 'papaya', so the third case runs— Papayas are $1.29 is logged to the console. The <em>break</em> keyword tells the computer to exit the block and <em>not execute any more code or check any other cases</em> inside the code block. Note: Without break keywords, the first matching case will run, but so will every subsequent case regardless of whether or not it matches—including the default. This behavior is different from <em>if/else</em> conditional statements that execute only one block of code. At the end of each switch statement, there is a <em>default</em> statement. If none of the cases are true, then the code in the default statement will run.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Functions -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Functions</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Function</td>
+                    <td>A function is a reusable block of code that groups together a sequence of statements to perform a specific task.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">function greetWorld() {
+                        <br>console.log('Hello, World!');
+                        <br>}
+                    </td>
+                    <td>Function Declaration</td>
+                    <td>Just like how a variable declaration binds a value to a variable name, a <em>function declaration</em> binds a function to a name, or an <em>identifier</em>. A function declaration consists of: <em>the function keyword</em>, the name of the function, or its <em>identifier</em>, followed by parentheses, and <em>a function body</em>, or the block of statements required to perform a specific task, enclosed in the function’s curly brackets, { }.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">greetWorld();
+                        <br>// Output: Hello, World!
+                        <br>
+                        <br>function greetWorld() {
+                        <br>console.log('Hello, World!');
+                        <br>}
+                    </td>
+                    <td>Hoisting</td>
+                    <td>Allows access to function declarations before they’re defined. Since hoisting isn’t considered good practice, we simply want you to be aware of this feature.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">greetWorld ();</td>
+                    <td>Calling a Function</td>
+                    <td>A function declaration does not ask the code inside the function body to run, it just declares the existence of the function. The code inside a function body runs, or executes, only when the function is called. To call a function in your code, you type the function name followed by parentheses. This function call executes the function body, or all of the statements between the curly braces in the function declaration.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">function calculateArea<strong>(width, height)</strong> {
+                        <br>console.log(width * height);
+                        <br>}
+                    </td>
+                    <td>Parameters</td>
+                    <td>Some functions can take inputs and use the inputs to perform a task. When declaring a function, we can specify its <em>parameters</em>. Parameters allow functions to accept input(s) and perform a task using the input(s). We use parameters as <strong>placeholders for information that will be passed to the function when it is called</strong>. The parameters are specified between the parenthesis as width and height, and inside the function body, they act just like regular variables. width and height act as placeholders for values that will be multiplied together.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">calculateArea(<strong>10, 6</strong>);</td>
+                    <td>Arguments</td>
+                    <td>The values that are passed to the function when it is called are called <em>arguments</em>. Arguments can be passed to the function as values or variables (names need to be surrounded by ' '). In the function call above, the number 10 is passed as the width and 6 is passed as height. Notice that the order in which arguments are passed and assigned follows the order that the parameters are declared.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">function greeting 
+                        <br>(name = 'stranger') {
+                        <br>console.log(`Hello, ${name}!`)
+                        <br>}
+                        <br>greeting() // Output: Hello, stranger!
+                    </td>
+                    <td>Default Parameters</td>
+                    <td>One of the features added in ES6 is the ability to use <em>default parameters</em>. Default parameters allow parameters to have a predetermined value in case there is no argument passed into the function or if the argument is undefined when called. In the example, we used the = operator to assign the parameter name a default value of 'stranger'. When there isn’t an argument passed into greeting(), the default value of 'stranger' is used, and 'Hello, stranger!' is logged to the console.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">function monitorCount 
+                        <br>(rows, columns) {
+                        <br>return rows * columns;
+                        <br>}
+                        <br>
+                        <br>const numOfMonitors = monitorCount(5, 4);
+                        <br>
+                        <br>console.log(numOfMonitors);
+                    </td>
+                    <td>return</td>
+                    <td>When a function is called, the computer will run through the function’s code and evaluate the result of calling the function. By default that resulting value is undefined. To pass back information from the function call, we use a <em>return statement</em>. To create a return statement, we use the return keyword followed by the value that we wish to return. If the value is omitted, undefined is returned instead. When a return statement is used in a function body, the execution of the function is stopped and the code that follows it will not be executed. The return keyword is powerful because it allows functions to produce an output. We can then save the output to a variable for later use.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">function multiplyByNineFifths(number) {
+                        <br>return number * (9/5);
+                        <br>};
+                        <br>
+                        <br>function getFahrenheit(celsius) {
+                        <br>return multiplyByNineFifths(celsius) + 32;
+                        <br>};
+                        <br>
+                        <br>getFahrenheit(15); // Returns 59
+                    </td>
+                    <td>Helper Functions</td>
+                    <td>We can also use the return value of a function inside another function. These functions being called within another function are often referred to as <em>helper functions</em>. Since each function is carrying out a specific task, it makes our code easier to read and debug if necessary. <strong>In the example</strong>, getFahrenheit() is called and 15 is passed as an argument. The code block inside of getFahrenheit() calls multiplyByNineFifths() and passes 15 as an argument. multiplyByNineFifths() takes the argument of 15 for the number parameter. The code block inside of multiplyByNineFifths() function multiplies 15 by (9/5), which evaluates to 27. 27 is returned back to the function call in getFahrenheit(). getFahrenheit() continues to execute. It adds 32 to 27, which evaluates to 59. Finally, 59 is returned back to the function call getFahrenheit(15). Writing helper functions can help take large and difficult tasks and break them into smaller and more manageable tasks.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const calculateArea
+                        <br>= function(width, height) {
+                        <br>}
+                    </td>
+                    <td>Function Expression</td>
+                    <td>Another way to define a function is to use a <em>function expression</em>. To define a function inside an expression, we can use the function keyword. In a function expression, the function name is usually omitted. A function with no name is called an <em>anonymous function</em>. A function expression is often stored in a variable in order to refer to it. <strong>To declare a function expression:</strong> declare a variable to be the name, or identifier, of your function. Since the release of ES6, it is common practice to use const as the keyword to declare the variable. Assign as that variable’s value an anonymous function created by using the function keyword followed by a set of parentheses with possible parameters. Then a set of curly braces that contain the function body. <strong>To invoke a function expression</strong>, write the name of the variable in which the function is stored followed by parentheses enclosing any arguments being passed into the function.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const rectangleArea = 
+                        <br>(width, height) => {
+                        <br>let area = width * height;
+                        <br>return area;
+                        <br>};
+                    </td>
+                    <td>Arrow Functions</td>
+                    <td>ES6 introduced <em>arrow function syntax</em>, a shorter way to write functions by using the special “fat arrow” () => notation. Arrow functions remove the need to type out the keyword function every time you need to create a function. Instead, you first include the parameters inside the ( ) and then add an arrow => that points to the function body surrounded in { }.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const squareNum = (num) => {
+                        <br>return num * num;
+                        <br>};
+                        <br>
+                        <br>const squareNum = num => num * num;
+                    </td>
+                    <td>Concise Body Arrow Functions</td>
+                    <td>JavaScript also provides several ways to refactor arrow function syntax. The most condensed form of the function is known as <em>concise body</em>. <strong>Rules</strong>: Functions that take only a single parameter do not need that parameter to be enclosed in parentheses. However, if a function takes zero or multiple parameters, parentheses are required. A function body composed of a single-line block does not need curly braces. Without the curly braces, whatever that line evaluates will be automatically returned. The contents of the block should immediately follow the arrow => and the return keyword can be removed. This is referred to as <em>implicit return</em>.
+                        <br>
+                        <br><strong>If you include curly brackets {}, you must type return in the code block. If you do <em>not</em> include curly braces {}, do <em>not</em> type return.</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Higher Order Functions</td>
+                    <td><em>Higher-order functions</em> are functions that accept other functions as arguments and/or return functions as output. This enables us to build abstractions on other abstractions.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const announceThatIAmDoingImportantWork = () => {
+                        <br>console.log("I’m doing very important work!");
+                        <br>};
+                        <br>
+                        <br>const busy = announceThatIAmDoingImportantWork;
+                        <br>busy(); // This function call barely takes any space!
+                    </td>
+                    <td>Functions as Data</td>
+                    <td>JavaScript functions behave like any other data type in the language; we can assign functions to variables, and we can reassign them to new variables. This is especially helpful if we want to maintain the source code for a function.
+                        <br>
+                        <br>busy is a variable that holds a reference to our original function. If we could look up the address in memory of busy and the address in memory of announceThatIAmDoingImportantWork they would point to the same place. Our new busy() function can be invoked with parentheses as if that was the name we originally gave our function. Notice how we assign announceThatIAmDoingImportantWork without parentheses as the value to the busy variable. We want to assign the value of the function itself, not the value it returns when invoked.
+                        <br>
+                        <br><strong>In JavaScript, functions are first class objects</strong>. This means that, like other objects you’ve encountered, JavaScript functions can have properties and methods. Since functions are a type of object, they have properties such as .length and .name, and methods such as .toString().
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const higherOrderFunc = param => {
+                        <br>&nbsp;param();
+                        <br>&nbsp;return `I just invoked ${param.name} as a callback function!`
+                        <br>}
+                        <br>
+                        <br>const anotherFunc = () => {
+                        <br>&nbsp;return 'I\'m being invoked by the higher-order function!';
+                        <br>}
+                        <br>
+                        <br>higherOrderFunc(anotherFunc);
+                    </td>
+                    <td>Functions as Parameters</td>
+                    <td>A <em>parameter</em> is a placeholder for the data that gets passed into a function. Since functions can behave like any other type of data in JavaScript, it might not surprise you to learn that functions can accept other functions as parameters. A <em>higher-order function</em> is a function that either accepts functions as parameters, returns a function, or both! We call functions that get passed in as parameters <em>callback functions</em>. Callback functions get invoked during the execution of the higher-order function.
+                        <br>
+                        <br>When we invoke a higher-order function, and pass another function in as an argument, we don’t invoke the argument function. Invoking it would evaluate to passing in the return value of that function call. <em>With callback functions, we pass in the function itself by typing the function name without the parentheses</em> (see example).
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Objects -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Objects</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Objects</td>
+                    <td>At their core, JavaScript objects are containers storing related data and functionality. Objects are <em>mutable</em> meaning we can update them after we create them!</td>
+                </tr>
+                <tr>
+                    <td class="vocab">let spaceship = {}; 
+                        <br>// spaceship is an empty object
+                        <br>
+                        <br>// An object literal with two key-value pairs
+                        <br>let spaceship = {
+                        <br>'Fuel Type': 'diesel',
+                        <br>color: 'silver'
+                        <br>};
+                    </td>
+                    <td>Object Literals</td>
+                    <td>Objects can be assigned to variables just like any JavaScript type. We use curly braces, {}, to designate an <em>object literal</em>.
+                        <br>
+                        <br>We fill an object with unordered data. This data is organized into <em>key-value pairs</em>. A key is like a variable name that points to a location in memory that holds a value. A key’s value can be of any data type in the language including functions or other objects.
+                        <br>
+                        <br>We make a key-value pair by writing the key’s name, or identifier, followed by a colon and then the value. We separate each key-value pair in an object literal with a comma (,). Keys are strings, but when we have a key that does not have any special characters in it, JavaScript allows us to omit the quotation marks.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">let spaceship = {
+                        <br>&nbsp;homePlanet: 'Earth',
+                        <br>&nbsp;color: 'silver'
+                        <br>};
+                        <br>
+                        <br>spaceship.homePlanet; 
+                        <br>// Returns 'Earth'
+                        <br>
+                        <br>let spaceship = {
+                        <br>&nbsp;'Fuel Type': 'Turbo Fuel'
+                        <br>};
+                        <br>
+                        <br>spaceship['Fuel Type'];
+                        <br>// Returns  'Turbo Fuel'
+                    </td>
+                    <td>Accessing Properties</td>
+                    <td>There are two ways we can access an object’s property: 
+                        <br>
+                        <br><em>dot notation (.)</em>: With property dot notation, we write the object’s name, followed by the dot operator and then the property name (key).
+                        <br>
+                        <br><em>bracket notation []</em>: To use bracket notation to access an object’s property, we pass in the property name (key) as a string. We <strong>must</strong> use bracket notation when accessing keys that have <strong>numbers, spaces, or special characters</strong> in them. Without bracket notation in these situations, our code would throw an error. With bracket notation you can also use a variable inside the brackets to select the keys of an object. This can be especially helpful when working with functions.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const spaceship = {type: 'shuttle'};
+                        <br>
+                        <br>spaceship = {type: 'alien'}; 
+                        <br>// TypeError: Assignment to constant variable.
+                        <br>
+                        <br>spaceship.type = 'alien'; 
+                        <br>// Changes the value of the type property
+                        <br>
+                        <br>spaceship.speed = 'Mach 5'; 
+                        <br>// Creates a new key of 'speed' with a value of 'Mach 5'
+                        <br>
+                        <br>delete spaceship.mission;  
+                        <br>// Removes the mission property
+                    </td>
+                    <td>Property Assignment</td>
+                    <td>We can use either dot notation, ., or bracket notation, [], and the assignment operator, = to add new key-value pairs to an object or change an existing property. One of two things can happen with property assignment: if the property already exists on the object, whatever value it held before will be replaced with the newly assigned value; if there was no property with that name, a new property will be added to the object. It’s important to know that although we can’t reassign an object declared with const, we can still mutate it, meaning we can add new properties and change the properties that are there.
+                        <br>
+                        <br>You can delete a property from an object with the <em>delete</em> operator.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const alienShip = {
+                        <br>&nbsp;invade () { 
+                        <br>&nbsp;&nbsp;console.log('Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.')
+                        <br>&nbsp;},
+                        <br>&nbsp;takeOff () {
+                        <br>&nbsp;&nbsp;console.log('Spim... Borp... Glix... Blastoff!');
+                        <br>&nbsp;}
+                        <br>};
+                        <br>
+                        <br>alienShip.invade();
+                    </td>
+                    <td>Methods</td>
+                    <td>We can include methods in our object literals by creating ordinary, colon-separated key-value pairs. The key serves as our method’s name, while the value is an anonymous function expression.
+                        <br>
+                        <br>With the new method syntax introduced in ES6 we can omit the colon and the function keyword. Don’t forget to separate your methods with commas just as you would any other key-value pairs.
+                        <br>
+                        <br>Object methods are invoked by appending the object’s name with the dot operator (.) followed by the method name and parentheses. 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const spaceship = {
+                        <br>&nbsp;crew: {
+                        <br>&nbsp;&nbsp;captain: { 
+                        <br>&nbsp;&nbsp;&nbsp;name: 'Sandra', 
+                        <br>&nbsp;&nbsp;&nbsp;degree: 'Computer Engineering', 
+                        <br>&nbsp;&nbsp;&nbsp;encourageTeam() { console.log('We got this!') } 
+                        <br>&nbsp;&nbsp;}
+                        <br>&nbsp;}
+                        <br>}; 
+                        <br>
+                        <br>spaceship.crew.captain.name; 
+                        <br>// Returns 'Sandra'
+                    </td>
+                    <td>Nested Objects</td>
+                    <td>In application code, objects are often nested— an object might have another object as a property which in turn could have a property that’s an array of even more objects!
+                        <br>
+                        <br>We can chain operators to access nested properties. We’ll have to pay attention to which operator makes sense to use in each layer. It can be helpful to pretend you are the computer and evaluate each expression from left to right so that each operation starts to feel a little more manageable.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const spaceship = {
+                        <br>&nbsp;homePlanet : 'Earth',
+                        <br>&nbsp;color : 'silver'
+                        <br>};
+                        <br>
+                        <br>let paintIt = obj => {
+                        <br>&nbsp;obj.color = 'glorious gold'
+                        <br>};
+                        <br>
+                        <br>paintIt(spaceship);
+                        <br>
+                        <br>spaceship.color 
+                        <br>// Returns 'glorious gold'
+                    </td>
+                    <td>Pass By Reference</td>
+                    <td>Objects are <em>passed by reference</em>. This means when we pass a variable assigned to an object into a function as an argument, the computer interprets the parameter name as pointing to the space in memory holding that object. As a result, functions which change object properties actually mutate the object permanently (even when the object is assigned to a const variable).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">// for...in
+                        <br>for (let crewMember in spaceship.crew) {
+                        <br>&nbsp;console.log(`${crewMember}: 
+                        <br>${spaceship.crew[crewMember].name}`);
+                        <br>}
+                        <br>
+                        <br>for (let variableName in outerObject.innerObject) {
+                        <br>&nbsp;console.log(`${outerObject.innerObject[variableName].propertyName}: ${outerObject.innerObject[variableName].differentPropertyName}`)
+                        <br>};
+                    </td>
+                    <td>Looping Through Objects</td>
+                    <td>We learned how to iterate through arrays using their numerical indexing, but the key-value pairs in objects aren’t ordered! JavaScript has given us alternative solution for iterating through objects with the <em><strong>for...in</strong></em> syntax. <em>for...in</em> will execute a given block of code for each property in an object. Our for...in will iterate through each element of the spaceship.crew object. In each iteration, the variable crewMember is set to one of spaceship.crew‘s keys, enabling us to log a list of crew members’ role and name.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const goat = {
+                        <br>&nbsp;dietType: 'herbivore',
+                        <br>&nbsp;makeSound() {
+                        <br>&nbsp;&nbsp;console.log('baaa');
+                        <br>&nbsp;},
+                        <br>&nbsp;diet() {
+                        <br>&nbsp;&nbsp;console.log(<strong>this</strong>.dietType);
+                        <br>&nbsp;}
+                        <br>};
+                        <br>
+                        <br>goat.diet(); 
+                        <br>// Output: herbivore
+                    </td>
+                    <td>this</td>
+                    <td>The <em>this</em> keyword references the calling object which provides access to the calling object’s properties. In the example, the calling object is <em>goat</em>, and the property is <em>dietType</em>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const goat = {
+                        <br>&nbsp;dietType: 'herbivore',
+                        <br>&nbsp;makeSound() {
+                        <br>&nbsp;&nbsp;console.log('baaa');
+                        <br>&nbsp;},
+                        <br>&nbsp;<strong>diet: () =></strong> {
+                        <br>&nbsp;&nbsp;console.log(<strong>this</strong>.dietType);
+                        <br>&nbsp;}
+                        <br>};
+                        <br>
+                        <br>goat.diet(); 
+                        <br>// Prints undefined
+                    </td>
+                    <td>Arrow Functions and this</td>
+                    <td>Avoid using arrow functions when using <em>this</em> in a method.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const bankAccount = {
+                        <br>&nbsp;_amount: 1000
+                        <br>}
+                    </td>
+                    <td>Privacy</td>
+                    <td>When discussing privacy in objects, we define it as the idea that only certain properties should be mutable or able to change in value. Certain languages have privacy built-in for objects, but JavaScript does not have this feature. 
+                        <br>
+                        <br>Rather, JavaScript developers follow naming conventions that signal to other developers how to interact with a property. One common convention is to <strong>place an underscore _ before the name of a property to mean that the property should not be altered</strong>. Though the property <em>can</em> be altered (i.e. bankAccount._amount = 1000000;), developers communicate not to do so.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const person = {
+                        <br>&nbsp;_firstName: 'John',
+                        <br>&nbsp;_lastName: 'Doe',
+                        <br>&nbsp;get fullName() {
+                        <br>&nbsp;&nbsp;if (this._firstName && this._lastName){
+                        <br>&nbsp;&nbsp;&nbsp;return `${this._firstName} ${this._lastName}`;
+                        <br>&nbsp;&nbsp;} else {
+                        <br>&nbsp;&nbsp;&nbsp;return 'Missing a first name or a last name.';
+                        <br>&nbsp;&nbsp;}
+                        <br>&nbsp;}
+                        <br>}
+                        <br>
+                        <br>// To call the getter method: 
+                        <br>person.fullName; // 'John Doe'
+                        <br>
+                        <br>const objFactory = param => {
+                        <br>&nbsp;return {
+                        <br>&nbsp;&nbsp; _param: param,
+                        <br>&nbsp;&nbsp;get param() {
+                        <br>&nbsp;&nbsp;&nbsp;return this._param;
+                        <br>&nbsp;&nbsp;},
+                        <br>&nbsp;}
+                        <br>}
+                    </td>
+                    <td>Getters (get)</td>
+                    <td>Getters are methods that get and return the internal properties of an object. But they can do more than just retrieve the value of a property! Getters can perform an action on the data when getting a property. Getters can return different values using conditionals. When using getter (and setter) methods, keep in mind that <em>properties cannot share the same name as the getter/setter function</em>. If we do so, then calling the method will result in an infinite call stack error. One workaround is to add an underscore before the property name as in the example.
+                        <br>
+                        <br>
+                        <ul>
+                            <li>Use the <em>get</em> keyword followed by a <em>function</em>.</li>
+                            <li>Use an <em>if...else</em> statement to check that data is available and true.</li>
+                            <li>You can access the calling object’s internal properties using <em>this</em>.</li>
+                            <li>In general, getter methods <em>do not need to be called with a set of parentheses</em>. Syntactically, it looks like we’re accessing a property.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const person = {
+                        <br>&nbsp;_age: 37,
+                        <br>&nbsp;set age(newAge){
+                        <br>&nbsp;&nbsp;if (typeof newAge === 'number'){
+                        <br>&nbsp;&nbsp;&nbsp;this._age = newAge;
+                        <br>&nbsp;&nbsp;} else {
+                        <br>&nbsp;&nbsp;&nbsp;console.log('You must assign a number to age');
+                        <br>&nbsp;&nbsp;}
+                        <br>&nbsp;}
+                        <br>};
+                        <br>
+                        <br>person.age = 40;
+                        <br>console.log(person._age); // Logs: 40
+                        <br>
+                        <br>person.age = '40'; // Logs: You must assign a number to age
+                        <br>
+                        <br>person._age = 'forty-five'
+                        <br>console.log(person._age); // Prints forty-five
+                    </td>
+                    <td>Setters (set)</td>
+                    <td>Reassign values of existing properties within an object. Again, the <em>typeof</em> operator validates data type. Setter methods like age do not need to be called with a set of parentheses. Syntactically, it looks like we’re reassigning the value of a property.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const monsterFactory = (name, age, energySource, catchPhrase) => {
+                        <br>&nbsp;return { 
+                        <br>&nbsp;&nbsp;name: name,
+                        <br>&nbsp;&nbsp;age: age, 
+                        <br>&nbsp;&nbsp;energySource: energySource,
+                        <br>&nbsp;&nbsp;scare() {
+                        <br>&nbsp;&nbsp;&nbsp;console.log(catchPhrase);
+                        <br>&nbsp;&nbsp;} 
+                        <br>&nbsp;}
+                        <br>};
+                        <br>
+                        <br>const ghost = monsterFactory('Ghouly', 251, 'ectoplasm', 'BOO!');
+                        <br>ghost.scare(); // 'BOO!'
+                    </td>
+                    <td>Factory Functions</td>
+                    <td>A real world factory manufactures multiple copies of an item quickly and on a massive scale. A factory function is a function that returns an object and can be reused to make multiple object instances. Factory functions can also have parameters allowing us to customize the object that gets returned.
+                        <br>
+                        <br>Now we have a ghost object as a result of calling monsterFactory() with the needed arguments. With monsterFactory in place, we don’t have to create an object literal every time we need a new monster. Instead, we can invoke the monsterFactory function with the necessary arguments.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const monsterFactory = (name, age) => {
+                        <br>&nbsp;return { 
+                        <br>&nbsp;&nbsp;name,
+                        <br>&nbsp;&nbsp;age 
+                        <br>&nbsp;}
+                        <br>};
+                    </td>
+                    <td>Property Value Shorthand</td>
+                    <td>ES6 introduced some new shortcuts for assigning properties to variables known as <em>destructuring</em>. Notice that we don’t have to repeat ourselves for property assignments!</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const vampire = {
+                        <br>&nbsp;name: 'Dracula',
+                        <br>&nbsp;residence: 'Transylvania',
+                        <br>&nbsp;preferences: {
+                        <br>&nbsp;&nbsp;day: 'stay inside',
+                        <br>&nbsp;&nbsp;night: 'satisfy appetite'
+                        <br>&nbsp;}
+                        <br>};
+                        <br>
+                        <br>const { residence } = vampire; 
+                        <br>console.log(residence); // Prints 'Transylvania'
+                    </td>
+                    <td>Destructured Assignment</td>
+                    <td>We often want to extract key-value pairs from objects and save them as variables. In <em>destructured assignment</em> we create a variable with the name of an object’s key that is wrapped in curly braces { } and assign to it the object. We can even use destructured assignment to grab nested properties of an object.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Built-in Object Methods</td>
+                    <td>We have access to object instance methods like: .hasOwnProperty(), .valueOf(), and many more! Practice your documentation reading skills and check out: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#Methods" target="_blank">MDN’s object instance documentation</a>.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Methods -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Methods</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Methods</td>
+                    <td>A method is a property with a function as its value. When the data stored on an object is a function we call that a <em>method</em>. A property is what an object has, while a method is what an object does.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const resultString 
+                        <br>= resultArray.join('').toUpperCase();</td>
+                    <td>Chaining Methods</td>
+                    <td>To perform multiple methods on a variable, simply connect them at the (dot) . The order matters.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Math.random()</td>
+                    <td>Randomly generates a number between 0 and 1, but not including 0 or 1.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Math.floor()</td>
+                    <td>Rounds the answer inside the parenthesis down to a whole number.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Math.ceil()</td>
+                    <td>Rounds the answer inside the parenthesis up to a whole number.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Math.abs()</td>
+                    <td>Expresses the absolute value of the answer inside the parenthesis.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const sortYears = (array) => {
+                        <br>&nbsp;return array.sort((a,b) => a &lt; b)
+                        <br>};
+                    </td>
+                    <td>.sort()</td>
+                    <td>Just putting .sort() on a variable will sort the array's elements in ascending order. The example sorts the elements in descending order, because a &lt; b. To list the array in ascending order, a &gt; b.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Scope -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Scope</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Scope</td>
+                    <td>Scope defines where variables can be accessed or referenced. While some variables can be accessed from anywhere within a program, other variables may only be available in a specific context.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const logSkyColor = () => 
+                        <br><strong>{
+                        <br>let color = 'blue'; 
+                        <br>console.log(color); // blue 
+                        <br>}</strong></td>
+                    <td>Blocks</td>
+                    <td>A block is the code found inside a set of curly braces {}. Blocks help us group one or more statements together and serve as an important structural marker for our code. A function body is an example of a block.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const color = 'blue';
+                        <br>
+                        <br>const returnSkyColor = () => {
+                        <br>return color; // blue 
+                        <br>};
+                        <br>
+                        <br>console.log(returnSkyColor()); 
+                        <br>// blue
+                    </td>
+                    <td>Global Scope</td>
+                    <td>Scope is the context in which our variables are declared. We think about scope in relation to blocks because variables can exist either outside of or within these blocks. In <em>global scope</em>, variables are declared outside of blocks. These variables are called global variables. Because global variables are not bound inside a block, they can be accessed by any code in the program, including code in blocks.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const logSkyColor = () => {
+                        <br>let color = 'blue'; 
+                        <br>console.log(color); 
+                        <br>// Prints "blue"
+                        <br>};
+                        <br>
+                        <br>logSkyColor(); // Prints "blue"
+                        <br>console.log(color); 
+                        <br>// throws a ReferenceError
+                    </td>
+                    <td>Block Scope</td>
+                    <td>When a variable is defined inside a block, it is only accessible to the code within the curly braces {} (referred to as a <em>local variable</em>). We say that variable has block scope because it is only accessible to the lines of code within that block.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">let num = 50;
+                        <br>
+                        <br>const logNum = () => {
+                        <br>num = 100; // Take note 
+                        <br>console.log(num);
+                        <br>};
+                        <br>
+                        <br>logNum(); // Prints 100
+                        <br>console.log(num); // Prints 100
+                    </td>
+                    <td>Scope Pollution</td>
+                    <td>Having too many global variables can cause problems in a program. When you declare global variables, they go to the global namespace. The global namespace allows the variables to be accessible from anywhere in the program. These variables remain there until the program finishes which means our global namespace can fill up really quickly. While it’s important to know what global scope is, <strong>it’s best practice to not define variables in the global scope.</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Arrays -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Arrays</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Arrays</td>
+                    <td><em>Arrays</em> are JavaScript’s way of making lists. Arrays can store any data types (including strings, numbers, and booleans). Like lists, arrays are ordered, meaning each item has a numbered position. <a href="https://www.codecademy.com/resources/docs/javascript/arrays" target="_blank">Learn about Arrays</a>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">let newYearsResolutions = ['Keep a journal', 'Take a falconry class', 'Learn to juggle'];</td>
+                    <td>Array Literal</td>
+                    <td>An <em>array literal</em> creates an array by wrapping items in square brackets []. In the example, the array is represented by the square brackets [] and the content inside. Each content item inside an array is called an <em>element</em>. In this example, the array is saved to a variable.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">let cities = ['New York', 'Beijing', 'Nairobi'];
+                        <br>
+                        <br>const hello = 'Hello World';
+                        <br>console.log(hello[6]);
+                        <br>// Output: W
+                    </td>
+                    <td>Accessing Elements</td>
+                    <td>Each element in an array has a numbered position known as its <em>index</em>. We can access individual items using their index, which is similar to referencing an item in a list based on the item’s position. Arrays in JavaScript are <em>zero-indexed</em>, meaning the positions start counting from 0 rather than 1. Therefore, the first item in an array will be at position 0. In the example, <em>cities[0]</em> will access the element at index 0 in the array cities. You can think of cities[0] as accessing the space in memory that holds the string 'New York'.
+                        <br>
+                        <br>You can also access individual characters in a string using bracket notation and the index.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">let seasons = ['Winter', 'Spring', 'Summer', 'Fall'];
+                        <br>seasons[3] = 'Autumn';
+                        <br>console.log(seasons); 
+                        <br>//Output: ['Winter', 'Spring', 'Summer', 'Autumn']
+                    </td>
+                    <td>Update Elements</td>
+                    <td>Once you have access to an element in an array, you can update its value.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const utensils = ['Fork', 'Knife', 'Chopsticks', 'Spork'];
+                        <br>utensils[3] = 'Spoon';
+                        <br>console.log(utensils);
+                        <br>//Outputs: [ 'Fork', 'Knife', 'Chopsticks', 'Spoon' ]
+                    </td>
+                    <td>Arrays with let and const</td>
+                    <td>Elements in an array declared with const (and let) remain mutable. Meaning that we can change the contents of a const array, but cannot reassign a new array or a different value.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const newYearsResolutions = 
+                        <br>['Keep a journal', 'Take a falconry class'];
+                        <br>console.log(newYearsResolutions.length);
+                        <br>// Output: 2
+                    </td>
+                    <td>.length</td>
+                    <td>One of an array’s built-in properties is length and it returns the number of items in the array. We access the <em>.length</em> property just like we do with strings.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const itemTracker = ['item 0', 'item 1', 'item 2'];
+                        <br>
+                        <br>itemTracker.push('item 3', 'item 4');
+                        <br>
+                        <br>console.log(itemTracker); 
+                        <br>// Output: ['item 0', 'item 1', 'item 2', 'item 3', 'item 4'];
+                    </td>
+                    <td>.push()</td>
+                    <td>Allows us to add items to the end of an array.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const newItemTracker = 
+                        <br>['item 0', 'item 1', 'item 2'];
+                        <br>
+                        <br>const removed = newItemTracker.pop();
+                        <br>
+                        <br>console.log(newItemTracker); 
+                        <br>// Output: [ 'item 0', 'item 1' ]
+                        <br>
+                        <br>console.log(removed);
+                        <br>// Output: item 2
+                    </td>
+                    <td>.pop()</td>
+                    <td>Removes the last item of an array.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>More Array Methods</td>
+                    <td>Some <a href="https://www.codecademy.com/resources/docs/javascript/arrays" target="_blank">arrays methods</a> that are available to JavaScript developers include: .join(), .slice(), .splice(), .shift(), .unshift(), and .concat() amongst many others. Some methods do not mutate the original array.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const flowers = ['peony', 'daffodil', 'marigold'];
+                        <br>
+                        <br>function addFlower(arr) {
+                        <br>arr.push('lily');
+                        <br>}
+                        <br>
+                        <br>addFlower(flowers);
+                        <br>
+                        <br>console.log(flowers); 
+                        <br>// Output: ['peony', 'daffodil', 'marigold', 'lily']
+                    </td>
+                    <td>Arrays & Functions</td>
+                    <td>
+                        <ul>
+                            <li>The flowers array has 3 <em>elements</em>.</li>
+                            <li>The <em>function</em> addFlower() has a <em>parameter</em> of arr, and uses .push() to add a 'lily' element into arr.</li>
+                            <li>We call addFlower() with an <em>argument</em> of flowers which will execute the code inside addFlower.</li>
+                            <li>We check the <em>value</em> of flowers and it now includes the 'lily' element! <em>The array was mutated!</em></li>
+                        </ul>
+                        <br>When you pass an array into a function, if the array is mutated inside the function, that change will be maintained outside the function as well. You might also see this concept explained as <em>pass-by-reference</em> since what we’re actually passing to the function is a reference to where the variable memory is stored and changing the memory.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const nestedArr = [[1], [2, 3]];
+                        <br>
+                        <br>console.log(nestedArr[1]); 
+                        <br>// Output: [2, 3]
+                        <br>
+                        <br>console.log(nestedArr[1][0]);
+                        <br>// Output: 2
+                    </td>
+                    <td>Nested Arrays</td>
+                    <td>Arrays can store other arrays. When an array contains another array it is known as a <em>nested array</em>. To access the nested arrays we can use bracket notation with the index value, just like we did to access any other element. Notice that nestedArr[1] will grab the element in index 1 which is the array [2, 3]. Then, if we wanted to access the elements within the nested array we can <em>chain</em>, or add on, more bracket notation with index values.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Loops -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Loops</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Loops</td>
+                    <td>A <em>loop</em> is a programming tool that repeats a set of instructions until a specified condition, called a <em>stopping condition</em> is reached. As a programmer, you’ll find that you rely on loops all the time! You’ll hear the generic term <em>iterate</em> when referring to loops; iterate simply means “to repeat”. When we need to reuse a task in our code, we often bundle that action in a function. Similarly, when we see that a process has to repeat multiple times in a row, we write a loop. Loops allow us to create efficient code that automates processes to make scalable, manageable programs.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">for (let counter = 0; counter &lt; 4; counter++) {
+                        <br>console.log(counter);
+                        <br>}
+                        <br>
+                        <br>//Output
+                        <br>0
+                        <br>1
+                        <br>2
+                        <br>3
+                    </td>
+                    <td>for</td>
+                    <td>The typical <em>for loop</em> includes an <em>iterator variable</em> that usually appears in all three expressions. The iterator variable is initialized, checked against the stopping condition, and assigned a new value on each loop iteration. Iterator variables can have any name, but it’s best practice to use a descriptive variable name.
+                        <br>
+                        <br>A <em>for</em> loop contains three expressions separated by ; inside the parentheses:
+                        <br>
+                        <br>
+                        <ul>
+                            <li>an <em>initialization</em> starts the loop and can also be used to declare the iterator variable.</li>
+                            <li>a <em>stopping condition</em> is the condition that the iterator variable is evaluated against— if the condition evaluates to true the code block will run, and if it evaluates to false the code will stop.</li>
+                            <li>an <em>iteration statement</em> is used to update the iterator variable on each loop.</li>
+                        </ul>
+                        <br>The code block is inside of the curly braces, console.log(counter), will execute until the condition evaluates to false. The condition will be false when counter is greater than or equal to 4 — the point that the condition becomes false is sometimes called the <em>stop condition</em>.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">for (let counter = 3; counter <strong>>=</strong> 0; counter--) {
+                        <br>console.log(counter);
+                        <br>};
+                    </td>
+                    <td>Looping in Reverse</td>
+                    <td>To run a backward for loop, we must:
+                        <br>
+                        <br>
+                        <ul>
+                            <li>Set the <em>iterator variable</em> to the highest desired value in the initialization expression.</li>
+                            <li>Set the <em>stopping condition</em> for when the iterator variable is less than the desired amount.</li>
+                            <li>The iterator should <em>decrease</em> in intervals after each iteration.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const animals = ['Grizzly Bear', 'Sloth', 'Sea Lion'];
+                        <br>
+                        <br>for (let i = 0; i &lt; animals.length; i++){
+                        <br>console.log(animals[i]);
+                        <br>}
+                        <br>
+                        <br>//Output
+                        <br>Grizzly Bear
+                        <br>Sloth
+                        <br>Sea Lion
+                    </td>
+                    <td>Looping through Arrays</td>
+                    <td>We can use a for loop to perform the same operation on each element in an array. Arrays hold lists of data, like customer names or product information. Imagine we owned a store and wanted to increase the price of every product in our catalog. That could be a lot of repeating code, but by using a for loop to iterate through the array we could accomplish this task easily. <em>To loop through each element in an array, a for loop should use the array’s .length property in its condition.</em>
+                        <br>
+                        <br>In the loop above, we’ve named our iterator variable i. This is a variable naming convention you’ll see in a lot of loops. When we use i to iterate through arrays we can think of it as being short-hand for the word index. Notice how our stopping condition checks that i is less than animals.length. Remember that arrays are zero-indexed, the index of the last element of an array is equivalent to the length of that array minus 1. If we tried to access an element at the index of animals.length we will have gone too far!
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const myArray = [6, 19, 20];
+                        <br>const yourArray = [19, 81, 2];
+                        <br>
+                        <br>for (let i = 0; i &lt; myArray.length; i++) {
+                        <br>&nbsp; for (let j = 0; j &lt; yourArray.length; j++) {
+                        <br>&nbsp; &nbsp; if (myArray[i] === yourArray[j]) {
+                        <br>&nbsp; &nbsp; &nbsp; console.log('Both arrays have the number: ' + yourArray[j]);
+                        <br>&nbsp; &nbsp; }
+                        <br>&nbsp; }
+                        <br>}
+                    </td>
+                    <td>Nested Loops</td>
+                    <td>When we have a loop running inside another loop, we call that a <em>nested loop</em>. One use for a nested <em>for</em> loop is to compare the elements in two arrays. For each round of the outer for loop, the inner for loop will run completely.
+                        <br>
+                        <br>Let’s think about what’s happening in the nested loop in our example. For each element in the outer loop array, myArray, the inner loop will run in its entirety comparing the current element from the outer array, myArray[i], to each element in the inner array, yourArray[j]. When it finds a match, it prints a string to the console.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">// A while loop that prints 1, 2, and 3
+                        <br>
+                        <br>let counterTwo = 1;
+                        <br>
+                        <br>while (counterTwo &lt; 4) {
+                        <br>&nbsp;console.log(counterTwo);
+                        <br>&nbsp;counterTwo++;
+                        <br>}
+                    </td>
+                    <td>while</td>
+                    <td>The syntax of a while loop is ideal when we don’t know in advance how many times the loop should run. 
+                        <br>
+                        <br>
+                        <ul>
+                            <li>The <em>counterTwo</em> variable is declared before the loop. We can access it inside our <em>while</em> loop since it’s in the global scope.</li>
+                            <li>We start our loop with the keyword while followed by our stopping condition, or test condition. This will be evaluated before each round of the loop. While the condition evaluates to true, the block will continue to run. Once it evaluates to false the loop will stop.</li>
+                            <li>Next, we have our loop’s code block which prints counterTwo to the console and increments counterTwo.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">let countString = '';
+                        <br>i = 0;
+                        <br>
+                        <br>do {
+                        <br>countString = countString + i;
+                        <br>i++;
+                        <br>} while (i &lt; 5);
+                        <br>
+                        <br>console.log(countString);
+                    </td>
+                    <td>do...while</td>
+                    <td>In some cases, you want a piece of code to run at least once and then loop based on a specific condition after its initial run. In this example, the code block makes changes to the countString variable by appending the string form of the i variable to it. First, the code block after the do keyword is executed once. Then the condition is evaluated. If the condition evaluates to true, the block will execute again. The looping stops when the condition evaluates to false.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">for (let i = 0; i &lt; 99; i++) {
+                        <br>&nbsp;if (i > 2 ) {
+                        <br>&nbsp;&nbsp;break;
+                        <br>&nbsp;}
+                        <br>&nbsp;console.log('Banana.');
+                        <br>}
+                        <br>
+                        <br>console.log('Orange you glad I broke out the loop!');
+                        <br>
+                        <br>//Output:
+                        <br>Banana.
+                        <br>Banana.
+                        <br>Banana.
+                        <br>Orange you glad I broke out the loop!
+                    </td>
+                    <td>break</td>
+                    <td> In our code, when we want to stop a loop from continuing to execute even though the original stopping condition we wrote for our loop hasn’t been met, we can use the keyword <em>break</em>. The break keyword allows programs to “break” out of the loop from within the loop’s block.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Infinite Loops</td>
+                    <td>Avoid writing an <em>infinite loop</em>, or a loop without a stopping condition. This can take up all of your computer's computing power, potentially freezing your computer. If you do run into an infinite loop, refresh the page, and fix your code.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const input = 'I love steak and milk';
+                        <br>
+                        <br>for (let i = 0; i &lt; input.length; i++) {
+                        <br>
+                        <br>};
+                    </td>
+                    <td>Iterating a String</td>
+                    <td>Loops, or iterations, can be applied to each character (letter) in a string. Treat the string the same way that you would an array.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const hobbies = ['singing', 'eating', 'quidditch', 'writing'];
+                        <br>
+                        <br>for (const hobby of hobbies) {
+                        <br>console.log(`I enjoy ${hobby}.`);
+                        <br>}                   
+                    </td>
+                    <td>for...of</td>
+                    <td>A cleaner syntax for iterating through items, one by one.
+                        <br>
+                        <br>There is no need to set up additional variables to store an index with a for...of loop. The loop will iterate over each element in the iterable object and terminate itself when it reaches the last item — so you don’t need to track the number of items in the array. In our example, we used an array, but for...of loops also work with strings, sets, and other array-like objects.
+                        <br>
+                        <br>Therefore, you should opt for a standard for loop if you need to access the indices or need finer control to determine what elements you want to loop over. The for...of loop still allows you to use <em>break</em> and <em>continue</em>.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const strangeBirds = ['Shoebill', 'Cockatrice', 'Basan', 'Cow', 'Terrorbird', 'Parotia', 'Kakapo'];
+                        <br>
+                        <br>for (const bird of strangeBirds) {
+                        <br>&nbsp;if  (bird === 'Cow'){
+                        <br>&nbsp;&nbsp;continue;
+                        <br>&nbsp;}
+                        <br>&nbsp;console.log(bird);
+                        <br>}
+                    </td>
+                    <td>continue</td>
+                    <td>The <em>continue</em> statement is used to skip one iteration of the loop.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Iterators -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Iterators</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab">const groceries = ['brown sugar', 'salt', 'cranberries', 'walnuts'];
+                        <br>
+                        <br>groceries.forEach(function(groceryItem) {
+                        <br>&nbsp;console.log(' - ' + groceryItem);
+                        <br>});
+                        <br>
+                        <br>const fruits = ['mango', 'papaya', 'pineapple', 'apple'];
+                        <br>
+                        <br>fruits.forEach(fruit => 
+                        <br>&nbsp;console.log(`I want to eat a ${fruit}`));
+                    </td>
+                    <td>.forEach()</td>
+                    <td>Executes the same code for each element of an array.
+                        <br>
+                        <br>In the example, <em>.forEach</em> is the iterator, and everything that follows it is the callback function.
+                        <br>
+                        <br><ul>
+                                <li>groceries.forEach() calls the forEach method on the groceries array.</li>
+                                <li><strong>As with all iterator functions, .forEach() takes an argument of a callback function.</strong> Remember, a callback function is a function passed as an argument into another function.</li>
+                                <li>.forEach() loops through the array and executes the callback function for each element. During each execution, the current element is passed as an argument to the callback function.</li>
+                                <li>The return value for .forEach() will always be undefined.</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const numbers = [1, 2, 3, 4, 5]; 
+                        <br>
+                        <br>const bigNumbers = numbers.map(number => {
+                        <br>&nbsp;return number * 10;
+                        <br>});
+                        <br>
+                        <br>console.log(bigNumbers); // Output: [10, 20, 30, 40, 50]
+                    </td>
+                    <td>.map()</td>
+                    <td>Takes an argument of a callback function and returns a new array.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const words = ['chair', 'music', 'pillow', 'brick', 'pen', 'door']; 
+                        <br>
+                        <br>const shortWords = words.filter(word => {
+                        <br>&nbsp;return word.length &lt; 6;
+                        <br>});
+                        <br>
+                        <br>console.log(shortWords); // Output: ['chair', 'music', 'brick', 'pen', 'door']
+                        <br>
+                        <br>const justCoolStuff = (array1, array2) => array1.filter
+                        <br>(element => array2.includes(element));
+                    </td>
+                    <td>.filter()</td>
+                    <td>Returns a new array, after filtering out certain elements from the original array. The callback function for the .filter() method should return true or false depending on the element that is passed to it. The elements that cause the callback function to return true are added to the new array.
+                        <br>
+                        <br>The "justCoolStuff" example demonstrates how to check if 2 arrays contain the same elements using .filter().
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const jumbledNums = [123, 25, 78, 5, 9]; 
+                        <br>
+                        <br>const lessThanTen = jumbledNums.findIndex(num => {
+                        <br>&nbsp;return num &lt; 10;
+                        <br>});
+                        <br>
+                        <br>console.log(lessThanTen); // Output: 3 
+                        <br>console.log(jumbledNums[3]); // Output: 5
+                    </td>
+                    <td>.findIndex()</td>
+                    <td>Returns the index of the first element that evaluates to true in the callback function. If there isn’t a single element in the array that satisfies the condition in the callback, then .findIndex() will return -1.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const numbers = [1, 2, 4, 10];
+                        <br>
+                        <br>const summedNums = numbers.reduce((accumulator, currentValue) => {
+                        <br>&nbsp;return accumulator + currentValue
+                        <br>})
+                        <br>
+                        <br>console.log(summedNums) // Output: 17
+                        <br>
+                        <br>{return accumulator + currentValue}, 100)  // 100 is the second argument for .reduce(); Outputs 117
+                    </td>
+                    <td>.reduce()</td>
+                    <td>Returns a single value after iterating through the elements of an array, thereby reducing the array. 
+                        <br>
+                        <br>In the example, accumulator begins with 1, and currentValue begins with 2. These numbers add together to make 3. Which, becomes the next accumulator, and 4 becomes the next currentValue. 3 + 4 = 7, and 7 + 10 = 17.
+                        <br>
+                        <br>The .reduce() method can also take an optional second parameter to set an initial value for accumulator (remember, the first argument is the callback function!).
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Iterator Documentation</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods" target="_blank">Learn more here</a>.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Debugging JavaScript -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Debugging JavaScript</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>List of Errors</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors" target="_blank">List of errors</a></td>
+                </tr>
+                <tr>
+                    <td class="vocab"><img class="error-stack-trace-img" src="C:/Software/Projects/0_Ethan's Code Cheat Sheet/Ethan's Code Cheat Sheet/Images/Screenshot 2023-11-19 215136.png" alt="Img Unavailable"></td>
+                    <td>Error Stack Traces</td>
+                    <td>Errors: big red text. A piece of software, called a <em>compiler</em>, is trying to translate your code so that your computer can understand and run it. However, the compiler is coming across a piece of code that it can’t interpret. As a result, it throws an error back to you to let you know that it has to stop and why. This information is logged as an <strong>error stack trace</strong> — a printed message containing information about where the error occurred, what type of error was thrown, and a description of the error.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>JavaScript Error Types</td>
+                    <td>
+                            <strong>SyntaxError:</strong> This error will be thrown when a typo creates invalid code — code that cannot be interpreted by the compiler. When this error is thrown, scan your code to make sure you properly opened and closed all brackets, braces, and parentheses and that you didn’t include any invalid semicolons.
+                        <br>
+                        <br><strong>ReferenceError:</strong> This error will be thrown if you try to use a variable that does not exist. When this error is thrown, make sure all variables are properly declared (check scope).
+                        <br>
+                        <br><strong>TypeError:</strong> This error will be thrown if you attempt to perform an operation on a value of the wrong type. For example, if we tried to use a string method on a number, it would throw a TypeError.
+                        <br>
+                        <br><strong>EvalError:</strong> This error will be thrown regarding the global function <em>eval()</em>.
+                        <br>
+                        <br><strong>RangeError:</strong> This error will be thrown when a numeric variable or parameter is outside its valid range.
+                        <br>
+                        <br><strong>URIError:</strong> This error will be thrown when <em>encodeURI()</em> or <em>decodeURI()</em> are passed invalid parameters.
+                        <br>
+                        <br><strong>AggregateError:</strong> This error will be thrown representing several errors wrapped in a single error when multiple errors need to be reported by an operation.
+                        <br>
+                        <br><strong>InternalError:</strong> This error will be thrown when there's an internal error in the JavaScript engine.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Debugging Errors</td>
+                    <td>
+                        <ol>
+                            <li>Run your code. Using the first error’s stack trace, identify the error’s type, description, and location.</li>
+                            <li>Go to the file name and line number indicated by the error stack trace. Using the error type and description, identify the bug in your code.</li>
+                            <li>Fix the bug and re-run your code.</li>
+                            <li>Repeat steps 1-3 until your code no longer throws any errors.</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">console.log()</td>
+                    <td>Locating Silent Bugs</td>
+                    <td>Even if your code runs error-free, it is not necessarily bug-free. You may find that your code is consistently returning incorrect values without throwing any errors. A lack of thrown errors does not mean your code logic is completely correct. An incredibly powerful tool for locating bugs is a method you likely learned very early on in your JavaScript journey: console.log()! By adding print statements to our code, we can identify where things have gone wrong.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">console.log()</td>
+                    <td>Debugging with console.log()</td>
+                    <td>
+                        <ol>
+                            <li>Go to the beginning of the malfunctioning code. Print out all starting variables, existing values, and arguments using console.log(). If the values are what you expect, move on to the next piece of logic in the code. If not, you have identified a bug and should skip to step 3.</li>
+                            <li>After the next piece of logic in your code, add console.log() statements to ensure updated variables have the values that you now expect and that the block of code is being executed. If that logic is executing properly, continue repeating this step until you find a line not working as expected, then move to step 3.</li>
+                            <li>Fix the identified bug and run your code again. If it now works as expected, you’ve finished debugging! If not, continue stepping through your code using step 2 until it does.</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Documentation</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN JavaScript web docs</a>. We encourage you to explore the docs, but often the fastest way to access a specific part of the docs you’re interested in is to Google it. For example, if we wanted more information on the Number object’s .isNan() method, we could Google “MDN isNan” and then click the link to the MDN page. If we were looking to see a list of all of the String built-in methods, we might Google “MDN String”, click the link to MDN, and then scroll down to the “Methods” section of the documentation.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Stack Overflow</td>
+                    <td><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Sample -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Sample</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+
+</html>

@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>CSS</title>
+    </head>
+
+    <body>
+        
+        <!-- Header -->
+
+        <header>
+            <h1>CSS</h1>
+            <nav>
+                <ul>
+                    <li class ="headernav"><a href="index.html">Home</a></li>
+                    <li class ="headernav"><a href="terminology.html">Terminology</a></li>
+                    <li class ="headernav"><a href="keyboardcommands.html">Keyboard Commands</a></li>
+                    <li class ="headernav"><a href="git.html">Git & GitHub</a></li>
+                    <li class ="headernav"><a href="html.html">HTML</a></li>
+                    <li class ="headernav"><a href="#">CSS</a></li>
+                    <li class ="headernav"><a href="javascript.html">JavaScript</a></li>
+                    <li class ="headernav"><a href="Node.js.html">Node.js</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!--Terminology-->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Terminology</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th></th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Selector</td>
+                    <td>The beginning of the ruleset used to target the element that will be styled.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Declaration Block</td>
+                    <td>The code in-between (and including) the curly braces { } that contains the CSS declaration(s).</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Declaration</td>
+                    <td>The group name for a property and value pair that applies a style to the selected element.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Property</td>
+                    <td>The first part of the declaration that signifies what visual characteristic of the element is to be modified.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Value</td>
+                    <td>The second part of the declaration that signifies the value of the property.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Specificity</td>
+                    <td>The order by which the browser decides which CSS styles will be displayed in the browser. In order of least to most specific: type, class, ID. An element that has an ID and class style will display the ID style instead of the class style. Additionally, a style with 2 type selectors would be displayed instead of a style with 1 type selector, and so on.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Linking CSS to HTML</td>
+                    <td>&lt;link&gt; within the &lt;head&gt; of an HTML file. Requires href="addressofcssfile", and rel="stylesheet". If .css file is stored in the same directory, use a relative path.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--Selectors-->
+        <table>
+            <thead>
+                <tr>
+                    <td scope="col" colspan="3">Selectors</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;p style="color: red;"&gt;Hello, World!&lt;/p&gt;</td>
+                    <td>Inline (HTML)</td>
+                    <td>Within an HTML element's opening tag, adding the <em>style</em> attribute allows you to insert CSS code inline with your HTML.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">p {}</td>
+                    <td>Type</td>
+                    <td>Matches the HTML element in the document. Do not use angle brackets when selecting elements in CSS. The type selector is also referred to as a tag name or element selector.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">* {}</td>
+                    <td>Universal</td>
+                    <td>Selects all elements of any type.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.paints {}</td>
+                    <td>Class</td>
+                    <td>In HTML, an element is given the attribute class="classname" in the opening tag. In CSS, the classname is written as shown in the example (with a . before its name). One of the most common ways to select an element when working with HTML and CSS. Meant to be reused over many elements.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.paints {} .bold {}</td>
+                    <td>Multiple Classes</td>
+                    <td>In HTML, the class attribute will contain multiple class names (class="paints bold"). In CSS, the classes will each have their own entries.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">#big-title {}</td>
+                    <td>ID</td>
+                    <td>In HTML, the id attribute will be applied to the element in the opening tag (id="big-title"). In CSS, the ID is written with a # before its name. If an HTML element needs to be styled uniquely, give it an id attribute. An ID can only be used once per page, and overrides the styles of types and classes.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">[href] {}</td>
+                    <td>Attribute</td>
+                    <td>Used to target HTML elements that already contain an attribute. Targets all elements with the given attribute. In CSS, the attribute must be surrounded with square brackets [].</td>
+                </tr>
+                <tr>
+                    <td class="vocab">img[src*="winter"] {}</td>
+                    <td>Type and/or Attribute</td>
+                    <td>Selects an element with an attribute that contains any instance of the specified value. type[attribute*="value"].</td>
+                </tr>
+                <tr>
+                    <td class="vocab">p:hover {}</td>
+                    <td>Pseudo-class</td>
+                    <td>Changes text (gives elements a different state) in response to user interaction, site navigation, and position in the document tree. Can be attached to any selector. Includes: <em>:link :visited :hover :active :focus :disabled</em>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.main-list li {}</td>
+                    <td>Descendant Combinator</td>
+                    <td>Selecting elements that are nested within other elements (<em>descendants</em>). Nesting occurs when an element, and its opening and closing tags, are between the opening and closing tags of another element. In the example, &lt;li&gt; is nested between an element that has the attribute class="main-list".</td>
+                </tr>
+                <tr>
+                    <td class="vocab">h1.special {}</td>
+                    <td>Chaining</td>
+                    <td>Assigning 2+ CSS selectors to an HTML element at the same time (combining selectors). This example allows you to select only the h1 elements with a class of special.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">h1, .menu {}</td>
+                    <td>Multiple Selectors</td>
+                    <td>Assigning CSS style(s) to multiple selectors at the same time (unrelated HTML elements).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.attribute a::after {}</td>
+                    <td>Pseudoselector</td>
+                    <td>Selects the space that occurs ::before or ::after the element.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--Visual Rules-->
+        <table>
+            <thead>
+                <tr>
+                    <td scope="col" colspan="3">Visual Rules</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab">font-family: arial;</td>
+                    <td>Font Family</td>
+                    <td>Changes the <em>typeface</em>, or the font of the text. When the name of a typeface contains multiple words, it's best to enclose it inside of quotes, e.g. "Courier New". Font must be installed on the user's computer or downloaded with the site. <em>Web safe fonts</em> appear the same across all browsers and operating systems. A <em>font stack</em> is a list of multiple similar-looking fonts (called <em>fallback fonts</em>). The browser will try to use the first font. If it can't, it will use the second, and finally the third. <em>Serif</em> fonts have extra details on the ends of each letter. <em>Sans-Serif</em> fonts do not have the extra details. These keyword values (<em>serif</em> or <em>sans-serif</em>) can be used as final fallback fonts if the browser is unable to support the other fonts in the font stack.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">font-size: 18px;</td>
+                    <td>Font Size</td>
+                    <td>Changes the size of the text.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">font-weight: bold;</td>
+                    <td>Font Weight</td>
+                    <td>How bold or thin text appears. Keyword values include: <em>lighter</em>, <em>normal</em>, <em>bold</em>, and <em>bolder</em>, all relative to the parent element. Numerical values range from 1-1000 (lightest to boldest). Common practice is to use increments of 100 (400 = normal, 700 = bold). Not all fonts can be assigned a numeric font weight. Not all numeric font weights are available to all fonts.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">text-align: center;</td>
+                    <td>Text Align</td>
+                    <td>Aligns text relative to the parent element that holds it. Includes: left, center, right, and justify (spreads text across the width of the parent element).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">color: blue;</td>
+                    <td>Color</td>
+                    <td>Styles an element's foreground color (the element itself).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">background-color: black;</td>
+                    <td>Background Color</td>
+                    <td>Styles an element's background color (the space around the element).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">opacity: 0.5;</td>
+                    <td>Opacity</td>
+                    <td>The measure of how transparent an element is. Scale of 0-1, using decimals (0 is invisible, 1 is fully visible).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">background-image: url(“ ”);</td>
+                    <td>Background Image</td>
+                    <td>Changes the background of an element to display an image. Copy the path (absolute) and insert it between the “ “, use forward slashes.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">color: blue !important;</td>
+                    <td>Important</td>
+                    <td>Overrides any style (no matter how specific). Changes all elements of that selector. Applied to specific declarations, instead of full rules. Should almost never be used.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">content: ">";</td>
+                    <td>Content</td>
+                    <td>Can be used to characterize the space between breadcrumbs. Includes: <em>">"</em> <em>"/"</em> and <em>"x"</em>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">vertical-align: super;</td>
+                    <td>Vertical Align</td>
+                    <td>Aligns the text vertically, within its line of text.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">list-style: none;</td>
+                    <td>List Style</td>
+                    <td>Under the &lt;ul&gt; selector (or its class name), <em>list style</em> allows you to style, or even remove the bullets. Includes: <em>none;</em>.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--The Box Model-->
+        <table>
+            <thead>
+                <tr>
+                    <td scope="col" colspan="3">The Box Model</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab">width: 240px;</td>
+                    <td>Width</td>
+                    <td>Changes the width of the content area. min-width and max-width ensure a minimum and maximum width for the element's box, respectively. When set in pixels, the box will be the same size on all devices. Height, width, and padding can also be set in %.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">height: 80px;</td>
+                    <td>Height</td>
+                    <td>Changes the height of the content area. min-height and max-height ensure a minimum and maximum height for the element's box, respectively.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">padding: 10px;</td>
+                    <td>Padding</td>
+                    <td>The amount of space between the content area and the border. This example puts 10 pixels of space between the content and the border on all 4 sides. Customize each side: padding-top, padding-bottom, padding-right, padding-left. Shorthand example: padding: 10px 5px 10px 5px; values are listed going clockwise around the box.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">border: 3px solid coral;</td>
+                    <td>Border</td>
+                    <td>The thickness and style of the border surrounding the content area and padding. Can be set with specific: <em>width</em> (thickness of border; set in pixels (px), or thin, medium, thick), <em>style</em> (design of border; solid, several styles), and <em>color</em>. The default border is medium none color, where color is the current color of the element. Any aspect that is not indicated will be set to the default.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">border-radius: 5px;</td>
+                    <td>Border Radius</td>
+                    <td>Modifies the corners of an element's border box. This example sets all 4 corners of the border box to a 5px radius. You can create a circular border by setting the height and width to the same value, and the radius to 50%.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">margin: 0px auto;</td>
+                    <td>Margin</td>
+                    <td>The amount of space between the border and the outside edge of the element. Same rules apply to margin as padding. More common to see margin values set for a specific side of an element. Auto allows you to center content. In the example, the 0 sets the margins for the top and bottom of the box, and the auto centers the element left-right. To center an element, a width must be set for it. Margin collapse: top and bottom (vertical) margins can collapse, unlike padding. Whichever element has a larger vertical margin, that will set the distance between them vertically on the page. Left + right (horizontal) margins will be spaced equal to the sum of their margins.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">overflow: scroll;</td>
+                    <td>Overflow</td>
+                    <td>Controls what happens to content that overflows, or spills outside of the box. <em>hidden:</em> content that overflows will be hidden from view. <em>scroll:</em> content that overflows will create a scrollbar to view it. <em>visible:</em> content that overflows will be displayed outside of the container element. This is the default value. Set overflow on a parent element to control the visibility of child elements.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">visibility: visible;</td>
+                    <td>Visibility</td>
+                    <td>Adjusts the visibility of elements. <em>hidden:</em> hides the element (leaves empty space on webpage). <em>visible:</em> displays the element. <em>collapse:</em> collapses the element. <em>display: none</em> will remove the element from the webpage.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">* {margin: 0; padding: 0;}</td>
+                    <td>Resetting Defaults</td>
+                    <td>All major web browsers have a default stylesheet that they use in the absence of an external stylesheet (known as <em>user agent</em> stylesheets). “user agent” = browser. The example is often the first CSS rule in an external stylesheet (resets all margin and padding).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">* {box-sizing: border-box;}</td>
+                    <td>Box Sizing</td>
+                    <td><em>The Box Problem:</em> borders, padding, height, and width all add together. This creates a problem, whereby the actual dimensions of the box change from 300px to something like 322px. This makes it hard to organize the elements on the webpage. <em>box-sizing</em> controls the type of box model that a browser should use when interpreting a web page. The default value of this property is <em>content-box</em>. However, <em>border-box</em> allows the height and width values to set the absolute values for the box. Under <em>border-box</em>, padding and borders will not add to the dimensions of the box.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--Display and Positioning-->
+        <table>
+            <thead>
+                <tr>
+                    <td scope="col" colspan="3">Display and Positioning</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab">position: fixed; top: 50px;</td>
+                    <td>Position</td>
+                    <td>The default position of an element can be changed by setting its position property. <em>static</em> is the default value and does not need to be specified. <em>relative</em> allows you to position an element relative to its default static position. Must be accompanied by an offset property, or properties (top, bottom, left, right, specified in px, ems, or %). <em>absolute</em> means that all other elements will ignore the element, acting like it's not even there. Positioned relative to its closest positioned parent element (offset properties can be used here as well). The element will scroll with the rest of the document. <em>fixed</em> fixes an element's position on the web page regardless of user scrolling. Commonly used for navigation bars across the top of a web page. Uses offset properties as well. <em>sticky</em> keeps an element in the document flow as the user scrolls. Sticks to a specified position as the page is scrolled further. Uses offset properties as well.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">z-index: 1;</td>
+                    <td>Z Index</td>
+                    <td>Controls how far back, or how far forward elements appear when they overlap. Controls the depth of content relative to other content. Accepts integer values (1, 2, 3) - defaults to 0 - higher #'s are more visible. Does NOT work with a static position.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">display: block;</td>
+                    <td>Display</td>
+                    <td>All HTML elements have a default display value that controls whether it can share horizontal space with another element. <em>inline</em> makes the content box wrap tightly around the element, so that it only takes up the space needed to display the element (does not require a new line after each element). Height and width of these elements can't be specified in the CSS doc. <em>inline</em> is the default display for some elements such as &lt;a&gt; &lt;strong&gt; &lt;em&gt;. <em>block</em> fills the entire width of the page by default. Content is not displayed in the same line as surrounding content. height and width properties can be set (unless specified, they are the height necessary to display their content). <em>block</em> is the default display for elements such as &lt;h1&gt; &lt;p&gt; &lt;div&gt; &lt;footer&gt;. <em>inline-block</em> content can appear next to each other (does not start new line). Width and height can be adjusted. <em>inline-block</em> is the default display for elements such as &lt;img&gt;.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">float: right;</td>
+                    <td>Float</td>
+                    <td>Moves an element as far left or as far right as possible in the container. Must have width specified. Commonly used for wrapping text around an image, and floating multiple elements. Other tools for this purpose include CSS grid and flexbox.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">clear: both;</td>
+                    <td>Clear</td>
+                    <td><em>left;</em> the left side of the element will not touch any other element within the same containing element. <em>right;</em> the right side of the element will not touch any other element within the same containing element. <em>both;</em> neither side of the element will touch any other element within the same containing element. <em>none;</em> the element can touch either side.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--Color-->
+        <table>
+            <thead>
+                <tr>
+                    <td scope="col" colspan="3">Color</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab">color: midnightblue;</td>
+                    <td>Named Colors</td>
+                    <td>English words that describe colors (keyword colors). ~140 colors. <em>transparent;</em> eliminates color opacity.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">color: rgb(255, 255, 255);</td>
+                    <td>RGB</td>
+                    <td>Numeric values that describe a mix of red, green, and blue. ~256 * 256 * 256 = 16,777,216 colors. Each value represents a color component (red, green, and blue, respectively, from 0-255). Control opacity (how transparent the color is) with color: rgba(0, 0, 0, 0.1). The "a" stands for <em>alpha</em>, and is the 4th number in the series (value scale of 0-1, in decimals).</td>
+                </tr> 
+                <tr>
+                    <td class="vocab">color: hsl(120, 70%, 80%);</td>
+                    <td>HSL</td>
+                    <td>Numeric values that describe a mix of <em>hue</em>, <em>saturation</em>, and <em>lightness</em>. The first number represents the <em>hue</em>, on a scale of 0-360. The number corresponds to an angle on a color wheel. The second number represents the <em>saturation</em>, or intensity/purity of the color, from 0-100%. The third number represents the <em>lightness</em>, from 0-100%. Control the opacity with hsla(0, 0, 0, 0.3). The 4th number is the <em>alpha</em>, which controls the opacity on a value scale of 0-1.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">color: #8FBC8F;</td>
+                    <td>Hexadecimal</td>
+                    <td>A type of syntax. Colors created using this syntax are called hex colors. # followed by 3 or 6 characters (letters and numbers). Hexadecimal number system has 16 digits (0-15). 10-15 are represented by the letters A-F (capitalized or lowercase). If the first and second values are the same (e.g. AA), they can be represented by one value (e.g. A). This is only true if the third and fourth, as well as the fifth and sixth values are also the same. Hex numbers must be either 3 or 6 values in length. For <em>opacity</em>, add 1 digit to a 3-digit hex, or add 2 digits to a 6-digit hex. Ranges from 00 (transparent) - FF (opaque).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">background-color: rgb(0, 0, 0);</td>
+                    <td>Background Color</td>
+                    <td>All of these color properties can be applied to both <em>color:</em> and <em>background-color:</em>.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--Typography-->
+        <table>
+            <thead>
+                <tr>
+                    <td scope="col" colspan="3">Typography</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab">font-style: italic;</td>
+                    <td>Font Style</td>
+                    <td>Displays the text in italics.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">text-transform: uppercase;</td>
+                    <td>Text Transform</td>
+                    <td>Text can be styled to appear in either all uppercase or all lowercase.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">letter-spacing: 0.5em;</td>
+                    <td>Letter Spacing</td>
+                    <td>Sets the horizontal spacing between the letters in an element. Units: px, em.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">word-spacing: 3px;</td>
+                    <td>Word Spacing</td>
+                    <td>Sets the space between words. Units: px, em.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">line-height: 1.2;</td>
+                    <td>Line Height</td>
+                    <td>How tall the lines containing text are. Units: px, em, %, and unitless ((e.g. 1.2) - if you change the font size, the space auto-adjusts).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--Links and Buttons-->
+        <table>
+            <thead>
+                <tr>
+                    <td scope="col" colspan="3">Links and Buttons</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Link Etiquette</td>
+                    <td>Anchor text, the text itself of a link, should be descriptive of the linked resource. Link styles should not be replicated in other page text. Available links appear in an underlined blue text. Clicked (but not yet followed) links appear with red text. Previously visited links are styled with purple text.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">text-decoration: underline;</td>
+                    <td>Text Decoration</td>
+                    <td>Includes: <em>none; underline; underline dotted; underline dotted red; green wavy underline;</em>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">cursor: pointer;</td>
+                    <td>Cursor</td>
+                    <td>When hovering over a link, the cursor property can be used to turn your standard mouse pointer into a pointing hand. Luckily, this behavior is generally included in browser user agent stylesheets, and it also exists in the HTML5 default styles. cursor properties include: <em>help; wait; crosshair; not-allowed; zoom-in; grab;</em>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;a href="cats.com" title="Video of cats"&gt;</td>
+                    <td>HTML title Attribute</td>
+                    <td>Provides additional context for a link in the form of text. Appears as a <em>tooltip</em>, a small box that appears when a user hovers their mouse over a link. Add the title attribute after the href attribute.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.question:hover {}</td>
+                    <td>Link States</td>
+                    <td>Applying the pseudo-class selector to links. When styling in .css, link states should always be written in the following order: <em>:link :visited :hover :active</em>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">button .content .skeuomorphic .flat</td>
+                    <td>Button Selectors</td>
+                    <td>First apply one of these selectors as a class to your &lt;button&gt; tag. These are descriptive selectors. You must create the styling for the button using properties such as <em>background-color, border-radius, color, font-family, font-size, font-weight, padding, text-decoration, text-transform,</em> etc.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">box-shadow: 0px 5px;</td>
+                    <td>Box Shadow</td>
+                    <td>Can be used to give a button a more 3-D appearance. The first number is the offset-x value, and the second number is the offset-y value.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Secondary Navigation -->
+        <table>
+            <thead>
+                <tr>
+                    <td scope="col" colspan="3">Secondary Navigation</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Primary vs. Secondary</td>
+                    <td>The primary navigation system typically contains the most important links and buttons that need to be displayed on every single page of the site. Secondary navigation, or breadcrumb navigation, usually consists of a clickable list of pages or attributes that led to the current page. It can help users understand the extent of the site and also where they are currently.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>3 Types</td>
+                    <td><em>Location:</em> based on where you are with respect to the navigation structure of the site. <em>Attribute:</em> based on the attributes of the page or product that you are browsing. If you want to allow users to remove attributes, provide an (x) button or similar to indicate they can be removed. <em>Path:</em> based on a user's unique path through the site. On complex websites, abbreviations are common ( … > About > Register ). Adding these classes to a breadcrumb list will allow you to differentiate them in the browser.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;ul class="breadcrumb"&gt;&lt;li&gt;&lt;a href="shoes.html"&gt;Shoes&lt;/a&gt;&lt;/l&gt;</td>
+                    <td>Breadcrumbs</td>
+                    <td>Usually displayed as a horizontal list of pages. In the header, left-aligned, and below any primary navigation. Takes up minimal space. Typically, they are separated with a “>” or a “/“ symbol. Not underlined. Displays clickability via :hover properties. Links to their own page.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.breadcrumb li+li::before {content: ">"}</td>
+                    <td>Pseudoselector</td>
+                    <td>Selects the space that occurs ::before or ::after the element. Useful for editing the appearance of the space between breadcrumb tabs.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Grids and Spacing -->
+        <table>
+            <thead>
+                <tr>
+                    <td scope="col" colspan="3">Grids and Spacing</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Columns</td>
+                    <td>The vertical sections that span the width of a page. In web design, it’s common to see layouts with 12-16 columns, and sometimes as few as 3 columns. The number of columns is determined by your design, device, and user screen size. Websites may not have the same column layout throughout. Content can span multiple columns.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Gutters</td>
+                    <td>The negative space between each column (there is always 1 less gutter than the number of columns). There are vertical and horizontal gutters. Gutters ensure that columns (and rows) don’t run together. They are typically narrower in width than the columns. Content can’t spill into the gutter unless it appears in the next column.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Margins</td>
+                    <td>Appear on the left and right sides of a column-based grid. Margins ensure that the content of your webpage doesn’t match up to the edges of the browser window. Margins may vary depending on the width of the grid, browser window, or device.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Responsive Design</td>
+                    <td>A set of techniques that allow a website’s content to shift based on the device or screen size. Requires a different number of total columns based on screen size, in order to accommodate content and keep it from being squished. For example: a 12-column grid on a desktop may be a 4-column grid on a mobile device.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Whitespace</td>
+                    <td>The negative area surrounding content (may or may not be white). Whitespace makes a web page easier to view and navigate. There are 2 forms of whitespace: passive and active. Passive / micro / unconsidered whitespace is used to improve the aesthetics of the layout without guiding the user. Passive whitespace is commonly used within text elements. Passive whitespace can be edited by using the line-height and margin styles. Active / macro whitespace is intentional, and is used to improve the page structure in order to guide a user through the web page. Active whitespace is commonly used to separate a site’s elements.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-container {display: grid;}</td>
+                    <td>Grid</td>
+                    <td>Turns an element into a block-level grid. Grids default to 1 column.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-container {display: inline-grid;}</td>
+                    <td>Inline Grid</td>
+                    <td>Turns an element into an inline grid.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-container {grid-template-rows: 20% 20% 600px;}</td>
+                    <td>Grid Template Rows</td>
+                    <td>Defines the number of rows in the grid, and the height of each row.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-container {grid-template-columns: 100px 200px;}</td>
+                    <td>Grid Template Columns</td>
+                    <td>Defines the number of columns in the grid, and the width of each column. The example has 2 columns, where the first has a width of 100px, and the second has a width of 200px. You can also define the size of the columns as a percentage of the entire grid's width (e.g. 20%).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-container {grid-template: 200px 300px / 20% 10% 70%;}</td>
+                    <td>Grid Template</td>
+                    <td>Can be used in place of grid-template-columns and grid-template-rows. When using grid-template, the values before the slash will determine the size of each row. The values after the slash determine the size of each column.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-container {grid-template: 2fr 1fr 1fr / 1fr 3fr 1fr;}</td>
+                    <td>Fraction</td>
+                    <td>A relative sizing unit. This unit was specifically created for use in CSS Grid. Using fr makes it easier to prevent grid items from overflowing the boundaries of the grid. It is possible to use fr with other units as well. When this happens, each fr represents a fraction of the <em>available</em> space (e.g. 1fr 60px 1fr).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-container {grid-template-columns: repeat(3, 100px);}</td>
+                    <td>Repeat</td>
+                    <td>The properties that define the number of rows and columns in a grid can take a function as a value. repeat() is one of these functions. The repeat function will duplicate the specifications for rows or columns a given number of times. In the example above, using the repeat function will make the grid have three columns that are each 100 pixels wide. Repeat is particularly useful with fr. For example, repeat(5, 1fr) would split your table into five equal rows or columns. Finally, the second parameter of repeat() can have multiple values (e.g. grid-template-columns: repeat(2, 20px 50px)). This code will create four columns where the first and third columns will be 20 pixels wide and the second and fourth will be 50 pixels wide.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-container {grid-template-columns: 100px minmax(100px, 500px) 100px;}</td>
+                    <td>Min Max</td>
+                    <td>Defines a minimum and maximum width or height for a column or row, respectively.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-container {gap: 20px 10px;}</td>
+                    <td>Grid Gap</td>
+                    <td>The CSS properties <em>row-gap:</em> and <em>column-gap:</em> will put blank space between every row and column in the grid. It is important to note that grid gap properties do not add space at the beginning or end of the grid. A shorthand CSS property, <em>gap:</em> can set the row and column gap at the same time (the first number is the row gap, the second number is the column gap). If only one value is given, it will set the column gap and the row gap to that value.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-item {grid-row-start: 1; grid-row-end: 3;}</td>
+                    <td>Multiple Row Items</td>
+                    <td>Can make single grid items take up multiple rows. The values that <em>grid-row-start:</em> and <em>grid-row-end:</em> accept are grid lines. The value for <em>grid-row-start:</em> should be the row at which you want the grid item to begin. The value for <em>grid-row-end:</em> should be one greater than the row at which you want the grid item to end. It is possible for the value of grid-row-start to be greater than that of grid-row-end. Both properties can also each have negative values. When an item spans multiple rows or columns using these properties, it will also include the gap if any exists. For example, if an item spans two rows of height 100 pixels and there is a ten-pixel gap, then the item will have a total height of 210 pixels.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-item {grid-row: 4 / 6;}</td>
+                    <td>Grid Row</td>
+                    <td>Shorthand for <em>grid-row-start:</em> and <em>grid-row-end:</em>. The starting row goes before the “/“ and the ending row goes after it.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-item {grid-column: 4 / span 2}</td>
+                    <td>Grid Column</td>
+                    <td>Shorthand for <em>grid-column-start:</em> and <em>grid-column-end:</em>. The starting row goes before the “/“ and the ending row goes after it. When using these properties, we can use the keyword <em>span</em> to start or end a column or row, relative to its other end. The example is telling the item element to begin in column four and take up two columns of space (columns 4 and 5). If you know where you want your grid item to start and how long it should be, use <em>span</em>!</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-item {grid-area: 2 / 3 / 4 / span 5;}</td>
+                    <td>Grid Area</td>
+                    <td>Shorthand for <em>grid-row:</em> and <em>grid-column:</em>. <em>grid-area:</em> takes four values separated by slashes: <em>grid-row-start:</em> / <em>grid-column-start:</em> / <em>grid-row-end:</em> / <em>grid-column-end:</em>. Using <em>grid-area:</em> is an easy way to place items exactly where you want them in a grid.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-container {grid-template-areas: "header header" "nav nav" "info services" "footer footer";} header {grid-area: header;}</td>
+                    <td>Grid Template Areas</td>
+                    <td>Allows you to name sections of your web page to use as values in the grid-row-start, grid-row-end, grid-column-start,grid-column-end, and grid-area properties. This property is declared on grid containers. The example creates a 2-column, 4-row layout. In each ruleset below .container, we use the grid-area property to tell that section to cover the portion of the page specified. In the example, the header element spans the first row and both columns.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Overlapping Elements</td>
+                    <td>Using <em>grid-area:</em> on different elements, the rows and columns may sometimes overlap. Using a <em>z-index:</em> can be helpful.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-container {justify-items: center;}</td>
+                    <td>Justify Items</td>
+                    <td>There are two axes in a grid layout — the column (or block) axis and the row (or inline) axis. <em>justify-items:</em> is a property that positions grid items along the inline, or row, axis. It is declared on grid containers. Includes: <em>start;</em> — aligns grid items to the left side of the grid area, <em>end;</em> aligns grid items to the right side of the grid area, <em>center;</em> aligns grid items to the center of the grid area, <em>stretch;</em> stretches all items to fill the grid area.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-container {justify-content: space-around;}</td>
+                    <td>Justify Content</td>
+                    <td><em>justify-content:</em> positions the entire grid column along the row axis. This property is declared on grid containers. Includes: <em>start;</em> — aligns the grid to the left side of the grid container, <em>end;</em> — aligns the grid to the right side of the grid container, <em>center;</em> — centers the grid horizontally in the grid container, <em>stretch;</em> — stretches the grid items to increase the size of the grid to expand horizontally across the container, <em>space-around;</em> — includes an equal amount of space on each side of a grid element, resulting in double the amount of space between elements as there is before the first and after the last element, <em>space-between;</em> — includes an equal amount of space between grid items and no space at either end, <em>space-evenly;</em> — places an even amount of space between grid items and at either end.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-container {align-items: center;}</td>
+                    <td>Align Items</td>
+                    <td>Positions grid items along the block, or column axis. This means that it positions items from top to bottom. This property is declared on grid containers. Includes: <em>start;</em> — aligns grid items to the top side of the grid area, <em>end;</em> — aligns grid items to the bottom side of the grid area, <em>center;</em> — aligns grid items to the center of the grid area, <em>stretch;</em> — stretches all items to fill the grid area.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-container {align-content: space-evenly;}</td>
+                    <td>Align Content</td>
+                    <td>Positions grid rows along the column axis, or from top to bottom, and is declared on grid containers. Includes: <em>start;</em> — aligns the grid to the top of the grid container, <em>end;</em> — aligns the grid to the bottom of the grid container, <em>center;</em> — centers the grid vertically in the grid container, <em>stretch;</em> — stretches the grid items to increase the size of the grid to expand vertically across the container, <em>space-around;</em> — includes an equal amount of space on each side of a grid element, resulting in double the amount of space between elements as there is before the first and after the last element, <em>space-between;</em> — includes an equal amount of space between grid items and no space at either end, <em>space-evenly;</em> — places an even amount of space between grid items and at either end.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-item {justify-self: }</td>
+                    <td>Justify Self</td>
+                    <td>Specifies how an individual element should position itself with respect to the row axis. This property will override <em>justify-items:</em> for any item on which it is declared. Declared on grid items. Includes: <em>start;</em> — positions grid items on the left side of the grid area, <em>end;</em> — positions grid items on the right side of the grid area, <em>center;</em> — positions grid items on the center of the grid area, <em>stretch;</em> — positions grid items to fill the grid area (default).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-item {align-self: }</td>
+                    <td>Align Self</td>
+                    <td>Specifies how an individual element should position itself with respect to the column axis. This property will override <em>align-items:</em> for any item on which it is declared. Declared on grid items. Includes: <em>start;</em> — positions grid items on the top of the grid area, <em>end;</em> — positions grid items on the bottom of the grid area, <em>center;</em> — positions grid items on the center of the grid area, <em>stretch;</em> — positions grid items to fill the grid area (default).</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Implicit vs. Explicit Grid</td>
+                    <td>What happens if the developer has specified a 3-column, 5-row grid (for a total of 15 items), but the search results return 30 items? The <em>implicit grid</em> takes over. The implicit grid is an algorithm built into the specification for CSS Grid that determines default behavior for the placement of elements when there are more than fit into the grid specified by the CSS. The default behavior of the implicit grid is as follows: items fill up rows first, adding new rows as necessary. New grid rows will only be tall enough to contain the content within them.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-container {grid-auto-rows: }</td>
+                    <td>Grid Auto Rows</td>
+                    <td>Specifies the height of implicitly added grid rows. Accepts the same values as its explicit counterpart: <em>grid-template-rows:</em>. Can apply the following: px, %, fr, repeat(). If we did not specify <em>grid-auto-rows:</em>, the rows would be auto-adjusted to the height of the content of the grid items.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-container {grid-auto-columns: }</td>
+                    <td>Grid Auto Columns</td>
+                    <td>Specifies the width of implicitly added grid columns. Accepts the same values as its explicit counterpart: <em>grid-template-columns:</em>. Can apply the following: px, %, fr, repeat().</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.grid-container {grid-auto-flow: row;}</td>
+                    <td>Grid Auto Flow</td>
+                    <td>Specifies whether new elements should be added to rows or columns, and is declared on grid containers. Includes: <em>row;</em> — specifies the new elements should fill rows from left to right and create new rows when there are too many elements (default), <em>column;</em> — specifies the new elements should fill columns from top to bottom and create new columns when there are too many elements, <em>dense;</em> — this keyword invokes an algorithm that attempts to fill holes earlier in the grid layout if smaller elements are added. You can pair <em>row;</em> or <em>column;</em> with <em>dense;</em>, like this: <em>grid-auto-flow: row dense;</em>.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Flexbox -->
+        <table>
+            <thead>
+                <tr>
+                    <td scope="col" colspan="3">Flexbox</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab">div.container {display: flex;}</td>
+                    <td>Display Flex</td>
+                    <td>Designates an element as a flex container. Flex containers are helpful tools for creating websites that respond to changes in screen sizes. Child elements of flex containers will change size and location in response to the size and position of their parent container. In the example, all divs with the class "container" are flex containers, and their child elements are flex items. This is a block-level declaration. Child elements will appear inline.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">div.container {display: inline-flex;}</td>
+                    <td>Inline Flex</td>
+                    <td>Creates flex containers that appear inline. If the parent element is too small, the flex items will shrink to accommodate the parent container’s size.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">div.container {justify-content: flex-end;}</td>
+                    <td>Justify Content</td>
+                    <td>Aligns flex items horizontally. Includes: <em>flex-start;</em> all items will be positioned in order, starting from the left of the parent container, with no extra space between or before them. <em>flex-end;</em> all items will be positioned in order, with the last item starting on the right side of the parent container, with no extra space between or after them. <em>center;</em> all items will be positioned in order, in the center of the parent container with no extra space before, between, or after them. <em>space-around;</em> items will be positioned with equal space before and after each item, resulting in double the space between elements. <em>space-between;</em> items will be positioned with equal space between them, but no extra space before the first or after the last elements.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">div.container {align-items: baseline;}</td>
+                    <td>Align Items</td>
+                    <td>Aligns flex items vertically. Includes: <em>flex-start;</em> all elements will be positioned at the top of the parent container. <em>flex-end;</em> all elements will be positioned at the bottom of the parent container. <em>center;</em> the center of all elements will be positioned halfway between the top and bottom of the parent container. <em>baseline;</em> the bottom of the content of all items will be aligned with each other. <em>stretch;</em> if possible, the items will stretch from top to bottom of the container (this is the default value; elements with a specified height will not stretch; elements with a minimum height or no height specified will stretch).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.flexitem {flex-grow: 1;}</td>
+                    <td>Flex Grow</td>
+                    <td>Allows us to specify if items should grow to fill a container and also which items should grow proportionally more or less than others (value=1, 2, 3, etc.). The default value of flex-grow is 0. Setting a max-width sets a limit to how much an element will expand. Margins are unaffected by flex-grow.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.flexitem {flex-shrink: 2;}</td>
+                    <td>Flex Shrink</td>
+                    <td>Can be used to specify which elements will shrink and in what proportions. The default value of flex-shrink is 1. Margins are unaffected by flex-shrink. Will only be employed if the parent container is too small or the browser is adjusted.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.flexitem {flex-basis: 100px;}</td>
+                    <td>Flex Basis</td>
+                    <td>Another way of specifying the width of a flex item. flex-basis allows us to specify the width of an item before it stretches or shrinks.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.flexitem {flex: 2 1 150px;}</td>
+                    <td>Flex</td>
+                    <td>Provides a convenient way for specifying how elements stretch and shrink, while simplifying the CSS required. Allows you to declare flex-grow, flex-shrink, and flex-basis all in one line (in that order). You can set flex-grow and flex-basis by using two values (1 100px;), or flex-grow and flex-shrink by using two values (2 1), but not flex-shrink and flex-basis.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">div.container {flex-wrap: wrap;}</td>
+                    <td>Flex Wrap</td>
+                    <td>Sometimes, we don’t want our content to shrink to fit its container. Instead, we might want flex items to move to the next line when necessary. Includes: <em>wrap;</em> child elements of a flex container that don’t fit into a row will move down to the next line. <em>wrap-reverse;</em> the same functionality as wrap, but the order of rows within a flex container is reversed. <em>nowrap;</em> prevents items from wrapping; this is the default value and is only necessary to override a wrap value set by a different CSS rule.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">div.container {align-content: space-around;}</td>
+                    <td>Align Content</td>
+                    <td>For aligning elements within a single row. If a flex container has multiple rows of content, we can use align-content to space the rows from top to bottom. Includes: <em>flex-start;</em> all rows of elements will be positioned at the top of the parent container with no extra space between. <em>flex-end;</em> all rows of elements will be positioned at the bottom of the parent container with no extra space between. <em>center;</em> all rows of elements will be positioned at the center of the parent element with no extra space between. <em>space-between;</em> all rows of elements will be spaced evenly from the top to the bottom of the container with no space above the first or below the last. <em>space-around;</em> all rows of elements will be spaced evenly from the top to the bottom of the container with the same amount of space at the top and bottom and between each element. <em>stretch;</em> if a minimum height or no height is specified, the rows of elements will stretch to fill the parent container from top to bottom (default value).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">div.container {flex-direction: column;}</td>
+                    <td>Flex Direction</td>
+                    <td>Flex containers have two axes: a main axis and a cross axis. By default, the main axis is horizontal and the cross axis is vertical. The main axis is used to position flex items with the following properties: <em>justify-content: flex-wrap: flex-grow: flex-shrink:</em>. The cross axis is used to position flex items with the following properties: <em>align-items: align-content:</em>. The main axis and cross axis are interchangeable. We can switch them using the flex-direction property. If we add the flex-direction property and give it a value of column, the flex items will be ordered vertically, not horizontally. The <em>flex-direction:</em> property can accept four values: <em>row;</em> elements will be positioned from left to right across the parent element starting from the top left corner (default). <em>row-reverse;</em> elements will be positioned from right to left across the parent element starting from the top right corner. <em>column;</em> elements will be positioned from top to bottom of the parent element starting from the top left corner. <em>column-reverse;</em> elements will be positioned from the bottom to the top of the parent element starting from the bottom left corner.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">div.container {flex-flow: column wrap;}</td>
+                    <td>Flex Flow</td>
+                    <td>Like the shorthand flex property, the shorthand flex-flow property is used to declare both the flex-wrap and flex-direction properties in one line.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Nested Flexboxes</td>
+                    <td>It is also possible to position flex containers inside of one another.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Relative Measurements -->
+        <table>
+            <thead>
+                <tr>
+                    <td scope="col" colspan="3">Relative Measurements</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Relative Measurements</td>
+                    <td>With CSS, you can avoid hard coded measurements and use relative measurements instead. Relative measurements offer an advantage over hard coded measurements, as they allow for the proportions of a website to remain intact regardless of screen size or layout.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.heading {font-size: 2em;}</td>
+                    <td>Em</td>
+                    <td>Incorporating relative sizing starts by using units other than pixels. One unit of measurement you can use in CSS to create relatively-sized content is the <em>em</em>. Today, the em represents the font-size of the current element or the default base font-size set by the browser if none is given. For example, if the base font of a browser is 16 pixels (which is normally the default size of text in a browser), then 1 em is equal to 16 pixels. 2 ems would equal 32 pixels, and so on.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">h1 {font-size: 2rem;}</td>
+                    <td>Rem</td>
+                    <td>Rem stands for <em>root em</em>. It acts similar to <em>em</em>, but instead of checking parent elements to size font, it checks the root element. The root element is the &lt;html&gt; tag. Most browsers set the font size of &lt;html&gt; to 16 pixels, so by default <em>rem</em> measurements will be compared to that value. To set a different font size for the root element, you can add a CSS rule. One advantage of using <em>rem</em> is that all elements are compared to the same font size value, making it easy to predict how large or small font will appear. If you are interested in sizing elements consistently across an entire website, the <em>rem</em> measurement is the best unit for the job. If you’re interested in sizing elements in comparison to other elements nearby, then the <em>em</em> unit would be better suited for the job.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">#main-nav {height: 100vh;}</td>
+                    <td>View Width / View Height</td>
+                    <td>View width. 1vw is 1% of the width of the viewport. View height. 1vh is 1% of the height of the viewport.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.main {height: 300px; width: 500px;}
+                        .main .subsection {height: 50%; width: 50%;}</td>
+                    <td>Percentages</td>
+                    <td>To size <em>non-text HTML elements</em> relative to their parent elements on the page you can use percentages. Percentages are often used to size box-model values, like width and height, padding, border, and margins. When height and width are set using percentages, the dimensions of child elements are calculated based on the dimensions of the parent element. When percentages are used to set padding and margin, however, they are calculated based only on the width of the parent element. They can also be used to set positioning properties (top, bottom, left, right). Be careful, a child element’s dimensions (.subsection) may be set erroneously if the dimensions of its parent element (.main) aren’t set first. Because the box model includes padding, borders, and margins, setting an element’s width to 100% may cause content to overflow its parent container. While tempting, 100% should only be used when content will not have padding, border, or margin.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>When to Use Each</td>
+                    <td>When using relative sizing, ems and rems should be used to size text and dimensions on the page related to text size (i.e. padding around text). This creates a consistent layout based on text size. Otherwise, percentages should be used.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">p {min-width: 300px; max-width: 600px;}</td>
+                    <td>Min / Max Width</td>
+                    <td>Although relative measurements provide consistent layouts across devices of different screen sizes, elements on a website can lose their integrity when they become too small or large. The unit of pixels is used to ensure hard limits on the dimensions of the element(s).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">p {min-height: 150px; max-height: 300px;}</td>
+                    <td>Min / Max Height</td>
+                    <td>Although relative measurements provide consistent layouts across devices of different screen sizes, elements on a website can lose their integrity when they become too small or large. The unit of pixels is used to ensure hard limits on the dimensions of the element(s).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">.container img {max-width: 100%; height: auto; display: block;}</td>
+                    <td>Scaling Images & Video</td>
+                    <td>The example ensures that images scale with the width of the container. The height property is set to auto, meaning an image’s height will automatically scale proportionally with the width. Finally, the last line will display images as block level elements (rather than inline-block, their default state). This will prevent images from attempting to align with other content on the page (like text), which can add unintended margin to the images.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">body {background-image: url('#'); background-repeat: no-repeat; background-position: center; background-size: cover;}</td>
+                    <td>Scaling Background Images</td>
+                    <td>In the example, the first CSS declaration sets the background image (# is a placeholder for an image URL in this example). The second declaration instructs the CSS compiler to not repeat the image (by default, images will repeat). The third declaration centers the image within the element. The final declaration, however, is the focus of the example above. It’s what scales the background image. The image will cover the entire background of the element, all while keeping the image in proportion. If the dimensions of the image exceed the dimensions of the container then only a portion of the image will display.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Media Queries -->
+        <table>
+            <thead>
+                <td scope="col" colspan="3">Media Queries</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Viewport</td>
+                    <td>The total viewable area for a user; this area varies depending on the device. The viewport is smaller on a mobile device and larger on a desktop.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;head&gt;
+                        ... 
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                        ...
+                      &lt;/head&gt;</td>
+                    <td>HTML Viewport Meta Tag</td>
+                    <td>Based on the size of the viewport, the meta tag (&lt;meta&gt;) is used to instruct the browser on how to render the webpage’s scale and dimensions. For instance, say if a web page is 960px and the device is 320px wide. Adding the viewport meta tag will squish the content down until it is 320px — there is no need for the user to zoom out and view the whole page! The <em>name="viewport"</em> attribute: tells the browser to display the web page at the same width as its screen. The <em>content</em> attribute: defines the values for the &lt;meta&gt; tag, including width and initial-scale. The <em>width=device-width</em> key-value pair: controls the size of the viewport in which it sets the width of the viewport to equal the width of the device. The <em>initial-scale=1</em> key-value pair: sets the initial zoom level.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">@media only screen and (max-width: 480px) {
+                        body {
+                          font-size: 12px;
+                        }
+                      }</td>
+                    <td>Media Queries</td>
+                    <td>CSS uses media queries to adapt a website’s content to different screen sizes. With media queries, CSS can detect the size of the current screen and apply different CSS styles depending on the width of the screen. In the example, the media query defines a rule for screens smaller than 480 pixels (approximately the width of many smartphones in landscape orientation). <em>@media</em> — This keyword begins a media query rule and instructs the CSS compiler on how to parse the rest of the rule. <em>only screen</em> — Indicates what types of devices should use this rule. In early attempts to target different devices, CSS incorporated different media types (screen, print, handheld). The rationale was that by knowing the media type, the proper CSS rules could be applied. However, “handheld” and “screen” devices began to occupy a much wider range of sizes and having only one CSS rule per media device was not sufficient. <em>screen</em> is the media type always used for displaying content, no matter the type of device. The <em>only</em> keyword is added to indicate that this rule only applies to one media type (<em>screen</em>). <em>and (max-width : 480px)</em> — This part of the rule is called a media feature, and instructs the CSS compiler to apply the CSS styles to devices with a width of 480 pixels or smaller. Media features are the conditions that must be met in order to render the CSS within a media query. CSS rules are nested inside of the media query’s curly braces {}. The rules will be applied when the media query is met. In the example above, the text in the body element is set to a font-size of 12px when the user’s screen is less than 480px.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">@media only screen and (min-width: 320px) and (max-width: 480px) {}</td>
+                    <td>Range</td>
+                    <td>Specific screen sizes can be targeted by setting multiple width and height media features, in the form of <em>min-width:</em> <em>min-height:</em> <em>max-width:</em> and <em>max-height:</em>. In the example, the word <em>and</em> allows us to chain multiple requirements together.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">@media only screen and (min-resolution: 300dpi) {}</td>
+                    <td>Resolution</td>
+                    <td>Targets screen resolution. Many times we will want to supply higher quality media (images, video, etc.) only to users with screens that can support high resolution media. Targeting screen resolution also helps users avoid downloading high resolution (large file size) images that their screen may not be able to properly display. To target by resolution, we can use the <em>min-resolution:</em> and <em>max-resolution:</em> media features. These media features accept a resolution value in either <em>dots per inch (dpi)</em> or <em>dots per centimeter (dpc)</em>. High-resolution screens typically have a DPI greater than ~150.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">@media only screen and (max-width: 480px) and (min-resolution: 300dpi) {}</td>
+                    <td>And Operator</td>
+                    <td>You can chain multiple media features of the same type in one media query by using the <em>and</em> operator. The <em>and</em> operator can be used to require multiple media features.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">@media only screen and (min-width: 480px), (orientation: landscape) {}</td>
+                    <td>Comma Separated List</td>
+                    <td>If only one of multiple media features in a media query must be met, media features can be separated in a comma separated list. The example requires only one of the media features to be true for its CSS to apply.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">@media only screen and (min-width: 480px), (orientation: landscape) {}</td>
+                    <td>Orientation</td>
+                    <td>The <em>orientation</em> media feature detects if the page has more width than height. If a page is wider, it’s considered <em>landscape</em>, and if a page is taller, it’s considered <em>portrait</em>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}</td>
+                    <td>Breakpoints</td>
+                    <td>The points / values at which media queries are set are called breakpoints. Breakpoints are the screen sizes at which your web page does not appear properly. The example creates a screen size range the size of a tablet in landscape mode and also identifies the orientation. Rather than set breakpoints based on specific devices, the best practice is to resize your browser to view where the website naturally breaks based on its content. The dimensions at which the layout breaks or looks odd become your media query breakpoints. Within those breakpoints, we can adjust the CSS to make the page resize and reorganize. Common breakpoints include: <em>480px (mobile)</em>, <em>768px (tablet)</em>, <em>1024px (tablet landscape)</em>, <em>1600px (laptop)</em>, <em>&gt;1600px (desktop)</em>.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Device Mode in DevTools</td>
+                    <td>Right click a webpage. Select <em>inspect</em>. In the DevTools browser, in the top left, click <em>toggle device toolbar</em>. At the top center of your webpage, under <em>dimensions</em>, you can select a device. If it's a mobile device, you can also rotate the screen with the rotate icon on the right. Next to the rotate icon, under <em>no throttling</em>, you can simulate your webpage's performance under suboptimal conditions. In the <em>dimensions</em> dropdown, under <em>edit</em>, you can add custom devices. Alternatively, you can select a preset device by hovering you cursor over the empty boxes below the navigation bar. To the far right of the top navigation bar, under the three dots, you can select <em>show rulers</em> to see your screen dimensions along the axes.</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+
+</html>

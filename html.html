@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>HTML</title>
+    </head>
+
+    <body>
+
+        <!-- Header -->
+
+        <header>
+            <h1>HTML</h1>
+            <nav>
+                <ul>
+                    <li class ="headernav"><a href="index.html">Home</a></li>
+                    <li class ="headernav"><a href="terminology.html">Terminology</a></li>
+                    <li class ="headernav"><a href="keyboardcommands.html">Keyboard Commands</a></li>
+                    <li class ="headernav"><a href="git.html">Git & GitHub</a></li>
+                    <li class ="headernav"><a href="#">HTML</a></li>
+                    <li class ="headernav"><a href="css.html">CSS</a></li>
+                    <li class ="headernav"><a href="javascript.html">JavaScript</a></li>
+                    <li class ="headernav"><a href="Node.js.html">Node.js</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Tags -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Tags</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="tag">Tag</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;head&gt;</td>
+                    <td>Head</td>
+                    <td>Contains the metadata for a webpage, such as links to .css files and the webpage title.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;title&gt;</td>
+                    <td>Title</td>
+                    <td>A browser’s tab displays the title specified in the title tags. The title tag is always inside of the head.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;header&gt;</td>
+                    <td>Header</td>
+                    <td>A container for introductory content, such as h1-h6 and nav links.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;nav&gt;</td>
+                    <td>Navigation</td>
+                    <td>Defines a block of navigation links (menu, table of contents, services, contact, etc.) Can be used inside of the header element, or on its own. Inside the &lt;nav&gt; tags, create an unordered list. Inside the &lt;ul&gt; tags, create list items &lt;li&gt;. Inside the &lt;li&gt; tags, create anchors for links &lt;a href="#nameofsectionid"&gt;. Name the link inside of the &lt;a&gt; tags, just before the closing tag.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;main&gt;</td>
+                    <td>Main</td>
+                    <td>Contains all of the content of a webpage (similar to body). Separate from nav and footer. May contain header.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;body&gt;</td>
+                    <td>Body</td>
+                    <td>Contains all of the content that is displayed on the webpage.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;h1&gt;</td>
+                    <td>Heading</td>
+                    <td>Creates a heading for a section on the webpage. Values range from h1-h6, which are used to determine the size of the text. h1 is the largest; h6 is the smallest.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;p&gt;</td>
+                    <td>Paragraph</td>
+                    <td>Creates a paragraph; a block of plain text.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;article&gt;</td>
+                    <td>Article</td>
+                    <td>Holds content that makes sense on its own: articles, blogs, comments, etc.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;section&gt;</td>
+                    <td>Section</td>
+                    <td>Defines elements in a document such as chapters, headings, etc. Sections usually contain articles, but this can go either way.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;aside&gt;</td>
+                    <td>Aside</td>
+                    <td>Marks additional information that enhances another element but isn’t required to understand the main content. Can be used alongside other elements such as section and article. Used for: bibliographies, endnotes, comments, pull quotes, editorial sidebars, and additional information.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;span&gt;</td>
+                    <td>Span</td>
+                    <td>Encloses short pieces of text as a means to separate content on the same line.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;em&gt;</td>
+                    <td>Emphasize</td>
+                    <td>Emphasizes text in <em>italics</em>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;strong&gt;</td>
+                    <td>Strong</td>
+                    <td>Emphasizes text in <strong>bold</strong>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;br&gt;</td>
+                    <td>Line Break</td>
+                    <td>Also referred to as newline, line break creates a new line of text... <br>and does not require a closing tag.</br></td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;ul&gt;</td>
+                    <td>Unordered List</td>
+                    <td>Creates an unordered (bulleted) list. Individual list items must be enclosed in &lt;li&gt; tags, otherwise they will not appear in the list on the webpage.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;li&gt;</td>
+                    <td>List Item</td>
+                    <td>Used to describe an item in a list.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;ol&gt;</td>
+                    <td>Ordered List</td>
+                    <td>Creates an ordered (numbered) list.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;a&gt;</td>
+                    <td>Anchor</td>
+                    <td>Emphasizes text that serves as an "achor" for a link. Links can take you to the same page, an internal page, or an external page. Common attributes are href and target.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;button&gt;</td>
+                    <td>Button</td>
+                    <td>Creates a button that a user can click. Buttons commonly appear as rectangles, rounded rectangles, or circles.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;div&gt;</td>
+                    <td>Division</td>
+                    <td>Creates a container that separates content from other content on the same page.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;figure&gt;</td>
+                    <td>Figure</td>
+                    <td>Encapsulates images, figures, illustrations, diagrams, etc. Can be moved anywhere in a document.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;figcaption&gt;</td>
+                    <td>Figure Caption</td>
+                    <td>Describes the media in the figure. This code is usually written inside of &lt;figure&gt;.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;img&gt;</td>
+                    <td>Image</td>
+                    <td>Inserts an image onto the webpage. Self-closing tag; can include or exclude the final / before the &gt;. Requires src attribute. Wrapping images with an anchor attribute turns the image into a link.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;video&gt;</td>
+                    <td>Video</td>
+                    <td>Inserts a video onto the webpage. Requires closing tag and src attribute. Useful attributes include controls, autoplay, and loop. "Video not supported" will only display if the browser is unable to support the video.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;audio&gt;</td>
+                    <td>Audio</td>
+                    <td>Encapsulates audio links. Can be written as &lt;audio src="audiolink"&gt; or &lt;source src="audiolink"&gt; within the audio tags. Helps to include the type attribute.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;table&gt;</td>
+                    <td>Table</td>
+                    <td>Inserts a table.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;tr&gt;</td>
+                    <td>Table Row</td>
+                    <td>Inserts a table row.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;td&gt;</td>
+                    <td>Table Data</td>
+                    <td>Inserts table data. Each new data point in a row creates a new column in that row.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;th&gt;</td>
+                    <td>Table Header</td>
+                    <td>Defines a title for columns and rows. The scope attribute is used to indicate a column &lt;col&gt;, or row &lt;row&gt;.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;thead&gt;</td>
+                    <td>Table Head</td>
+                    <td>Allows the table's column titles to be sectioned off.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;tbody&gt;</td>
+                    <td>Table Body</td>
+                    <td>Allows the table's body to be sectioned off.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;tfoot&gt;</td>
+                    <td>Table Foot</td>
+                    <td>Allows the table's footer to be sectioned off. Table footers are often used to display sums, differences, etc.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;footer&gt;</td>
+                    <td>Footer</td>
+                    <td>Contains information such as: contact, copyright, terms of use, site map, reference to top of page links, etc.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;style&gt;</td>
+                    <td>Style</td>
+                    <td>Allows you to write CSS code within the &lt;head&gt; of an HTML file.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;!----&gt;</td>
+                    <td>Comment</td>
+                    <td>Inserts a comment into your code. Any characters in-between the -- -- are ignored by your browser and will not appear on the webpage. Shortcut: Ctrl+/</td> 
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;&gt;</td>
+                    <td>Less than, Greater than</td>
+                    <td>To display the less than (<) and greater than (>) symbols when discussing code tags on a webpage, without creating a code prompt (see far left), use & l t ; for (<) and & g t ; for (>).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;sup&gt;</td>
+                    <td>Superscript</td>
+                    <td>Makes the text superscripted.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">& thinsp ;</td>
+                    <td>Thin Space</td>
+                    <td>Creates a narrow space between the text (<em>type as one word</em>).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">& nbsp ;</td>
+                    <td>Space</td>
+                    <td>Creates a regular space between the text (<em>type as one word</em>).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">& ensp :</td>
+                    <td>Double Space</td>
+                    <td>Creates two spaces between the text (<em>type as one word</em>).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">& emsp ;</td>
+                    <td>Quadruple Space</td>
+                    <td>Creates four spaces between the text (<em>type as one word</em>).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--Attributes-->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Attributes</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;div id="name"&gt;</td>
+                    <td>ID</td>
+                    <td>Used to specify different content.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;img src="link"&gt;</td>
+                    <td>Source</td>
+                    <td>Allows you to provide a source URL for image, video, or other content.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;img alt="description of image"&gt;</td>
+                    <td>Alternative Text</td>
+                    <td>Text that is used in place of image, video, or other content. The value of alt should be a description of the graphic (useful for blind people and those using screen readers). Also improves SEO.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;video width="320"&gt;</td>
+                    <td>Width</td>
+                    <td>Sets the width of content in the browser.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;video height="240"&gt;</td>
+                    <td>Height</td>
+                    <td>Sets the height of content in the browser.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;video controls&gt;</td>
+                    <td>Controls</td>
+                    <td>Includes basic video or audio controls such as pausing, playing, and volume.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;a href="www.site.com"&gt;</td>
+                    <td>Hyperlink Reference</td>
+                    <td>Inside of an &lt;a&gt; (anchor) element, href allows you to insert a link. Give your link a clickable name between the &lt;a&gt; and &lt;/a&gt; tags. href="#" will link to the top of the current page.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;a href="cats.com" title="Video of cats"&gt;</td>
+                    <td>Title</td>
+                    <td>Provides additional context for a link in the form of text. Appears as a <em>tooltip</em>, a small box that appears when a user hovers their mouse over a link. Add the title attribute after the href attribute.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;a target="_blank"&gt;</td>
+                    <td>Target</td>
+                    <td>Inside of an &lt;a&gt; (anchor) element, target specifies how a link should open. Requires a value of _blank.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;td scope="col"&gt;</td>
+                    <td>Scope</td>
+                    <td>A value of "col” indicates a column title in a table; a value of “row” indicates a row title.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;td colspan="3"&gt;</td>
+                    <td>Column Span</td>
+                    <td>Allows data in a table to span multiple columns. Accepts integers greater than, or equal to 1.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;td rowspan="3"&gt;</td>
+                    <td>Row Span</td>
+                    <td>Allows data in a table to span multiple rows. Accepts integers greater than, or equal to 1.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;audio type="mp3"&gt;</td>
+                    <td>Type</td>
+                    <td>Can be used to include the type of audio in an audio link.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;audio autoplay&gt;</td>
+                    <td>Autoplay</td>
+                    <td>Enables the video or audio to automatically play.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;video loop&gt;</td>
+                    <td>Loop</td>
+                    <td>Causes the linked video to play on repeat.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--Links-->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Links</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="name">Type</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td>Same Page</td>
+                    <td>Create an id for a section of the webpage. Then, create a link to the id that looks something like this: &lt;a href="#nameofid"&gt;Nameofid&lt;/a&gt;. In the #nameofid, the name is case sensitive and must match the capitalization in the id itself.</td>
+                </tr>
+                <tr>
+                    <td>Relative Path</td>
+                    <td>A <em>relative path</em> is a filename that shows the path to a local file. A <em>local file</em> is a file in the same folder. A relative path links to another page on the same website. An example would be &lt;a href="./contact.html"&gt;Contact&lt;/a&gt;, where the "./" tells the browser to look for the file in the same folder.</td>
+                </tr>
+                <tr>
+                    <td>Absolute Path</td>
+                    <td>An <em>absolute path</em> links to a file that is stored in a different folder. An <em>absolute path</em> links to a webpage on a different website, and requires a full URL in the href link.</td>
+                </tr>
+                <tr>
+                    <td>Web Fonts</td>
+                    <td>You can link to outsourced fonts from your HTML document with a &lt;link&gt;. Go to a font hosting website (Google Fonts, Adobe Fonts, fonts.com). Pick a font. Pick a style. The &lt;link&gt; is automatically generated for you to use. Add the &lt;link&gt; to the &lt;head&gt; of your html. Create font-family declarations in your CSS using quotes (" ") around the name. Ex: "Macondo".</td>
+                </tr>
+                <tr>
+                    <td>Web Fonts (@font-face)</td>
+                    <td>You can create a @font-face ruleset in your CSS stylesheet to link to the relative path of the font file. Font file formats (in order of least to most progressive): <em>OTF (OpenType Font), TTF (TrueType Font), WOFF (Web Open Font Format), WOFF2 (Web Open Font Format 2)</em>. It's a good idea to include <em>TTF, WOFF, and WOFF2</em> formats with your @font-face rule to ensure compatibility on all browsers. Go to a font hosting website. Select a font + select a style (opens, “Selected Families”). Within Selected Families, click Download. Files will be downloaded in a single format. Move the font files into a folder in your project's working directory. You are now ready to use the font files in a @font-face {font-family: ;} ruleset. Define the font-face ruleset at the top of your CSS stylesheet. font-family is used to set a custom name for the font, in quotes "". In CSS, use font-family: "nameofyourfont".</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </body>
+
+</html>

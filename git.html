@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Git & GitHub</title>
+    </head>
+    
+    <body>
+        
+        <!-- Header -->
+
+        <header>
+            <h1>Git & GitHub</h1>
+            <nav>
+                <ul>
+                    <li class ="headernav"><a href="index.html">Home</a></li>
+                    <li class ="headernav"><a href="terminology.html">Terminology</a></li>
+                    <li class ="headernav"><a href="keyboardcommands.html">Keyboard Commands</a></li>
+                    <li class ="headernav"><a href="#">Git & GitHub</a></li>
+                    <li class ="headernav"><a href="html.html">HTML</a></li>
+                    <li class ="headernav"><a href="css.html">CSS</a></li>
+                    <li class ="headernav"><a href="javascript.html">JavaScript</a></li>
+                    <li class ="headernav"><a href="Node.js.html">Node.js</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Git -->
+
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Git</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Git</td>
+                    <td>Git is a software that allows you to keep track of changes made to a project over time. Git works by recording the changes you make to a project, storing those changes, then allowing you to reference them as needed. Git is the industry-standard version control system for web developers.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Git Workflow</td>
+                    <td>
+                        <ol>
+                            <li><em>Working Directory:</em> where you’ll be doing all the work: creating, editing, deleting and organizing files.</li>
+                            <li><em>Staging Area:</em> where you’ll list changes you make to the working directory.</li>
+                            <li><em>Repository:</em> where Git permanently stores those changes as different versions of the project.</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>git init</td>
+                    <td>(In bash / Git) The word <em>init</em> means <em>initialize</em>. The command sets up all the tools Git needs to begin tracking changes made to the project.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>git status</td>
+                    <td>Allows you to check the status of changes to the contents of the working directory.
+                        <br>
+                        <br>
+                        <ul>
+                            <li>Untracked means that Git sees the file but has not started tracking changes yet.</li>
+                            <li>Changes to be committed means that Git is tracking changes.</li>
+                            <li>Under "Changes to be committed", <em>new file:  filename</em> means that the file was added to the staging area.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>git add filename</td>
+                    <td>Adds a file to the staging area. This is required for Git to start tracking the file. Also adds the changes to the staging area in Git. The word <em>filename</em> here refers to the name of the file you are editing, such as scene-1.txt.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>git add filename_1 filename_2</td>
+                    <td>In Git, it’s common to change many files, add those files to the staging area, and commit them to a repository in a single commit. A shortcut to add all files to the staging area is <em>git add .</em> the (.) means "every".</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>git diff filename</td>
+                    <td>If git is tracking a file, and you make a change, <em>git diff</em> checks the differences between the working directory and the staging area. Changes to the file are marked with a + and are indicated in green.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">git commit -m "Complete first line of dialogue"</td>
+                    <td>git commit -m ""
+                        <br>
+                        <br>git commit --amend
+                    </td>
+                    <td>A <em>commit</em> is the last step in our Git workflow. A commit permanently stores changes from the staging area inside the repository. However, one more bit of code is needed for a commit: <strong>the option -m followed by a message</strong>.
+                        <br>
+                        <br>Standard Conventions for Commit Messages:
+                        <br>
+                        <br>
+                        <ul>
+                            <li>Must be in quotation marks</li>
+                            <li>Written in the present tense</li>
+                            <li>Should be brief (50 characters or less) when using -m</li>
+                        </ul>
+                        <br>
+                        <br>Git’s <em>--amend</em> flag is extremely useful when updating a commit, it allows you to correct mistakes and edit commits easily instead of creating a completely new one (by deleting the original and placing this commit in its place). Remember to make the changes, use <em>git add</em> to stage the changes, and finally use <em>git commit --amend</em>. The git terminal will ask you to update your commit message. However, if you want to keep the same commit message, you can simply add the flag <em>--no-edit</em>.
+                    </td>
+                </tr>
+                <tr>
+                    <td class ="vocab"><img class ="git-log-example" src="C:/Software/Projects/0_Ethan's Code Cheat Sheet/Ethan's Code Cheat Sheet/Images/Screenshot 2023-11-27 192411.png" alt="git log example"></td>
+                    <td>git log
+                        <br>
+                        <br>git log --oneline
+                        <br>
+                        <br>git log -S "keyword"
+                        <br>
+                        <br>git log --oneline --graph - --graph
+                    </td>
+                    <td>Often with Git, you’ll need to refer back to an earlier version of a project. Commits are stored chronologically in the repository and can be viewed with <em>git log</em>. This allows you to view the commit history of the branch you currently have checked out.
+                        <br>
+                        <br>The output contains:
+                        <br>
+                        <br>
+                            <ul>
+                                <li>A 40-character code, called a <em>SHA</em>, that uniquely identifies the commit. This appears in orange text.</li>
+                                <li>The commit author (you!)</li>
+                                <li>The date and time of the commit</li>
+                                <li>The commit message</li>
+                            </ul>
+                        <br>
+                        <br><em>git log --oneline</em> shows the list of commits in one line format.
+                        <br>
+                        <br><em>git log -S "keyword"</em> displays a list of commits where the number of occurrences of the keyword changes within at least one file via addition, deletion, or modification.
+                        <br>
+                        <br><em>git log --oneline --graph - --graph</em> displays a visual representation of how the branches and commits were created in order to help you make sense of your repository history. When used alone, the description can be very lengthy, so you can combine the command with <em>--oneline</em> in order to shorten the description.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Restore Terminal</td>
+                    <td>Press "q"</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Backtracking</td>
+                    <td>When working on a Git project, sometimes we make changes that we want to get rid of. Git offers a few eraser-like features that allow us to undo mistakes during project creation.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>git show HEAD</td>
+                    <td>In Git, the most recent commit is known as the <em>HEAD commit</em>. In many cases, the most recently made commit is the HEAD commit. In reference to the example, the output of this command will display everything the git log command displays for the HEAD commit, plus all the file changes that were committed.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>git checkout HEAD filename</td>
+                    <td>What if you decide to change something in the working directory, but then decide you want to discard that change? You could rewrite the line how it was originally, but what if you forgot the exact wording? The command in the example will restore the file in your working directory to look exactly as it did when you last made a commit.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>git reset HEAD filename</td>
+                    <td>What if, before you commit, you accidentally delete an important line? We can <strong>unstage</strong> that file from the staging area using the command in the example. This command resets the file in the staging area to be the same as the HEAD commit. It does not discard file changes from the working directory, it just removes them from the staging area.
+                        <br>
+                        <br>Notice in the output, <em>Unstaged changes after reset: M   filename</em>. The M is short for “modification”.
+                        <br>
+                        <br>Now that the unwanted change has been reset (booted from staging area), you are ready to commit.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>git reset commit_SHA</td>
+                    <td>Where commit_SHA = the first 7 characters of the SHA of a previous commit. For example, if the SHA of the previous commit is 5d692065cf51a2f50ea8e7b19b5a7ae512f633ba, use: <em>git reset 5d69206</em>. HEAD is now set to that previous commit. Any commits after the new HEAD commit are erased.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>git stash
+                        <br>
+                        <br>git stash pop
+                    </td>
+                    <td>Let's say you're working in a repository that has branches A and B. You're working in branch B, but branch A needs some fixing, <em>git stash</em> allows you to get back to a clean commit point with a synchronized working tree, and avoid losing your local changes in the process. You’re “stashing” your local work temporarily (in a hidden directory) in order to update a previous commit and later on retrieve your work. Once the bug is fixed, you want to retrieve the code you were working on previously, you can “pop” the work that was stored when you used git stash. In order to go to a different branch, one must always be at a clean commit point.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ git config --global alias.co "checkout"
+                        <br>
+                        <br>$ git checkout example_branch
+                        <br>---becomes---
+                        <br>$ git co example_branch
+                    </td>
+                    <td>git alias commands</td>
+                    <td>When grouping commands together, you can end up writing very long lines of Git commands in the terminal. If you have a set of commands that you use regularly and want to save some time from typing them, you can easily set up an alias for each command using Git config.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Git Version Control in VSCode</td>
+                    <td>
+                        <ol>
+                            <li><strong>Initialize Repository:</strong> Open a folder in VSCode. In the menu on the left edge of the screen, click "Source Control". Under Source Control, click "Initialize Repository".</li>
+                            <li><strong>Rename:</strong> At the bottom left of your screen, you'll see the branch name. To change the branch name, typing, "shift+ctrl+p" will open the command palette. Type, "&gt;rename". Click the first option, and type the new branch name.</li>
+                            <li><strong>Stage:</strong> In the Source Control panel to the left, the new file may have the letter "U" beside it, for "Untracked". The file is new, and hasn't been added to the repository yet. To track it, click the "+" next to the file name. The file is now staged. Once added to the repository, the letter will change to an "A".</li>
+                            <li><strong>Commit:</strong> To commit the file to the repository, above the file name, there is a message bar. Type in a message for your commit. This message generally describes the change you made, in present tense. Above the message bar, click the checkmark. The file has now been committed.</li>
+                            <li><strong>Create Branch:</strong> To create a new branch, open the command palette (shift+ctrl+p) and type in, "create branch". Select the first option from the drop-down menu, and type in a name for the new branch.</li>
+                            <li><strong>Gutter:</strong> To the right of the numbers indicating the lines of code, the space containing dropdown carrots is referred to as the <em>gutter</em>. Within the gutter, a <em>green line</em> indicates a new line of code. A <em>shaded blue line</em> indicates a changed line of code. A <em>red asterisk</em> indicates a deleted line of code.</li>
+                            <li><strong>Merge:</strong> If you want changes in one branch to be reflected in another branch, you need to merge the two branches. First, open the branch that you want to add the changes to. In the Source Control header, click the 3 dots. Click "Branch", and then "Merge Branch". When it asks you to select where to merge from, select the branch with the desired changes.</li>
+                            <li><strong>Publish to GitHub:</strong> In the Source Control menu to the left, click, "Publish Branch". Enable permissions as asked. Choose public or private repository. Open GitHub.</li>
+                        </ol>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- GitHub -->
+
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">GitHub</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>GitHub</td>
+                    <td>GitHub is both a website and a service that facilitates software development by allowing you to store your code in containers, called repositories, and by tracking changes made to your code. In addition, it offers a hosting service and tools to build, test, and deploy code. GitHub uses Git, a version-control development tool, to manage your projects by tracking changes to files and allowing multiple people to work on the same project. Although both GitHub and Git have similar names, GitHub is a service while Git is a development tool that can be used by you outside of and without GitHub.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>GitHub Pages</td>
+                    <td>A tool for publishing your website on the internet (provided by GitHub), that displays your website from the code that is saved in your GitHub repository. To view your website, within your username.github.io repo, go to Settings and scroll down to GitHub Pages (left side toolbar, “Pages”). Under Source, make sure that your repo is linked to your web page. If you see None, then select the main branch.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>User, Email, Access Token</td>
+                    <td>Using Git Bash, follow the instructions in the following links to set these up: 
+                        <br>
+                        <br>
+                        <ul>
+                            <li><a href="https://docs.github.com/en/get-started/getting-started-with-git/setting-your-username-in-git#setting-your-git-username-for-every-repository-on-your-computer">Username</a></li>
+                            <li><a href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address#setting-your-commit-email-address-in-git">Email Address</a></li>
+                            <li><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic">Personal Access Token</a>. Be sure to check the box that grants the token repo scope — this will allow you to write to the repository from the terminal on your machine. Save your access token somewhere on your computer. Personal access tokens can only be used for HTTPS Git operations. If your repository uses an SSH remote URL, you will need to switch the remote from SSH to HTTPS.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Linking GitHub Repo in Git Bash (HTTPS)</td>
+                    <td>
+                        <ol>
+                            <li>Create a new repository in GitHub</li>
+                            <li>Open Git Bash</li>
+                            <li>Follow the instructions in GitHub</li>
+                        </ol>
+                        <br>
+                        <br><strong>…or create a new repository on the command line</strong>
+                        <br><p>echo "# file_name" >> README.md
+                            <br>git init
+                            <br>git add README.md
+                            <br>git commit -m "first commit"
+                            <br>git branch -M main
+                            <br>git remote add origin https://github.com/ethanjaldridge/file_name.git
+                            <br>git push -u origin main</p>
+                        <br>
+                        <br><strong>…or push an existing repository from the command line</strong>
+                        <br><p>git remote add origin https://github.com/ethanjaldridge/git_practice.git
+                            <br>git branch -M main
+                            <br>git push -u origin main</p>
+                        <br>
+                        <br><strong>…or import code from another repository</strong>
+                        <br><p>You can initialize this repository with code from a Subversion, Mercurial, or TFS project.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Local vs. Remote</td>
+                    <td>The local repository is on your computer; the remote repository is on GitHub.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+
+</html>
