@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Bash</title>
+    </head>
+    
+    <body>
+
+        <!--Header-->
+
+        <header>
+            <h1>Bash</h1>
+            <nav>
+                <ul>
+                    <li class ="headernav"><a href="index.html">Home</a></li>
+                    <li class ="headernav"><a href="terminology.html">Terminology</a></li>
+                    <li class ="headernav"><a href="keyboardcommands.html">Keyboard Commands</a></li>
+                    <li class ="headernav"><a href="git.html">Git & GitHub</a></li>
+                    <li class ="headernav"><a href="#">Bash</a></li>
+                    <li class ="headernav"><a href="html.html">HTML</a></li>
+                    <li class ="headernav"><a href="css.html">CSS</a></li>
+                    <li class ="headernav"><a href="javascript.html">JavaScript</a></li>
+                    <li class ="headernav"><a href="Node.js.html">Node.js</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Bash -->
+
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Bash</td> 
+                </tr>   
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="tag">Tag</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Command Line</td>
+                    <td>A text interface for the computer’s operating system. The command line is used to navigate, manipulate, and redirect your computer's file system.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Bash</td>
+                    <td>Bourne Again SHell. A command line interface. Open source. On Mac and Linux, the command line is accessed through Bash (Windows comes with a different command line, but Windows users can download Bash). Other options include <em>Windows Command Prompt, Powershell, Windows Terminal, and Git Bash</em>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ nano ~/.bash_profile</td>
+                    <td>Bash Profile</td>
+                    <td>File used to store environment settings for your terminal. Usually found in the home directory, named <em>.bash_profile</em>. When a session starts, the bash profile is loaded before executing commands. Home directory represented by ~ (tilde)<br>
+                        <br>
+                        <ul>
+                            <li>. indicates a hidden file</li>
+                            <li>To open and edit the bash profile in the customization/ directory, you can use the command: nano .bash_profile</li>
+                            <li>You can add commands to execute every time a new terminal session is started</li>
+                            <li>To activate the changes made in .bash_profile for the current session, use the following command: source .bash_profile. This makes the changes in the bash profile available right away without closing the terminal and needing to start a new session.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Filesystem</td>
+                    <td>Organizes computer files and directories into a tree structure.<br>
+                        <br>
+                        <ul>
+                            <li><em>Directory:</em> a folder that holds files</li>
+                            <li><em>Root Directory:</em> the first directory</li>
+                            <li>Parent directories contain child directories and files</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col" colspan="3" class="use-cases">Other Commands</th>
+                </tr>
+                <tr>
+                    <td class="vocab">$ nano filename.txt</td>
+                    <td>nano</td>
+                    <td>nano is a command line text editor. It works just like a desktop text editor like TextEdit or Notepad, except that it is accessible from the command line and only accepts keyboard input.<br> 
+                        <br>
+                        <ul>
+                            <li>In nano, must use “ “ around text</li>
+                            <li>Save = Ctrl+O (letter)</li>
+                            <li>Exit = Ctrl+X</li>
+                            <li>Help Menu = Ctrl+G</li>
+                            <li>^ stands for the Ctrl key</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Autopopulate</td>
+                    <td>When typing a command, the Tab button can autocomplete a line.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Recent Commands</td>
+                    <td>Up and Down arrows on keyboard will move you through past and recent commands</td>
+                </tr>
+                <tr>
+                    <td class="vocab">alias pd="pwd"</td>
+                    <td>alias</td>
+                    <td>The alias command allows you to create keyboard shortcuts, or aliases, for commonly used commands.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ env</td>
+                    <td>env</td>
+                    <td>The env command stands for “environment”, and returns a list of the environment variables for the current user. <em>$ env | grep PATH</em> is a command that displays the value of a single environment variable.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ echo $PATH</td>
+                    <td>PATH</td>
+                    <td>PATH is an environment variable that stores a list of directories separated by a colon. Each directory contains scripts for the command line to execute. PATH lists which directories contain scripts.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">PS1=”>> ”</td>
+                    <td>PS1</td>
+                    <td>PS1 - an environment variable that defines the makeup and style of the command prompt</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ echo $USER</td>
+                    <td>USER</td>
+                    <td>$ echo $USER returns (in the terminal) the name set (in nano) for the environment variable: USER by export USER=”name”. $ is always used when returning a variables value.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ cp m*.txt scifi/</td>
+                    <td>Wildcards (*)</td>
+                    <td>Here, m*.txt selects all files in the working directory starting with “m” and ending with “.txt”, and copies them to scifi/.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">wc -l */*.txt</td>
+                    <td>wc</td>
+                    <td>Word count; counts report in the order: newline, word, character, byte, maximum line length.<br>
+                        <br>
+                        <ul>
+                            <li>-l  lists number of lines (newline count)</li>
+                            <li>-c  prints the byte counts</li>
+                            <li>-m  prints the character counts</li>
+                            <li>-L  prints the max display width</li>
+                            <li>-w  prints the word counts</li>
+                        </ul><br>
+                        <br>The example prints the newline count, for all files in the current directory, and for all files in each of those files, that end in .txt.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ clear</td>
+                    <td>Clear</td>
+                    <td>Clear will clear your terminal of commands (doesn't undo previous commands)</td>
+                </tr>
+
+                <tr>
+                    <th scope="col" colspan="3" class="use-cases">Navigation</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Navigation</td>
+                    <td>Move through your computer's filesystem.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ cd jan/memory/</td>
+                    <td>cd</td>
+                    <td>cd (change directory) takes a directory name as an argument, and switches into that directory. To navigate directly to a directory, use cd with the directory’s path as an argument. Here, cd jan/memory/ command navigates directly to the jan/memory directory.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ cd ..</td>
+                    <td>cd ..</td>
+                    <td>Moves up one directory. $ cd ../name_of_adjacent_directory moves you up 1 directory, then down into the directory adjacent to starting directory.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ grep Mount mountains.txt</td>
+                    <td>grep</td>
+                    <td>SEARCH. grep stands for “global regular expression print”. It searches files for lines that match a pattern and returns the results. It is case sensitive. Can search for files with 0 lines (content) by typing grep 0. <em>grep -i</em> enables the command to be case insensitive. <em>grep -R</em> searches all files in a directory and outputs filenames and lines containing matched results. -R stands for “recursive”. <em>grep -Rl</em> searches all files in a directory and outputs only filenames with matched results (no lines). -R stands for “recursive” and l stands for “files with matches” (lowercase L).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ echo $HOME</td>
+                    <td>HOME</td>
+                    <td>The HOME variable is an environment variable that displays the path of the home directory. Can specify + change the home variable, but not needed in most cases.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ ls (L not an i)</td>
+                    <td>ls</td>
+                    <td>ls lists all files and directories in the working directory. <em>ls -a</em> lists all contents in the working directory, including hidden files and directories. <em>ls -l</em> lists all contents of a directory in long format. <em>ls -t</em> orders files and directories by the time they were last modified. Can present multiple -l -a -t as -lat or -la or -lt, etc.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ pwd</td>
+                    <td>pwd</td>
+                    <td>pwd prints the name of the working directory.</td>
+                </tr>
+
+                <tr>
+                    <th scope="col" colspan="3" class="use-cases">Manipulation</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Manipulation</td>
+                    <td>Copy, move, and remove files and directories.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ cp ada_lovelace.txt historical/</td>
+                    <td>cp</td>
+                    <td>cp copies files or directories. Here, we copy the file ada_lovelace.txt and place it in the historical/ directory. If ada_lovelace.txt was in a daughter directory, use <em>$ cp name/ada_lovelace.txt</em>. If copying multiple files, use <em>$ cp ava_lovelace.txt file2.txt historical</em>. <em>$ cp terminator.txt terminator.bak</em> makes a copy of the terminator.txt file, called terminator.bak. .bak is commonly used to make backup files of the same name. <em>$ cp the-office.txt slapstick/the-office-us.txt</em> renames the file by entering the new name in the path of the 2nd argument.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ mkdir media</td>
+                    <td>mkdir</td>
+                    <td>mkdir takes in a directory name as an argument, and then creates a new directory in the current working directory. Here we used mkdir to create a new directory named media/.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ mv superman.txt superhero/</td>
+                    <td>mv</td>
+                    <td>To move a file into a directory, use mv with the source file as the first argument and the destination directory as the second argument. Here we move superman.txt into superhero/. *NOTE: does not make a copy, moves the original file. <em>$ mv superman.txt superman-1.txt</em> renames a file within the working directory.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ rm waterboy.txt</td>
+                    <td>rm</td>
+                    <td>rm deletes files. Here we remove the file waterboy.txt from the file system. <em>$ rm media/*</em> deletes all files in media, but not the directory itself. <em>rm -r</em> deletes a directory and all of its child directories.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ touch data.txt</td>
+                    <td>touch</td>
+                    <td>touch creates a new file inside the working directory. It takes in a file name as an argument, and then creates a new empty file in the current working directory. If the file exists, touch is used to update the modification time of the file.</td>
+                </tr>
+
+                <tr>
+                    <th scope="col" colspan="3" class="use-cases">Redirection</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Redirection</td>
+                    <td>Input and output (I/O) redirection. Direct the input and output (and error) of a command to and from other files and programs, and chain commands together in a pipeline.<br>
+                        <br>
+                        <ul>
+                            <li><em>standard input</em>, abbreviated as <em>stdin</em>, is information inputted into the terminal through the keyboard or input device.</li>
+                            <li><em>standard output</em>, abbreviated as <em>stdout</em>, is the information outputted after a process has ran.</li>
+                            <li><em>standard error</em>, abbreviated as <em>stderr</em>, is an error message outputted by a failed process.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ cat oceans.txt &gt; continents.txt</td>
+                    <td>&gt;</td>
+                    <td>cat command > command takes the standard output of the command on the left and redirects it to the file on the right. Like saying, “take the result of this and put it (>) here”. cat file > file overwrites all original content in the file to the right. If you view the output data using cat, you’ll only see the contents of oceans.txt (or whatever file is on the left).</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ cat glaciers.txt &gt;&gt; rivers.txt</td>
+                    <td>&gt;&gt;</td>
+                    <td>&gt;&gt; takes the standard output of the command on the left and appends (adds) it to the file on the right.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ cat &lt; lakes.tx</td>
+                    <td>&lt;</td>
+                    <td>&lt; takes the standard input from the file on the right and inputs it into the command on the left.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ cat volcanoes.txt | wc (word count; lines words characters)</td>
+                    <td>|</td>
+                    <td>| is a “pipe”. The | takes the standard output of the command on the left, and pipes it as standard input to the command on the right. You can think of this as “command to command” redirection. multiple | can be chained together.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">cat batman.txt</td>
+                    <td>cat</td>
+                    <td>Outputs contents of a specified file (peek without opening). cat directory/name.txt outputs contents of a specified file from a different directory.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>echo</td>
+                    <td>echoes what you type after it. Takes a string as stdin and prints it as stdout. For things like USER and PATH, must type as echo $USER, with a $ in front. To make the bash terminal say something when you open it, go to nano .bash_profile and type in: <em>echo Hello, Ethan</em>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">export USER="Jane Doe"</td>
+                    <td>export</td>
+                    <td>export makes the variable to be available to all child sessions initiated from the session you are in. This is a way to make the variable persist across programs.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ sed 's/snow/rain/' forests.txt</td>
+                    <td>sed</td>
+                    <td>sed stands for “stream editor”. It accepts standard input and modifies it based on an expression, before displaying it as output data. In the expression 's/snow/rain/': s: stands for “substitution”, snow: the search string, the text to find, rain: the replacement string, the text to add in place. *essentially “find & replace”; only replacing the 1st instance of “snow” on a line. In the expression <em>‘s/snow/rain/g’</em>: g stands for "global", and replaces every instance of the word “snow” with “rain”. *As used here, sed will only rewrite the command line output; the actual file won’t be changed.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>sed -i</td>
+                    <td>Rewrites the actual file according to the “find & replace” command used.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ sort lakes.txt</td>
+                    <td>sort</td>
+                    <td>sort takes a filename or standard input and orders each line alphabetically, printing it to standard output.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">$ uniq lakes.txt</td>
+                    <td>uniq</td>
+                    <td>uniq, short for “unique”, takes a filename or standard input and prints out every line, removing any exact duplicates. Removes duplicates only if they are adjacent.</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+
+</html>
