@@ -132,3 +132,8 @@ a:hover {
     width: 20rem;
     height: 11rem;
 }
+
+.git-use-cases {
+    padding: 1rem 0;
+    border-top: thick solid black;
+}
