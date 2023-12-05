@@ -1316,6 +1316,22 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="vocab">const workoutAdvice = {
+                        <br>&ensp;goal: ['lose bodyfat', 'build muscle', 'gain strength'],
+                        <br>&ensp;start: ['going to bed early', 'eating real food', 'training hard'],
+                        <br>&ensp;stop: ['staying up late', 'eating junk food', 'skipping the gym']
+                        <br>};
+                        <br>
+                        <br>for (let advice in workoutAdvice) {
+                        <br>let selector = generateRandomNumber(workoutAdvice[advice].length)
+                        <br>
+                        <br>switch (advice) {
+                        <br>&ensp;case 'goal':
+                    </td>
+                    <td>for...in</td>
+                    <td>Use this when iterating over an object's properties.</td>
+                </tr>
+                <tr>
                     <td class="vocab">const strangeBirds = ['Shoebill', 'Cockatrice', 'Basan', 'Cow', 'Terrorbird', 'Parotia', 'Kakapo'];
                         <br>
                         <br>for (const bird of strangeBirds) {
