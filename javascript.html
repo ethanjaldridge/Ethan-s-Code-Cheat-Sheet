@@ -84,9 +84,9 @@
                         <br>
                         <br>Browsers come equipped with <em>HTML parsers</em> that help browsers render the elements accordingly. The HTML parser does NOT process the next element in the HTML file until it loads and executes the &lt;script&gt; element, thus leading to a delay in load time and resulting in a poor user experience. Additionally, scripts are loaded sequentially, so if one script depends on another script, they should be placed in that very order inside the HTML file. Use either <em>async</em> or <em>defer</em> just before the &gt; of your opening script tag.
                         <br>
-                        <br>The <em>async</em> attribute loads and executes the script asynchronously with the rest of the webpage. async is useful for scripts that are independent of other scripts in order to function accordingly. 
+                        <br>The <strong>async</strong> attribute loads and executes the script asynchronously with the rest of the webpage. async is useful for scripts that are independent of other scripts in order to function accordingly. 
                         <br>
-                        <br>The <em>defer</em> attribute specifies that scripts should be executed after the HTML file is completely parsed. Scripts with the defer attribute are executed in order (i.e. first script 1, then script 2). When a script contains functionality that requires interaction with the DOM, the defer attribute is the way to go.
+                        <br>The <strong>defer</strong> attribute specifies that scripts should be executed after the HTML file is completely parsed. Scripts with the defer attribute are executed in order (i.e. first script 1, then script 2). When a script contains functionality that requires interaction with the DOM, the defer attribute is the way to go.
                     </td>
                 </tr>
                 <tr>
@@ -206,6 +206,37 @@
                         <br>
                         <br>The <strong>.onclick</strong> property allows you to assign a function to run when a click event happens on an element.
                     </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- DOM Events-->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">DOM Events</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class ="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class ="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class ="vocab"></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
