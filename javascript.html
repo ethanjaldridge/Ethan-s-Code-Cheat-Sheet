@@ -100,6 +100,116 @@
             </tbody>
         </table>
 
+        <!-- The DOM -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">The DOM</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>DOM</td>
+                    <td>Document Object Model. A tree-like structure of the webpage (document -> html -> head / body -> etc.) where each element is referred to as a <em>node: an intersecting point in a tree that contains data</em>. The top-most node is called the <em>root node</em>, which represents the html document. The DOM is implemented by browsers to allow JavaScript to access, modify, and update the structure of an HTML web page in an organized way. For this reason, we like to think of the DOM as the link between an HTML web page and scripting languages.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">document.body</td>
+                    <td>document</td>
+                    <td>The <strong>document</strong> object in JavaScript is the door to the DOM structure. The document object allows you to access the root node of the DOM tree. Before you can access a specific element in the page, first you must access the document structure itself. The document object allows scripts to access children of the DOM as properties. <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">List of document properties</a>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">document.body.innerHTML = '&lt;h1&gt;This is now the heading of the body element&lt;/h1&gt;';</td>
+                    <td>Tweaking Elements</td>
+                    <td>When using the DOM in your script to access an HTML element, whether it’s an &lt;li&gt; element or the entire &lt;body&gt; element, you also have access to all of that element’s properties. This includes the ability to modify the contents of the element as well as its attributes and properties, which can range from modifying the text inside a &lt;p&gt; element to assigning a new background color to a &lt;div&gt;. For example, the <strong>.innerHTML</strong> property allows you to access and set the contents of an element.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">document.querySelector('p');
+                        <br>
+                        <br>document.getElementById('bio').innerHTML = 'The description';
+                        <br>
+                        <br>document.getElementsByClassName('student')[0].innerHTML = 'Not yet registered';
+                        <br>
+                        <br>document.getElementsByTagName('li')[1].innerHTML = 'Cedric Diggory`;
+                    </td>
+                    <td>Select & Modify Elements</td>
+                    <td>The DOM interface allows us to access a specific element with CSS selectors. Selectors can include a tag name, a class, or an ID.
+                        <br>
+                        <br>The <strong>.querySelector()</strong> method allows us to specify a CSS selector as a string and returns the first element that matches that selector.
+                        <br>
+                        <br>The <strong>.getElementById()</strong> method allows us to access an element directly by its id. In this example, we’ve selected the element with an ID of 'bio' and set its .innerHTML to the text 'The description'. Notice that the ID is passed as a string, wrapped in quotation marks (' ').
+                        <br>
+                        <br>There are also the <strong>.getElementsByClassName()</strong> and <strong>.getElementsByTagName()</strong> methods which return an array of elements, instead of just one element. You can use bracket notation to access individual elements of an array.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">let blueElement = document.querySelector('.blue');
+                        <br>blueElement.style.backgroundColor = 'blue';
+                        <br>
+                        <br>document.querySelector('.blue').style.fontFamily = 'Roboto';
+                    </td>
+                    <td>Style an Element</td>
+                    <td>The <strong>.style</strong> property of a DOM element provides access to the inline style of that HTML tag. The syntax follows an <strong>element.style.property</strong> format, with the property representing a CSS property. For example, the following code selects the first element with a class of blue and assigns blue as the background-color. <a href="https://www.w3schools.com/jsref/dom_obj_style.asp" target="_blank">How CSS properties are converted into JavaScript</a>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">let parentElement = document.getElementById('must-have').parentNode;
+                        <br>
+                        <br>//Returns the parent element of the element with an ID of 'must-have'.
+                    </td>
+                    <td>Traversing the DOM</td>
+                    <td>Each element has a <strong>.parentNode</strong> and <strong>.children</strong> property. The .parentNode property returns the parent of the specified element in the DOM hierarchy. Note that the document element is the root node so its .parentNode property will return <em>null</em>. The .children property returns an array of the specified element’s children. If the element does not have any children, it will return null.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">let paragraph = document.createElement('p');
+                        <br>
+                        <br>paragraph.id = 'info'; 
+                        <br>paragraph.innerHTML = 'The text inside the paragraph';
+                        <br>
+                        <br>document.body.appendChild(paragraph);
+                    </td>
+                    <td>Create & Insert Elements</td>
+                    <td>The <strong>.createElement()</strong> method creates a new element based on the specified tag name passed into it as an argument. However, it does not append it to the document. It creates an empty element with no inner HTML.
+                        <br>
+                        <br>We can assign values to the properties of the newly created element like how we’ve done previously with existing elements.
+                        <br>
+                        <br>In order to create an element and add it to the web page, you must assign it to be the child of an element that already exists on the DOM, referred to as the parent element. We call this process <em>appending</em>. The <strong>.appendChild()</strong> method will add a child element as the parent element’s last child node.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">let paragraph = document.querySelector('p');
+                        <br>document.body.removeChild(paragraph);
+                        <br>
+                        <br>document.getElementById('sign').hidden = true;
+                    </td>
+                    <td>Remove an Element</td>
+                    <td>The <strong>.removeChild()</strong> method removes a specified child from a parent.
+                        <br>
+                        <br>If you want to hide an element rather than completely deleting it, the <strong>.hidden</strong> property allows you to hide it by setting the property as <strong>true</strong> or <strong>false</strong>.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">let element = document.querySelector('button');
+                        <br>
+                        <br>function turnBlue() {
+                        <br>&ensp;element.style.backgroundColor = 'blue'; 
+                        <br>};
+                        <br>
+                        <br>element.onclick = turnBlue;
+                    </td>
+                    <td>Add Click Interactivity</td>
+                    <td>You can add interactivity to DOM elements by assigning a function to run based on an event. Events can include anything from a click to a user mousing over an element.
+                        <br>
+                        <br>The <strong>.onclick</strong> property allows you to assign a function to run when a click event happens on an element.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
         <!-- Terminology -->
         <table>
             <thead>
@@ -1466,33 +1576,6 @@
                     <td class="vocab"></td>
                     <td>Iterator Documentation</td>
                     <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods" target="_blank">Learn more here</a>.</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- ??? -->
-
-        <table>
-            <thead>
-                <tr>
-                    <td colspan="3">???</td> 
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="col" class="example">Example</th>
-                    <th scope="col" class="name">Name</th>
-                    <th scope="col" class="description">Description</th>
-                </tr>
-                <tr>
-                    <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
                 </tr>
             </tbody>
         </table>
