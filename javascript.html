@@ -210,7 +210,7 @@
             </tbody>
         </table>
 
-        <!-- DOM Events-->
+        <!-- DOM Events -->
         <table>
             <thead>
                 <tr>
@@ -290,15 +290,57 @@
                 <tr>
                     <td class ="vocab"></td>
                     <td>Event Types</td>
-                    <td></td>
+                    <td>Most events in the DOM take place without being noticed because there are no event handlers connected to them. It’s also important to know some registered events don’t depend on user interactions to fire. For instance, the <em>load</em> event fires after website files completely load in the browser. <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank">List of Events</a>.
+                        <br>
+                        <br>Many events need user interaction with the DOM to fire (see mouse events below).
+                        <br>
+                        <br>
+                            <ul>
+                                <li>The <strong>click</strong> event fires when the user presses and releases a mouse button on an element in the DOM.</li>
+                                <li>The <strong>mousedown</strong> event is fired when the user presses a mouse button down. This is different from a <em>click</em> event because mousedown doesn’t need the mouse button to be released to fire.</li>
+                                <li>The <strong>mouseup</strong> event is fired when the user releases the mouse button. This is different from the <em>click</em> and <em>mousedown</em> events because <em>mouseup</em> doesn’t depend on the mouse button being pressed down to fire.</li>
+                                <li>The <strong>mouseover</strong> event is fired when the mouse enters the content of an element.</li>
+                                <li>The <strong>mouseout</strong> event is fired when the mouse leaves an element.</li>
+                                <li>The <strong>wheel</strong> event fires when the user rotates a wheel button on a pointing device (typically a mouse).</li>
+                            </ul>
+                    </td>
                 </tr>
                 <tr>
                     <td class ="vocab"></td>
+                    <td>Keyboard Events</td>
+                    <td><em>Keyboard events</em> are triggered by user interaction with keyboard keys in the browser. Keyboard events have unique properties assigned to their event objects like the <strong>.key</strong> property that stores the values of the key pressed by the user. You can program the event handler function to react to a specific key, or react to any interaction with the keyboard.
+                        <br>
+                        <br>
+                            <ul>
+                                <li>The <strong>keydown</strong> event is fired while a user presses a key down.</li>
+                                <li>The <strong>keyup</strong> event is fired while a user releases a key.</li>
+                                <li>The <strong>keypress</strong> event is fired when a user presses a key down and releases it.</li>
+                            </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- HTML Forms-->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">HTML Forms</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td class ="vocab"></td>
+                    <td class="vocab"></td>
                     <td></td>
                     <td></td>
                 </tr>
