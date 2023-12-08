@@ -225,7 +225,71 @@
                 </tr>
                 <tr>
                     <td class ="vocab"></td>
-                    <td></td>
+                    <td>Events</td>
+                    <td>Events on the web are user interactions and browser manipulations that you can program to trigger functionality. Some other examples of events are:
+                        <br>
+                        <br>
+                            <ul>
+                                <li>A mouse clicking on a button</li>
+                                <li>Webpage files loading in the browser</li>
+                                <li>A user swiping right on an image</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class ="vocab">function eventHandlerFunction() {
+                        <br>&ensp;// this block of code will run when click event happens
+                        <br>}
+                        <br>
+                        <br>eventTarget.addEventListener('click', eventHandlerFunction);
+                        <br>
+                        <br>eventTarget.onclick = eventHandlerFunction;
+                    </td>
+                    <td>Event Handler Functions</td>
+                    <td>After a specific event fires on a specific element in the document object model (or DOM), an <em>event handler</em> function can be created to run as a response.
+                        <br>
+                        <br>Using the <strong>.addEventListener()</strong> method, we can have a DOM element listen for a specific event and execute a block of code when the event is detected. The DOM element that listens for an event is called the <em>event target</em> and the block of code that runs when the event happens is called the <em>event handler</em>. With the <strong>.addEventListener()</strong> method , we can add multiple event handler functions.
+                        <br>
+                        <br>Event Handlers can also be registered by setting an <strong>.onevent</strong> property on a DOM element (<em>event target</em>). The pattern for registering a specific event is to <strong>append an element with .on followed by the lowercased event type name</strong>. With <strong>.onevent</strong>, it allows for one event handler function to be attached to the event target.
+                    </td>
+                </tr>
+                <tr>
+                    <td class ="vocab">eventTarget.removeEventListener('click', eventHandlerFunction);</td>
+                    <td>Removing <br>Event Handler Functions</td>
+                    <td>The <strong>.removeEventListener()</strong> method is used to reverse the <em>.addEventListener()</em> method. This method stops the event target from “listening” for an event to fire when it no longer needs to. If <em>.addEventListener()</em> was provided an anonymous function, then that event listener cannot be removed. <strong>.removeEventListener()</strong> also takes two arguments:
+                        <br>
+                        <br>
+                            <ul>
+                                <li>The event type as a string</li>
+                                <li>The event handler function</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class ="vocab">function eventHandlerFunction(event){
+                        <br>&ensp;console.log(event.timeStamp);
+                        <br>}
+                        <br>
+                        <br>eventTarget.addEventListener('click', eventHandlerFunction);
+                        <br>
+                        <br>let sharePhoto = function(event) {
+                        <br>&ensp;event.target.style.display = 'none';
+                        <br>};
+                    </td>
+                    <td>Event Object Properties</td>
+                    <td>JavaScript stores events as Event objects with their related data and functionalities as properties and methods. When an event is triggered, the event object can be passed as an argument to the event handler function. There are pre-determined properties associated with event objects. You can call these properties to see information about the event, for example:
+                        <br>
+                        <br>
+                            <ul>
+                                <li>the <strong>.target</strong> property to reference the element that the event is registered to.</li>
+                                <li>the <strong>.type</strong> property to access the name of the event.</li>
+                                <li>the <strong>.timeStamp</strong> property to access the number of milliseconds that passed since the document loaded and the event was triggered.</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class ="vocab"></td>
+                    <td>Event Types</td>
                     <td></td>
                 </tr>
                 <tr>
