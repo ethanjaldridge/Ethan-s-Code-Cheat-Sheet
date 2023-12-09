@@ -342,7 +342,119 @@
                 <tr>
                     <td class="vocab"></td>
                     <td>Form Validation</td>
-                    <td>Most data, once submitted, is stored by a website or web application. It’s stored in a database on the server side. There are important reasons for us to make sure the information that will be stored in the database is accurate (to prevent username doubling, address error in shipping, leaking of personal info, etc.)</td>
+                    <td>Most data, once submitted, is stored by a website or web application (data submitted through forms are stored as strings). It’s stored in a database on the server side. There are important reasons for us to make sure the information that will be stored in the database is accurate (to prevent username doubling, address error in shipping, leaking of personal info, etc.)</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Regular Expressions</td>
+                    <td>To specify patterns for the computer to recognize, we use a special language called <em>regular expressions</em> — also known as <em>regex</em> or <em>regexp</em>. A regular expression is a sequence of characters representing a pattern. We can use that pattern to match a string, match parts of a string, confirm that data is formatted acceptably, or even replace parts of strings with different characters.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;input id="name" name="name" type="text" <strong>required minlength="3" maxlength="100"</strong>&gt;
+                        <br>
+                        <br><strong>min="1" max="123"</strong>
+                        <br>
+                        <br><strong>pattern="[cC]odecademy"</strong>
+                    </td>
+                    <td>Client-side Validation: HTML</td>
+                    <td><em>Client-side validation</em> occurs when problematic inputs are prevented from being submitted in the first place. The client is the process interacting with the server on behalf of a user—in the case of websites, the web browser is the client. The logic for validating the form is included with the code that displays the form on the user’s device. No interaction with the back-end is required to perform client-side validations. HTML provides some of these validation features built-in (required fields, min and max values, input must match a particular pattern specified by a regular expression).</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Client-side Validation: JavaScript</td>
+                    <td>In order to truly customize validation or to perform more complex validations, we can incorporate JavaScript form validations. We can do this by either writing the JavaScript ourselves or by incorporating a JavaScript library. Most basic validation libraries will involve directly accessing or manipulating the DOM. This can get tricky when working with a framework that relies on a virtual DOM, like React or Vue. In those situations, it might be best to incorporate a library that works well with your specific framework.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Back-end Validation</td>
+                    <td>Validations must also be completed on the back-end or server-side. As a rule, the back-end should never trust the data it receives. Front-end validations are easy to bypass. A malicious user can simply turn off JavaScript on their browser, for example. There’s also the potential for middleman attacks in which data is changed after the request is submitted by a user but before it arrives at the server.
+                        <br>
+                        <br>Advantages of back-end validation:
+                        <br>
+                        <br>
+                            <ul>
+                                <li>Once data is in the back-end, the developer has complete control over it.</li>
+                                <li>Developers can use validation code, often on machines with more computing power.</li>
+                                <li>Developers can write validation code that a user can’t see (more difficult for malicious users to hack).</li>
+                                <li>Developers can validate the information against other data the front-end doesn’t have access to (is the username taken?).</li>
+                            </ul>
+                        <br>
+                        <br>There are two main ways to validate inputs on the server-side. The first takes place while the user is still inputting data into the form on the front-end. We can make asynchronous requests to the server with pieces of their data and send feedback directly to the user before they’ve submitted. This is slower than front-end validation and can be a design challenge from a user-experience perspective.
+                        <br>
+                        <br>The second is once the form has been submitted. Back-end form validation is our application’s last defense against problematic data, and it’s essential to verify the validity and safety of data before adding it to a database. This is also an opportunity to “sanitize” the data: in order for our database to be useful, it’s important that all data within it is formatted consistently. This means that while we may want to be flexible about the formatting we require from a user, we likely want to transform inputs into a strict format before entering them in the database.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;form action="/example.html" method="POST"&gt;&lt;/form&gt;
+                        <br>
+                        <br>&lt;form action="/example.html" method="POST"&gt;
+                            <br>&ensp;&lt;h1&gt;Creating a form&lt;/h1&gt;
+                            <br>&ensp;&lt;p&gt;Looks like you want to learn how to create an HTML form. Well, the best way to learn is to play around with it.&lt;/p&gt;
+                          &lt;/form&gt;
+                    </td>
+                    <td>form</td>
+                    <td>An HTML <strong>&lt;form&gt;</strong> element is responsible for collecting information to send somewhere else. We need to supply the &lt;form&gt; element with both the location of where the information goes, and what HTTP request to make. The <strong>action</strong> attribute determines where the information is sent. The <strong>method</strong> attribute is assigned an HTTP verb that is included in the HTTP request. Note: HTTP verbs like POST <em>do not need to be capitalized</em> for the request to work, but it’s done so out of convention. The &lt;form&gt; element can also contain child elements.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;form action="/example.html" method="POST"&gt;
+                        <br>&ensp;<strong>&lt;input type="text" name="first-text-field"&gt;</strong>
+                        <br>&lt;/form&gt;
+                    </td>
+                    <td>input</td>
+                    <td>The <strong>&lt;input&gt;</strong> element allows you to create an input field in your &lt;form&gt;. The &lt;input&gt; element has a <strong>type</strong> attribute which determines how it renders on the web page and what kind of data it can accept. It’s also important that we include a <strong>name</strong> attribute for the &lt;input&gt; — without the <em>name</em> attribute, information in the &lt;input&gt; won’t be sent when the &lt;form&gt; is submitted. 
+                        <br>
+                        <br>After the user types into the &lt;input&gt; field, their text becomes the value of the <strong>value</strong> attribute, which is paired with the <em>name</em> attribute. Using the example, when the form is submitted, the text: "first-text-field=user text" is sent to /example.html. We could also assign a default value for the value attribute so that users have a pre-filled text field when they first see the rendered form.
+                        <br>
+                        <br>The <strong>"text"</strong> value for the <em>type</em> attribute is the default, and renders a text field that users can type into.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;form action="/example.html" method="POST"&gt;
+                        <br>&ensp;<strong>&lt;label for="meal"&gt;What do you want to eat?&lt;/label&gt;</strong>
+                        <br>
+                        <br>&ensp;&lt;input type="text" name="food" <strong>id="meal"</strong>&gt;
+                        &lt;/form&gt;
+                    </td>
+                    <td>label</td>
+                    <td>The <strong>&lt;label&gt;</strong> element has an opening and closing tag and displays text that is written between the opening and closing tags. To associate a &lt;label&gt; and an &lt;input&gt;, the <em>&lt;input&gt;</em> needs an <strong>id attribute</strong>. We then assign the <strong>for attribute</strong> of the &lt;label&gt; element with the value of the id attribute of &lt;input&gt;. Another benefit for using the &lt;label&gt; element is when this element is clicked, the corresponding &lt;input&gt; is highlighted/selected.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;input type ="password"&gt;</td>
+                    <td>password</td>
+                    <td>An &lt;input type ="password"&gt; element will replace input text with another character like an asterisk (*) or a dot (•). Even though the password field obscures the text of the password, when the form is submitted, the value of the text is sent.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;input id="years" name="years" type="number" step="1"&gt;</td>
+                    <td>number</td>
+                    <td>By setting <strong>type="number"</strong> for an &lt;input&gt; we can restrict what users type into the input field to just numbers (and a few special characters like -, +, and .). We can also provide a <strong>step attribute</strong> which creates arrows inside the input field to increase or decrease by the value of the step attribute.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;input id="volume" name="volume" type="range" min="0" max="100" step="1"&gt;</td>
+                    <td>range</td>
+                    <td>Another option we could use is <strong>type="range"</strong> which creates a <strong>slider</strong>. To set the minimum and maximum values of the slider we assign values to the <strong>min</strong> and <strong>max attribute</strong> of the &lt;input&gt;. We could also control how smooth and fluid the slider works by assigning the step attribute a value. Smaller step values will make the slider move more fluidly, whereas larger step values will make the slider move more noticeably. Everytime the slider moves by 1, the <strong>value attribute</strong> of the &lt;input&gt; changes by 1.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;input id="lettuce" name="topping" type="checkbox" value="lettuce"&gt;
+                        <br>
+                        <br>&lt;label for="lettuce"&gt;Lettuce&lt;/label&gt;
+                    </td>
+                    <td>checkbox</td>
+                    <td>In an &lt;input&gt;, setting the <strong>type="checkbox"</strong> creates a checkbox field for the corresponding &lt;label&gt;. Note: there are assigned values to the <strong>value attribute</strong> of the checkboxes. These values are not visible on the form itself, that’s why it is important that we use an associated &lt;label&gt; to identify the checkbox. Since each checkbox lives inside of its own &lt;input&gt;, using the same <strong>name</strong> for each &lt;input&gt; will group them together.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td class="vocab"></td>
