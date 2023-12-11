@@ -126,6 +126,21 @@ a:hover {
     height: 11rem;
 }
 
+.dropdown-list-img {
+    width: 20rem;
+    height: 11rem;
+}
+
+.datalist-img {
+    width: 20rem;
+    height: 11rem;
+}
+
+.textarea-img {
+    width: 20rem;
+    height: 11rem;
+}
+
 /* Git */
 
 .git-log-example {
