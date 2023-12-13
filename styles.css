@@ -21,6 +21,14 @@ h2 {
     text-align: center;
 }
 
+ul li {
+    margin-left: 1rem;
+}
+
+ol li {
+    margin-left: 1rem;
+}
+
 
 
 /* Header */
@@ -119,12 +127,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* JavaScript */
-
-.error-stack-trace-img {
-    width: 20rem;
-    height: 11rem;
-}
+/* HTML */
 
 .dropdown-list-img {
     width: 20rem;
@@ -137,6 +140,18 @@ a:hover {
 }
 
 .textarea-img {
+    width: 20rem;
+    height: 11rem;
+}
+
+.search-img {
+    width: 20rem;
+    height: 11rem;
+}
+
+/* JavaScript */
+
+.error-stack-trace-img {
     width: 20rem;
     height: 11rem;
 }
