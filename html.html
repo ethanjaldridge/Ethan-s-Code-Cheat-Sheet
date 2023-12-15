@@ -62,7 +62,7 @@
                 <tr>
                     <td class="vocab">&lt;nav&gt;</td>
                     <td>Navigation</td>
-                    <td>Defines a block of navigation links (menu, table of contents, services, contact, etc.) Can be used inside of the header element, or on its own. Inside the &lt;nav&gt; tags, create an unordered list. Inside the &lt;ul&gt; tags, create list items &lt;li&gt;. Inside the &lt;li&gt; tags, create anchors for links &lt;a href="#nameofsectionid"&gt;. Name the link inside of the &lt;a&gt; tags, just before the closing tag.</td>
+                    <td>Defines a block of navigation links (menu, table of contents, services, contact, index, etc.) Can be used inside of the header element, or on its own. Inside the &lt;nav&gt; tags, create an unordered list. Inside the &lt;ul&gt; tags, create list items &lt;li&gt;. Inside the &lt;li&gt; tags, create anchors for links &lt;a href="#nameofsectionid"&gt;. Name the link inside of the &lt;a&gt; tags, just before the closing tag.</td>
                 </tr>
                 <tr>
                     <td class="vocab">&lt;main&gt;</td>
@@ -572,6 +572,178 @@
                         <br>There are two main ways to validate inputs on the server-side. The first takes place while the user is still inputting data into the form on the front-end. We can make asynchronous requests to the server with pieces of their data and send feedback directly to the user before they’ve submitted. This is slower than front-end validation and can be a design challenge from a user-experience perspective.
                         <br>
                         <br>The second is once the form has been submitted. Back-end form validation is our application’s last defense against problematic data, and it’s essential to verify the validity and safety of data before adding it to a database. This is also an opportunity to “sanitize” the data: in order for our database to be useful, it’s important that all data within it is formatted consistently. This means that while we may want to be flexible about the formatting we require from a user, we likely want to transform inputs into a strict format before entering them in the database.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--Web Accessibility-->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Web Accessibility</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Installing a Screen Reader</td>
+                    <td><strong>NVDA (NonVisual Desktop Access)</strong> is a free screen reader for Windows, which allows blind and vision-impaired people to use computers. It reads the text on the screen in a computerized voice. The user can easily control what is read to them by moving the cursor to the relevant area of text with a mouse or using the arrows on the keyboard. NVDA can also convert the text into braille if the computer user owns a device called a “braille display”. <a href="https://www.nvaccess.org/" target="_blank">NVDA can be installed</a> on your Windows machine or used on a USB stick. This screen reader is unique because it’s an open source program, which means developers can contribute to improving this software.
+                        <br>
+                        <br><strong>(Google Chrome) ChromeVox</strong> is built using only web technologies like HTML5, CSS, and Javascript. ChromeVox (Classic) was designed from the start to enable unprecedented access to modern web apps, including those that utilize W3C ARIA (Access to Rich Internet Applications) to provide a rich, desktop-like experience. ChromeVox can be easily added to your Chrome browser as an extension through the <a href="https://chromewebstore.google.com/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en" target="_blank">Chrome Web Store</a>. Once installed, you can use <a href="https://support.google.com/chromebook/answer/7031755" target="_blank">these keyboard shortcuts</a>. If you want to change the keyboard shortcuts, just click the browser extension icon, then click “options”.
+                        <br>
+                        <br>Screen readers can vary based on the operating system you are using. However, they can also be implemented through the browser. Please note that when using a browser’s screen reader, it’s best to turn off the operating system’s screen reader.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Accessibility (a11y)</td>
+                    <td>Accessibility refers to designing devices, products, and environments such that individuals with disabilities or sensory impairments can successfully use the device or product. In 1990, the United States Congress passed the Americans with Disabilities Act, commonly referred to as the ADA. The ADA mandates that public and private spaces be made accessible to individuals with disabilities that include (but are not limited to): sensory impairments, cognitive impairments, and physical limitations.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Digital Accessibility</td>
+                    <td>For the full list of digital accessibility guidelines, there is a global standard known as the <a href="https://www.w3.org/TR/WCAG21/" target="_blank">Web Content Accessibility Guidelines 2.1 (WCAG)</a>.
+                        <br>These standards fall under a group of guidelines called ARIA, or <a href="https://en.wikipedia.org/wiki/WAI-ARIA" target="_blank">Accessible Rich Internet Applications</a>.
+                        <br>
+                        <br>Examples of digital accessibility include:
+                        <br>
+                        <br>
+                            <ul>
+                                <li>Screen readers that parse a website for a user with visual impairments</li>
+                                <li>Videos on websites are closed-captioned for individuals with hearing impairments</li>
+                                <li>Images include “alt text” for individuals with visual impairments</li>
+                                <li>Websites must be navigable by keyboard for users who may not be able to operate a mouse (i.e., navigating using the “Tab” on a keyboard)</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Contrast</td>
+                    <td>Contrast refers to the opposition of different properties (color, size, shape, font, etc) to make one object visually distinct from another. Careful use of contrast will aid all users in skimming or navigating our pages, by directing our user’s attention, and by visually communicating what is most important and what is not as important.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Headings</td>
+                    <td>Headings are one way to create contrast on a webpage. They add organization, create a hierarchy of importance where larger headings are more important, and provide information to things like web browsers, plugins, and assistive technologies like screen readers. They also improve the SEO of your website, as content in an &lt;h1&gt; heading is deemed more important by the browser.
+                        <br>
+                        <br><strong>Heading elements should be used in order and it is considered best practice not to skip heading elements when possible. Note that each web page should only contain one &lt;h1&gt; element.</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Text</td>
+                    <td><strong>Highly accessible websites use real text instead of images of text, use text with high contrast with its background, and choose highly legible font sizes.</strong>
+                        <br>
+                        <br>Real text is better because:
+                        <br>
+                        <br>
+                            <ul>
+                                <li>Screen readers can transform the text into a voice-over</li>
+                                <li>Users can scale or magnify the text for better legibility without losing image quality</li>
+                                <li>It's less taxing on the browser to load real text versus requesting large image assets from a server.</li>
+                            </ul>
+                        <br>
+                        <br>Contrasting colors:
+                        <br>
+                        <br>
+                            <ul>
+                                <li>According to the Web Content Accessibility Guidelines, <strong>a ratio of at least 4.5:1 should be used on all standard text sizes</strong>. This means the lighter color must have four and a half times the luminance of its paired darker color.</li>
+                                <li><strong>A ratio of at least 3:1 should be used for larger text sizes</strong> (24px and above).</li>
+                                <li><a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAIM - Color Contrast Checker</a></li>
+                            </ul>
+                        <br>
+                        <br>Font sizes:
+                        <br>
+                        <br>
+                            <ul>
+                                <li>The <strong>standard font size for most modern web browsers is 16 pixels</strong>.</li>
+                                <li>This allows users to scan your website and consume information without straining their eyes.</li>
+                                <li>While <strong>smaller type sizes can be used, they should be reserved for nonessential content or design aesthetic only</strong>.</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Color</td>
+                    <td>When using color in our designs, it’s important to note the contrast between elements in the foreground and those in the background. For instance, using the combination of black (#00000) as a foreground color and white (#ffffff) as a background color provides maximum contrast. 
+                        <br>
+                        <br>Sufficient color contrast can improve the usability of your site for users with low vision or color blindness. In general, about 8% of men and 0.5% of women have a color vision deficiency.
+                        <br>
+                        <br>Here are some practical steps you can take to improve the color accessibility of your design:
+                        <br>
+                        <br>
+                            <ul>
+                                <li>Choosing highly contrasting colors (opposite from each other on a color wheel) will aid users with partial color blindness.</li>
+                                <li>Using a color scheme with multiple shades of brightness for a single color will create contrast for users with partial or total color blindness.</li>
+                                <li>Pairing color with other forms of conveying information (text, icons, etc) is the most general solution. For example, an invalid entry in a form on a website should not just turn the entry field red, it should also display text that explains the error.</li>
+                                <li>Test your designs with a <a href="https://www.toptal.com/designers/colorfilter" target="_blank">colorblind webpage filter</a>.</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Semantic HTML Elements</td>
+                    <td>The quickest way of improving accessibility for screen readers is to use the appropriate tags for a given task. For example, developers should wrap a navigation bar in a &lt;header&gt; element. Although the navigation bar could be wrapped in a &lt;div&gt; element with a class="header", the native semantics of a &lt;header&gt; element allows someone using a screen reader to understand and navigate a web page more efficiently.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;div id="code-editor" <strong>role="complementary"</strong>&gt;
+                        <br>...
+                        <br>&lt;/div&gt;
+                        <br>
+                        <br>&lt;div id="container" <strong>role="presentation"</strong>&gt;
+                        <br>&ensp;&lt;p&gt;I'm content you want to hear!&lt;/p&gt;
+                        <br>&lt;/div&gt;
+                    </td>
+                    <td>ARIA Roles</td>
+                    <td>To help add context to web page information, ARIA provides an HTML attribute called <strong>role</strong>. The value of an element’s role changes how a screen reader communicates the element. The <strong>role="complementary"</strong> attribute and value can help a screen reader user understand that the information in the code editor (... in the example) is complementary (or supporting) to the information you are reading right now. It helps users of screen readers identify the relationship between the two sections of the page.
+                        <br>
+                        <br><strong>role="presentation":</strong> some HTML elements, like &lt;ul&gt; and &lt;ol&gt;, only serve to organize information on a web page. When a screen reader navigates a page, however, it reads out to the user each element’s name as it encounters them. Therefore, reading “ol“ outloud will slow down visually impaired users. We can instruct screen readers to skip reading unnecessary elements by setting the role attribute to <strong>presentation</strong>. The presentation role skips over elements and their necessary children. This will cause the screen reader to skip directly to the text between the &lt;li&gt; tags.
+                        <br>
+                        <br><a href="https://www.w3.org/TR/html-aria/#allowed-aria-roles-states-and-properties" target="_blank">ARIA roles</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;img src="#" alt="A painting of the Shenandoah Valley"/&gt;
+                        <br>&ensp;&lt;p <strong>aria-label="Artist"</strong>&gt;Armand Cabrera, 2010&lt;/p&gt;
+                    </td>
+                    <td>ARIA Properties</td>
+                    <td><em>ARIA properties</em> are attributes that you can add to HTML elements. These attributes provide additional information about elements that might not be obvious to users of screen readers. The property <strong>aria-label</strong> gives the screen reader additional information to read out loud to the user.
+                        <br>
+                        <br><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques" target="_blank">ARIA properties</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">&lt;img src="#" <strong>alt="a kitten snuggling a puppy"</strong>/&gt;</td>
+                    <td>alt</td>
+                    <td>Some HTML elements have a built-in attribute called <strong>alt</strong> that works like <em>aria-label</em> but has additional functionality. The alt attribute is used to describe an image (or several other elements). A screen reader will read the value of the alt attribute out loud. However, if the element cannot be visually seen — whether it is because the user is visually impaired, an incorrect source is referenced, or the page is being accessed over a slow connection — the alt attribute will be displayed in its place. On the other hand, the value of <em>aria-label</em> will never be displayed on the screen and is a better choice for elements that do not support the alt attribute.
+                        <br>
+                        <br>When using the <strong>alt attribute</strong>, you should adhere to these conventions:
+                        <br>
+                        <br>
+                            <ul>
+                                <li>In general, the value of alt should concisely describe the image (&lt;150 characters).</li>
+                                <li>For images that are also &lt;a&gt; elements, the alt attribute should describe the source that the link targets.</li>
+                                <li>If an image conveys no information (such as a decorative border), the alt attribute should be empty, but should never be omitted.</li>
+                                <li>If an image is described by text near the image, do not duplicate the description in the alt attribute. Use an empty alt attribute instead.</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Best Practices</td>
+                    <td>
+                        <ul>
+                            <li><strong>Text on top of an image:</strong> adding a dark transparent overlay on top of the image could increase the contrast and provide better legibility.</li>
+                            <li><strong>Removing input labels:</strong> another trend often seen in web design is the removal of labels above input fields, sometimes relying on placeholder text instead to identify the input field. This can make it hard for a user to know what field they're filling out. For users with screen readers, the form's placeholder text is not always narrated.</li>
+                            <li><strong>Buttons & Links:</strong> visual contrast is especially important for buttons and links because these are the tools our users employ to navigate. Color alone should not be used to indicate clickability, as this will cause challenges for low vision and color-blind users.</li>
+                        </ul>
                     </td>
                 </tr>
             </tbody>
