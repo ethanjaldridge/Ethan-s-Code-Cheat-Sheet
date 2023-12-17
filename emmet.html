@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Emmet</title>
+    </head>
+    
+    <body>
+        
+        <!-- Header -->
+
+        <header>
+            <h1>Emmet</h1>
+            <nav>
+                <ul>
+                    <li class ="headernav"><a href="index.html">Home</a></li>
+                    <li class ="headernav"><a href="terminology.html">Terminology</a></li>
+                    <li class ="headernav"><a href="keyboardcommands.html">Keyboard Commands</a></li>
+                    <li class ="headernav"><a href="#">Emmet</a></li>
+                    <li class ="headernav"><a href="git.html">Git & GitHub</a></li>
+                    <li class ="headernav"><a href="markdown.html">Markdown</a></li>
+                    <li class ="headernav"><a href="bash.html">Bash</a></li>
+                    <li class ="headernav"><a href="html.html">HTML</a></li>
+                    <li class ="headernav"><a href="css.html">CSS</a></li>
+                    <li class ="headernav"><a href="javascript.html">JavaScript</a></li>
+                    <li class ="headernav"><a href="Node.js.html">Node.js</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Emmet -->
+
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Emmet</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="tag">Tag</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Emmet</td>
+                    <td>A collection of shortcuts and snippets that generate long-hand code in HTML.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>! + Enter</td>
+                    <td>Creates boilerplate for an HTML file.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Tags</td>
+                    <td>Emmet is also responsible for generating a full tag from even a single letter (i.e. "a" for "anchor").</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>tag.class</td>
+                    <td>Generates a tag with the desired class.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>tag#id</td>
+                    <td>Generates a tag with the desired id.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>.class / #id</td>
+                    <td>Tags without a name will default to a &lt;div&gt; tag.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>tag[attribute="value"] / tag[attribute]</td>
+                    <td>Generates a tag with the desired attribute.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>tag>child</td>
+                    <td>Generates a tag with the desired child element.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>tag*number</td>
+                    <td>Generates the desired tag, a desired number of times.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>tag{HTML text here}</td>
+                    <td>Generates a tag with the desired text between the element's tags.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>tag*3{$} / .class-$</td>
+                    <td>The "$" sign will generate numbers in its place.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>tag*3{$$}</td>
+                    <td>Using 2 "$" signs will pad the number, adding a 0 in front of it.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>header+main+footer</td>
+                    <td>The "+" symbol will generate sibling tags (as it does in css).</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>header>nav^main+footer</td>
+                    <td>The "^" symbol serves to "climb up" out of the header tag, and continue creating sibling tags.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>(header>nav)+main+header</td>
+                    <td>The "()" symbols "group" the tags together, so that the sibling tags aren't nested within the header.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>input:text</td>
+                    <td>Creates an input with the "type" of text.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
