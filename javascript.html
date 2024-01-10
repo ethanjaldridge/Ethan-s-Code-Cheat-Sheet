@@ -1723,6 +1723,108 @@
             </tbody>
         </table>
 
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Classes</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="vocab">class Dog {
+                        <br>&emsp;constructor(name) {
+                        <br>&emsp;&emsp;this._name = name;
+                        <br>&emsp;&emsp;this._behavior = 0;
+                        <br>&emsp;}
+                        <br>}
+                    </td>
+                    <td>Class</td>
+                    <td>Different from object identifiers.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">class Dog {
+                        <br>&emsp;constructor(name) {
+                        <br>&emsp;&emsp;this.name = name;
+                        <br>&emsp;&emsp;this.behavior = 0;
+                        <br>&emsp;}
+                        <br>}
+                    </td>
+                    <td>constructor()</td>
+                    <td>JavaScript calls the <strong>constructor()</strong> method every time it creates a new instance of a class. Capitalize and PascalCase class names. In the context of a class, <strong>this</strong> refers to an instance of that class. In the Dog class, we use <strong>this</strong> to set the value of the Dog instance’s name property to the name argument. Under this.name, we create a property called behavior, which will keep track of the number of times a dog misbehaves. The behavior property is always initialized to zero.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const halley = <strong>new</strong> Dog('Halley');
+                        <br>
+                        <br>console.log(halley.name);
+                    </td>
+                    <td>Instances</td>
+                    <td>An instance is an object that contains the property names and methods of a class, but with unique property values. Below our Dog class, we use the <strong>new</strong> keyword to create an instance of our Dog class.
+                        <br>
+                        <br><ul>
+                                <li>We create a new variable named halley that will store an instance of our Dog class.</li>
+                                <li>We use the <strong>new</strong> keyword to generate a new instance of the Dog class. The <strong>new</strong> keyword calls the constructor(), runs the code inside of it, and then returns the new instance.</li>
+                                <li>We pass the 'Halley' string to the Dog constructor, which sets the name property to 'Halley'.</li>
+                                <li>Finally, we log the value saved to the name key in our halley object, which logs 'Halley' to the console.</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">class Surgeon {
+                    <br>&emsp;constructor... {}
+                    <br>
+                    <br>&emsp;get name() {
+                    <br>&emsp;&emsp;return this._name;
+                    <br>&emsp;}
+                    <br>
+                    <br>&emsp;takeVacationDays(daysOff) {
+                    <br>&emsp;&emsp;this._remainingVacationDays = this._remainingVacationDays - daysOff;
+                    <br>&emsp;}
+                    <br>}
+                    </td>
+                    <td>Methods</td>
+                    <td>Class method and getter syntax is the same as it is for objects except <strong>you can not include commas between methods</strong>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">surgeonRomero.name</td>
+                    <td>Method Calls</td>
+                    <td>The syntax for calling methods and getters on an instance is the same as calling them on an object — append the instance with a period, then the property or method name. For methods, you must also include opening and closing parentheses.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">class Animal {}...
+                        <br>
+                        <br>class Cat <strong>extends</strong> Animal {
+                        <br>&emsp;constructor(name, usesLitter) {
+                        <br>&emsp;&emsp;<strong>super</strong>(name);
+                        <br>&emsp;&emsp;this._usesLitter = usesLitter;
+                        <br>&emsp;}
+                        <br>}
+                    </td>
+                    <td>Inheritance</td>
+                    <td>With inheritance, you can create a parent class (also known as a superclass) with properties and methods that multiple child classes (also known as subclasses) share. The child classes inherit the properties and methods from their parent class.
+                        <br>
+                        <br><ul>
+                                <li>The <strong>extends</strong> keyword makes the methods of the animal class available inside the cat class.</li>
+                                <li>The constructor, called when you create a new Cat object, accepts two arguments, name and usesLitter.</li>
+                                <li>The <strong>super</strong> keyword calls the constructor of the parent class. In this case, super(name) passes the name argument of the Cat class to the constructor of the Animal class. When the Animal constructor runs, it sets this._name = name; for new Cat instances.</li>
+                                <li>_usesLitter is a new property that is unique to the Cat class, so we set it in the Cat constructor.</li>
+                            </ul>
+                        <br>
+                        <br><em>In a constructor(), you must always call the <strong>super</strong> method before you can use the <strong>this</strong> keyword — if you do not, JavaScript will throw a reference error.</em>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">class....
+                        <br>&emsp;constructor...
+                        <br>
+                        <br>&emsp;static generateName() {}
+                    </td>
+                    <td>static Methods</td>
+                    <td>Sometimes you will want a class to have methods that aren’t available in individual instances, but that you can call directly from the class. Because of the <strong>static</strong> keyword, we can only access .generateName() by appending it to the name of the class.</td>
+                </tr>
+            </tbody>
+        </table>
+
         <!-- Debugging JavaScript -->
         <table>
             <thead>
