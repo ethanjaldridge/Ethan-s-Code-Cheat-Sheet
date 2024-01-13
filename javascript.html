@@ -1927,33 +1927,198 @@
             <tbody>
                 <tr>
                     <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
+                    <td>Why Test?</td>
+                    <td><strong>In 2002</strong>, a study commissioned by the US Department of Commerce’s National Institute of Standards and Technology concluded that <strong>software errors cost the US economy about $59 billion annually</strong>. To avoid those costs, software professionals use automated testing. During and after production, they can run an <em>automated test suite</em> to give themselves confidence that their products are free of errors and work as expected.
+                        <br>
+                        <br><strong>The process for testing is as follows: write code changes, make pull request, run test(s), fix code, repeat until test passes, merge the pull request.</strong>
+                        <br>
+                        <br><a href="https://www.codecademy.com/article/tdd-u1-good-test">The characteristics of a good test:</a> fast, complete, reliable, isolated, maintainable, and expressive.
+                    </td>
                 </tr>
                 <tr>
                     <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
+                    <td>Manual Testing</td>
+                    <td>Software testing is the process of assessing the completeness and quality of computer software. Usually this is done by running a part of a system (like a web application) and comparing the actual behavior to the expected behavior. <strong>Manual testing is a form of testing done by a human interacting with a system. With web apps, this might be clicking, dragging, and typing through a webpage</strong>. A list of actions and expected behaviors would be given. If the observed behavior doesn’t match the expected behavior, the application has an error.</td>
                 </tr>
                 <tr>
                     <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
+                    <td>Automated Testing</td>
+                    <td>The cost of testing can be reduced and the quality can be improved with automated testing. <strong>Automated testing is the use of software to control the execution of tests and the comparison of actual behavior to expected behavior.</strong> Automated testing is faster, more accurate, and more maintainable.</td>
                 </tr>
                 <tr>
                     <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
+                    <td>The Test Suite</td>
+                    <td>Tests are written with code, just like the rest of your web app. You can refer to the code defining your app as <em>implementation code</em>, and the code defining your tests as <em>test code</em>. If implementation code is written in index.js then the corresponding test code may be written in index-test.js. <strong>A collection of tests for a web application is called a test suite.</strong></td>
                 </tr>
                 <tr>
                     <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
+                    <td>Tests As Documentation</td>
+                    <td><strong>Documentation is any content separate from implementation code that explains how it works or how to use it.</strong> Documentation can come in many forms, including plain text, diagrams…and tests! Tests as documentation provide what many other forms cannot: both human-readable text to describe the application and machine-executable code to confirm the app works as described.</td>
                 </tr>
                 <tr>
                     <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
+                    <td>Regression</td>
+                    <td><strong>When adding a new feature to your product, it’s possible that something will break. If that break occurs within a feature developed earlier, it is called regression</strong>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Testing Types</td>
+                    <td>At different stages of production for a particular project, you may encounter the opportunity for different types of tests, which can vary in scale and resource intensity, as well as serve different purposes.
+                        <br>
+                        <br><ul>
+                                <li><strong>Unit Tests:</strong> covers the smallest possible unit of testable code, such as a single function. In order to keep the scope of a unit test focused on the unit being tested, any data or behavior from other units or external sources that the unit relies on should be replaced with fake (mock) data or behavior.</li>
+                                <li><strong>Integration Tests:</strong> covers how the units of a particular program work with one another. When testing integrations with external services, only the handling of incoming data is tested while the data itself remains mocked.</li>
+                                <li><strong>End to End Tests:</strong> (sometimes referred to as a UI layer test or e2e) automates user flow to test the application in the way that a real user would experience it. To closely match the end user’s experience, this type of testing would also test interactions with external services such as databases and APIs. In this test, the actual database and external API is used.</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Testing Methodologies</td>
+                    <td>Some software testing methodologies prioritize writing test cases before writing the code those test cases will validate. Those types include:
+                        <br>
+                        <br><ul>
+                                <li><strong>Test-driven Development (TDD):</strong> a methodology that flips the order, where tests are written before the functioning code is written. TDD tests look at the components of code, like functions and classes, as the smallest unit to test. In practice, TDD can accelerate software development since it dictates short development cycles with direct test cases.</li>
+                                <li><strong>Behavior-driven Development (BDD):</strong> also involves writing test before code. BDD differs from TDD in why or when tests are written, what an individual unit is considered to be, and how the language of the test is composed (BDD is more specific). Since BDD tests are driven by behavior, the language of the test cases are simplified and written via collaboration between engineers, product owners, and other stakeholders, to ensure the specified behaviors make sense from a user perspective. Changes to the code base, such as changing the design of the code, will not occur unless there is a relevant change in the product. Since those changes are feature-related, the unit of tests is called a “feature.” Test cases are related to whether or not the feature works, rather than if the individual functions or classes you are writing to develop features work.</li>
+                                <li><strong>Specification by Example (SBE):</strong></li>
+                                <li><strong>Acceptance Test-driven Development (ATDD):</strong></li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Installing Mocha</td>
+                    <td>Developers use <strong>test frameworks</strong> to organize and automate tests that provide useful feedback when errors occur.
+                        <br>
+                        <br><ul>
+                                <li><strong>Node</strong> allows you to run JavaScript in the terminal</li>
+                                <li><strong>npm</strong> is a Node tool that allows you to download packages from the web, and manage them in a JavaScript project</li>
+                                <li><strong>Mocha</strong> is one of those packages and is used to test other JavaScript code</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>npm init</td>
+                    <td>In Git Bash, this command creates a file <strong>package.json</strong> that can be used to manage packages for the project. After running this command you will be prompted to enter information about your project. It’s okay to skip some fields if you’re not ready to enter that information.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>$ npm install mocha -D</td>
+                    <td>With your project setup, you can install packages. Here’s what this command means:
+                        <br>
+                        <br><ul>
+                                <li>npm install tells npm to install a package from the internet and any other packages it depends on</li>
+                                <li>mocha is the package you want to download</li>
+                                <li>-D signifies that this package is a development dependency and will show up under the devDependecies section in package.json. This means that the package will only be included in development mode and will not be included in the production bundle.</li>
+                            </ul>
+                        <br>Once you npm install packages, you can find the packages and all their dependencies in the node_modules folder. The new directory structure contains the following:
+                        <br>
+                        <br>project
+                        <br>|_ node_modules
+                        <br>|___ .bin
+                        <br>|___ mocha
+                        <br>|___ ...
+                        <br>|_ package.json
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Running Mocha</td>
+                    <td>The first (and more tedious) method is to <strong>call it directly from node_modules</strong>:
+                        <br>
+                        <br><strong>$ ./node_modules/mocha/bin/mocha</strong>
+                        <br>
+                        <br>The second (and recommended) method is to <strong>add a script to package.json.</strong> In the scripts object in package.json, set the value of "test" to mocha. It should look like this:
+                        <br>
+                        <br><strong>"scripts": {
+                        <br>&emsp;"test": "mocha"
+                        <br>}</strong>
+                        <br>
+                        <br>Now you can call Mocha with the following command: <strong>$ npm test</strong>. Instead of manually running each test in the test directory, you can use this command to run the full test suite automatically.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"><img src="Images\describe and it functions.png" alt="image of describe and it block code example" class="example-img"></td>
+                    <td>describe and it blocks</td>
+                    <td>In Mocha we <strong>group tests using the describe function</strong> and <strong>define tests using the it function</strong>. These two functions can be used to make your test suite complete, maintainable, and expressive in the following ways:
+                        <br>
+                        <br><ul>
+                                <li>Structure your test suite: you can organize tests into nested groups that reflect the structure of your implementation code.</li>
+                                <li>Provide informative messages: you can define your tests using human-readable strings.</li>
+                            </ul>
+                        <br>Both the <strong>describe</strong> and <strong>it</strong> functions <strong>accept two parameters: a descriptive string and a callback function</strong>. Though the functions are flexible, they are commonly used in the structure above: nest describe blocks to resemble the structure of your implementation code and write individual tests in it blocks.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const assert = require('assert');
+                        <br>
+                        <br>assert.ok(a === 3);
+                    </td>
+                    <td>assert</td>
+                    <td>To write the tests themselves, we can use the <strong>assert.ok()</strong> method provided by Node.js. <strong>assert.ok()</strong> allows you to compare values and throw errors as needed using one function call.
+                        <br>
+                        <br>As a Node module, <strong>assert can be imported at the top of your files with const assert = require('assert');</strong> You call assert functions in an <strong>it block</strong> like this: <strong>assert.ok(a === 3);</strong> If an argument passed to assert.ok() evaluates to false, an <em>AssertionError</em> is thrown.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Testing Phases</td>
+                    <td>The phases of a test are defined as follows:
+                        <br>
+                        <br><ul>
+                                <li><strong>Setup:</strong> create objects, variables, and set conditions that your test depends on</li>
+                                <li><strong>Execute:</strong> execute the functionality you are testing</li>
+                                <li><strong>Verify:</strong> check your expectations against the result of the exercise phase. You can use the assert library here</li>
+                                <li><strong>Teardown:</strong> adding a teardown step to the end of a test resets the environment before the next test runs. This prevents changes to the environment from one test affecting the environment for the next test.</li>
+                            </ul>
+                        <br>While execution and verification are unique to each test, setup and teardown are often similar or even identical for multiple tests within a test suite.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Teardown</td>
+                    <td>In most situations, we will need to write many tests for a particular feature that get executed in succession. Running multiple tests can introduce issues if the tests make changes to the testing environment: changes to the environment in one test might affect the next test. Some common changes to an environment include:
+                        <br>
+                        <br><ul>
+                                <li>altering files and directory structure</li>
+                                <li>changing read and write permissions on a file</li>
+                                <li>editing records in a database</li>
+                            </ul>
+                        <br>To address this issue, we often add a <strong>teardown</strong> step to the end of our tests (e.g. the it function). The teardown phase makes our tests isolated by resetting the environment before the next test runs.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>fs.appendFileSync(path, str)</td>
+                    <td>In the Git Bash terminal, this creates a new file at path with the string str as content. If a file at path exists, the string str will be appended to the end.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>fs.readFileSync(path)</td>
+                    <td>Returns the contents of the file found at path.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">describe...
+                        <br>
+                        <br>let testValue;
+                        <br>
+                        <br>beforeEach(() => {
+                        <br>&emsp;testValue = 5;
+                        <br>});
+                        <br>
+                        <br>it...
+                    </td>
+                    <td>Hooks</td>
+                    <td>The Mocha test framework provides functions that enable us to reduce repetition, simplify the scope of each test, and more finely control the execution of our tests.
+                        <br>
+                        <br><ul>
+                                <li><strong>beforeEach(callback)</strong> callback is run before each test</li>
+                                <li><strong>afterEach(callback)</strong> callback is run after each test</li>
+                                <li><strong>before(callback)</strong> callback is run before the first test (useful for separating out the setup steps of your tests)</li>
+                                <li><strong>after(callback)</strong> callback is run after the last test (useful for separating out the teardown steps of your tests.)</li>
+                            </ul>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -2046,7 +2211,7 @@
                     <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors" target="_blank">List of errors</a></td>
                 </tr>
                 <tr>
-                    <td class="vocab"><img class="error-stack-trace-img" src="C:/Software/Projects/0_Ethan's Code Cheat Sheet/Ethan's Code Cheat Sheet/Images/Screenshot 2023-11-19 215136.png" alt="Img Unavailable"></td>
+                    <td class="vocab"><img class="example-img" src="C:/Software/Projects/0_Ethan's Code Cheat Sheet/Ethan's Code Cheat Sheet/Images/Screenshot 2023-11-19 215136.png" alt="Img Unavailable"></td>
                     <td>Error Stack Traces</td>
                     <td>Errors: big red text. A piece of software, called a <em>compiler</em>, is trying to translate your code so that your computer can understand and run it. However, the compiler is coming across a piece of code that it can’t interpret. As a result, it throws an error back to you to let you know that it has to stop and why. This information is logged as an <strong>error stack trace</strong> — a printed message containing information about where the error occurred, what type of error was thrown, and a description of the error.</td>
                 </tr>
