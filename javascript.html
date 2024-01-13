@@ -1883,7 +1883,7 @@
                         <br>&lt;script type="module" src="./secret-messages.js"&gt;&lt;/script&gt;
                     </td>
                     <td>ES6 Named Import Syntax (browser)</td>
-                    <td>This line of code is written at the beginning of the js file (before the variables and functions that require the imported code). In the path, starting with <strong>../</strong> indicates that the modules/ folder is in the same folder as the parent folder.
+                    <td>This line of code is written at the beginning of the js file (before the variables and functions that require the imported code). In the path, starting with ./ indicates that the modules file is in the same parent folder as the current js file.
                         <br>
                         <br>You must also modify your html file, by adding the attribute <strong>type='module'</strong> to the &lt;script&gt; element. Failure to do so can cause some browsers to throw an error.
                     </td>
@@ -1917,6 +1917,116 @@
             </tbody>
         </table>
 
+        <!-- Testing -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Testing</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Error Handling -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Error Handling</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Error Handling</td>
+                    <td>Error handling is the process of programmatically anticipating and addressing errors.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">console.log(Error('Your password is too weak.'));
+                        <br>// Prints: Error: Your password is too weak.
+                        <br>
+                        <br>console.log(new Error('Your password is too weak.'));
+                    </td>
+                    <td>Error Function</td>
+                    <td>Let’s say we need to inform a user that a string passed in as an argument is too short with a custom message. Such a message isn’t covered by a built-in error, but we could use the Error function to make our own error object with a message that is unique to our program!
+                        <br>
+                        <br>The Error function takes an argument of a string which becomes the value of the error’s message property. You might also see errors created with the new keyword.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">throw Error('Something wrong happened');
+                        <br>// Error: Something wrong happened
+                    </td>
+                    <td>throw</td>
+                    <td>Creating an error doesn’t cause our program to stop — remember, an error must be thrown for it to halt the program.
+                        <br>
+                        <br>To throw an error in JavaScript, we use the <strong>throw</strong> keyword. When we use the throw keyword, the error is thrown and code after the throw statement will not execute.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">try {
+                        <br>&emsp;throw Error('This error will get caught');
+                        <br>} catch (e) {
+                        <br>&emsp;console.log(e);
+                        <br>}
+                        <br>// Prints: This error will get caught</td>
+                    <td>try...catch</td>
+                    <td>In JavaScript, we use try...catch statements to anticipate and handle errors. <strong>These statements allow our program to keep running despite the error.</strong>
+                        <br>
+                        <br><ul>
+                                <li>We have code that follows try inside curly braces {} known as the try block.</li>
+                                <li>Inside the try block we insert code that we anticipate might throw an error.</li>
+                                <li>Since we want to see what happens if an error is thrown in the try block, we throw an error with the message 'This error will get caught'.</li>
+                                <li>Following the try block is the catch statement which accepts the thrown error from the try block . <strong>The e represents the thrown error</strong>.</li>
+                                <li>The curly braces that follow catch(e) is known as the catch block and contains code that executes to handle the error.</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const someVar = 'Cannot be reassigned';
+                        <br>try {
+                        <br>&emsp;someVar = 'Still going to try';
+                        <br>} catch(e) {
+                        <br>&emsp;console.log(e);
+                        <br>}
+                        <br>
+                        <br>// Prints: TypeError: Assignment to constant variable.</td>
+                    <td>Handling with try...catch</td>
+                    <td>We can also use a try...catch statement <strong>to handle built-in errors</strong> that are thrown by the JavaScript engine that is reading and evaluating our code. Using a try...catch statement for built-in JavaScript errors is really beneficial when we need to use data from an external source that’s not written directly in our program. Let’s say we expect to grab an array from a database but the information we get back is a string. In our program, we could have a function that only works on arrays. If that function was called with a string instead of an array we would get an error and our program would stop running!</td>
+                </tr>
+            </tbody>
+        </table>
+
         <!-- Debugging JavaScript -->
         <table>
             <thead>
@@ -1939,6 +2049,11 @@
                     <td class="vocab"><img class="error-stack-trace-img" src="C:/Software/Projects/0_Ethan's Code Cheat Sheet/Ethan's Code Cheat Sheet/Images/Screenshot 2023-11-19 215136.png" alt="Img Unavailable"></td>
                     <td>Error Stack Traces</td>
                     <td>Errors: big red text. A piece of software, called a <em>compiler</em>, is trying to translate your code so that your computer can understand and run it. However, the compiler is coming across a piece of code that it can’t interpret. As a result, it throws an error back to you to let you know that it has to stop and why. This information is logged as an <strong>error stack trace</strong> — a printed message containing information about where the error occurred, what type of error was thrown, and a description of the error.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Runtime Errors</td>
+                    <td>When we execute code and a line of code throws an error, that error is referred to as a runtime error. In JavaScript, there are built-in error objects that have a name and message property which tell us what went wrong (see below).</td>
                 </tr>
                 <tr>
                     <td class="vocab"></td>
