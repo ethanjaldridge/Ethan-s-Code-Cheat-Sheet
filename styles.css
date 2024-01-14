@@ -156,6 +156,11 @@ a:hover {
     height: 11rem;
 }
 
+.example-img-tall {
+    width: 20rem;
+    height: 15rem;
+}
+
 /* Git */
 
 .git-log-example {

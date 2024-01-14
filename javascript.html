@@ -574,7 +574,7 @@
                         <br>// Evaluates to true
                     </td>
                     <td>Comparison Operators</td>
-                    <td>When writing conditional statements, sometimes we need to use different types of operators to compare values. These operators are called <em>comparison operators</em>. Comparison operators compare the value on the left with the value on the right. All comparison statements evaluate to either true or false and are made up of: two values that will be compared, and an operator that separates the values and compares them accordingly (&gt;, &lt;, &lt;=, &gt;=, ===, !==).</td>
+                    <td>When writing conditional statements, sometimes we need to use different types of operators to compare values. These operators are called <em>comparison operators</em>. Comparison operators compare the value on the left with the value on the right. All comparison statements evaluate to either true or false and are made up of: two values that will be compared, and an operator that separates the values and compares them accordingly (&gt;, &lt;, &lt;=, &gt;=, ===, !==). Note that "==" indicates <em>loose equality</em>.</td>
                 </tr>
                 <tr>
                     <td class="vocab">if (stopLight === 'green' && pedestrians === 0) {
@@ -2039,7 +2039,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="vocab"><img src="Images\describe and it functions.png" alt="image of describe and it block code example" class="example-img"></td>
+                    <td class="vocab"><img src="./Images/describe and it functions.png" alt="image of describe and it block code example" class="example-img"></td>
                     <td>describe and it blocks</td>
                     <td>In Mocha we <strong>group tests using the describe function</strong> and <strong>define tests using the it function</strong>. These two functions can be used to make your test suite complete, maintainable, and expressive in the following ways:
                         <br>
@@ -2048,17 +2048,6 @@
                                 <li>Provide informative messages: you can define your tests using human-readable strings.</li>
                             </ul>
                         <br>Both the <strong>describe</strong> and <strong>it</strong> functions <strong>accept two parameters: a descriptive string and a callback function</strong>. Though the functions are flexible, they are commonly used in the structure above: nest describe blocks to resemble the structure of your implementation code and write individual tests in it blocks.
-                    </td>
-                </tr>
-                <tr>
-                    <td class="vocab">const assert = require('assert');
-                        <br>
-                        <br>assert.ok(a === 3);
-                    </td>
-                    <td>assert</td>
-                    <td>To write the tests themselves, we can use the <strong>assert.ok()</strong> method provided by Node.js. <strong>assert.ok()</strong> allows you to compare values and throw errors as needed using one function call.
-                        <br>
-                        <br>As a Node module, <strong>assert can be imported at the top of your files with const assert = require('assert');</strong> You call assert functions in an <strong>it block</strong> like this: <strong>assert.ok(a === 3);</strong> If an argument passed to assert.ok() evaluates to false, an <em>AssertionError</em> is thrown.
                     </td>
                 </tr>
                 <tr>
@@ -2119,6 +2108,106 @@
                                 <li><strong>after(callback)</strong> callback is run after the last test (useful for separating out the teardown steps of your tests.)</li>
                             </ul>
                     </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Expressive Testing</td>
+                    <td>An expressive test is easy to read and descriptive. One way to make a test more expressive is clarifying its verify phase — the step where expected outcome is compared to actual outcome. Node.js provides a library called <strong>assert</strong> with methods that help you write more expressive verification code. You can use the methods in this library in place of conditional statements to write less code and use human-readable language. It can be used within the Mocha testing framework.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>const assert = require('assert');</td>
+                    <td>As a Node module, this function can import assert at the top of your JS files.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"><img src="./Images/assert.png" alt="" class="example-img-tall">
+                    </td>
+                    <td>assert.ok()</td>
+                    <td>To write the tests themselves (specifically the verify phase), we can use the <strong>assert.ok()</strong> method provided by Node.js. <strong>assert.ok()</strong> allows you to compare values and throw errors as needed using one function call.
+                        <br>
+                        <br>You call assert functions in an <strong>it block</strong> like this: <strong>assert.ok(a === 3);</strong> If an argument passed to assert.ok() evaluates to false, an <em>AssertionError</em> is thrown. The error communicates to Mocha that a test has failed, and Mocha logs the error message to the console. 
+                        <br>
+                        <br>In the example, it is common practice to pass result first and expected second.
+                        <br>
+                        <br><a href="https://nodejs.org/api/assert.html" target="_blank">Functions in the assert library</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">assert.ok(5 == '5');
+                        <br>
+                        <br>assert.equal(5, '5'); //OK
+                    </td>
+                    <td>assert.equal()</td>
+                    <td>Performs a == (loose equality) comparison. The examples each produce the same result. The second line is more expressive: instead of parsing the entire statement, a reader only needs to read the first two words to know the test is verifying equality!</td>
+                </tr>
+                <tr>
+                    <td class="vocab">assert.strictEqual(5, 5); //OK</td>
+                    <td>assert.strictEqual()</td>
+                    <td>Performs a === (strict equality) comparison. July 2021 Update: <strong>the assert documentation recommends always using assert.strictEqual() instead of assert.equal()</strong>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">const a = {number: 5};
+                        <br>const b = {number: 5};
+                        <br>
+                        <br>assert.deepEqual(a,b); //OK
+                    </td>
+                    <td>assert.deepEqual()</td>
+                    <td>Performs a == (loose equality) <strong>comparison of the values</strong> within two objects. Arrays are also objects, so deepEqual() also compares their values with loose equality. Different objects with identicle properties are not considered equal when using either loose or strict equality in JavaScript.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">assert.notStrictEqual(1, 2); //OK
+                        <br>
+                        <br>assert.notStrictEqual(1, '1'); //OK
+                    </td>
+                    <td>assert.notStrictEqual()</td>
+                    <td>Performs a !=== (strict inequality) comparison.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">assert.throws(() => {}, expected);</td>
+                    <td>assert.throws()</td>
+                    <td>Indicates whether a function returns a specific error (expected). The first parameter is an anonymous function, and the second parameter is the expected error.</td>
+                </tr>
+                <tr>
+                    <td class="vocab">Write test code that fails
+                        <br>
+                        <br>Write implementation code so the test passes
+                        <br>
+                        <br>Consider refactoring the code
+                    </td>
+                    <td>The Red-Green-Refactor Cycle</td>
+                    <td>One of the driving forces of TDD is the red-green-refactor cycle. “Red” and “green” correspond to the color of the text that our test framework produces in the terminal while running the tests in our suite. Red signifies failing tests and green corresponds to passing tests.
+                        <br>
+                        <br><ul>
+                                <li><strong>Red:</strong> write tests that describe the intended behavior of implementation code, and then compare developer expectations with the actual results of implementation code. The tests should always fail at first because the implementation code for the desired behavior will be written in response to the failing test.</li>
+                                <li><strong>Green:</strong> write just enough implementation code to make the test pass. The tests return green because the implementation code executes the intended behavior described by the test in the red phase.</li>
+                                <li><strong>Refactor:</strong> clean up and optimize code following the characteristics of a good test. Refactoring involves actively considering test and implementation code and making revisions to the code base. The tests are passing and should continue to pass throughout this phase of the cycle.</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
