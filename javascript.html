@@ -2127,9 +2127,11 @@
                         <br>
                         <br>You call assert functions in an <strong>it block</strong> like this: <strong>assert.ok(a === 3);</strong> If an argument passed to assert.ok() evaluates to false, an <em>AssertionError</em> is thrown. The error communicates to Mocha that a test has failed, and Mocha logs the error message to the console. 
                         <br>
-                        <br>In the example, it is common practice to pass result first and expected second.
+                        <br>In the example, it is common practice to <strong>pass result first and expected second</strong>.
                         <br>
                         <br><a href="https://nodejs.org/api/assert.html" target="_blank">Functions in the assert library</a>
+                        <br>
+                        <br><a href=https://www.chaijs.com/guide/ target="_blank">chai.js assertion library</a>
                     </td>
                 </tr>
                 <tr>
@@ -2178,16 +2180,16 @@
                     <td>One of the driving forces of TDD is the red-green-refactor cycle. “Red” and “green” correspond to the color of the text that our test framework produces in the terminal while running the tests in our suite. Red signifies failing tests and green corresponds to passing tests.
                         <br>
                         <br><ul>
-                                <li><strong>Red:</strong> write tests that describe the intended behavior of implementation code, and then compare developer expectations with the actual results of implementation code. The tests should always fail at first because the implementation code for the desired behavior will be written in response to the failing test.</li>
-                                <li><strong>Green:</strong> write just enough implementation code to make the test pass. The tests return green because the implementation code executes the intended behavior described by the test in the red phase.</li>
-                                <li><strong>Refactor:</strong> clean up and optimize code following the characteristics of a good test. Refactoring involves actively considering test and implementation code and making revisions to the code base. The tests are passing and should continue to pass throughout this phase of the cycle.</li>
+                                <li><strong>Red:</strong> write tests that describe the intended behavior of implementation code <strong>(describe and it block)</strong>, and then compare developer expectations with the actual results of implementation code <strong>(assert statement)</strong>. The tests should always fail at first because the implementation code for the desired behavior will be written in response to the failing test.</li>
+                                <li><strong>Green:</strong> write <strong>just enough implementation code to make the test pass</strong>. The tests return green because the implementation code executes the intended behavior described by the test in the red phase.</li>
+                                <li><strong>Refactor:</strong> clean up and optimize code following the characteristics of a good test <strong>(add setup, execute, verify, teardown)</strong>. Refactoring involves actively considering test and implementation code and making revisions to the code base. The tests are passing and should continue to pass throughout this phase of the cycle.</li>
                             </ul>
                     </td>
                 </tr>
                 <tr>
                     <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
+                    <td>Edge Case</td>
+                    <td>An edge case is a problem or situation that occurs only at an extreme (maximum or minimum) operating parameter — you can think of these as special cases that you need to account for (number instead of string).</td>
                 </tr>
                 <tr>
                     <td class="vocab"></td>
