@@ -2193,18 +2193,27 @@
                 </tr>
                 <tr>
                     <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
+                    <td>Code Coverage</td>
+                    <td>The metric that <strong>measures the percentage of how many lines of code have been tested</strong>. For example, if 90% of our code has been executed in our tests, then we would say that we have “90% code coverage”. Some key criteria to use when measuring code coverage include:
+                        <br>
+                        <br><ul>
+                                <li><strong>Function Coverage:</strong> Has each function been called?</li>
+                                <li><strong>Statement Coverage:</strong> Has each statement been executed? (e.g. return)</li>
+                                <li><strong>Path Coverage:</strong> Has every edge in the control-flow graph been executed? (e.g. if, else)</li>
+                                <li><strong>Condition Coverage:</strong> Has each boolean sub-expression evaluated to be both true and false?</li>
+                            </ul>
+                        <br>Having 100% code coverage does not guarantee bug-free code – it simply validates the completeness of our tests using a given set of criteria relative to other test suites with lower code coverage.
+                    </td>
                 </tr>
                 <tr>
                     <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
+                    <td>Test Coverage</td>
+                    <td>Test coverage differs from code coverage in that test coverage <strong>measures the percentage of the required features/specs that are tested</strong>, as opposed to the percentage of lines executed. These features/specs are typically defined in a requirements document provided by a client or product designer.</td>
                 </tr>
                 <tr>
                     <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
+                    <td>Mocking in Tests</td>
+                    <td>Mocking is the process of <strong>creating a fake version of an external service for testing purposes</strong>, particularly in unit tests and integration tests. Mocking is effective in testing individual units of code without relying on the functionality of other services or units such as APIs or databases. By removing dependencies, we are limiting the sources of potential bugs and unintended results to just the feature being tested. This is also known as <strong>stubbing</strong>. While it’s helpful to use mocks in unit tests, we should avoid using mocks in integration tests to better simulate interactions between internal services (though external services should remain mocked).</td>
                 </tr>
                 <tr>
                     <td class="vocab"></td>
