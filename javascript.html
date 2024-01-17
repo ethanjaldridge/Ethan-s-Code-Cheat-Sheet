@@ -366,9 +366,111 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="vocab"></td>
+                    <td class="vocab"><img src="./Images/event loop js.png" alt="diagram illustrating the event loop" class="example-img-tall"></td>
                     <td>Event Loop</td>
-                    <td>JavaScript is a single-threaded language, which means that two statements can’t be executed simultaneously. For example, if you have a for loop that takes a while to process, it’ll have to finish executing before the rest of your code runs. That results in blocking code. But as we already learned, we can run non-blocking code in JavaScript, which is where the Event Loop comes in. <strong>Input/output (I/O) is handled with events and callbacks so code execution can continue</strong>.</td>
+                    <td>At a high level, the event loop is a system for managing code execution. Input/output (I/O) is handled with events and callbacks so code execution can continue. We have data structures that we call the <strong>heap</strong> and the <strong>call stack</strong>, which are part of the JavaScript engine. The heap and call stack interact with <strong>Node and Web APIs</strong>, which pass messages back to the stack via an <strong>event queue</strong>. The event queue’s interaction with the call stack is managed by an <strong>event loop</strong>. All together, those parts maintain the order of code execution when we run asynchronous functions.
+                        <br>
+                        <br><ul>
+                                <li>First the event loop will poll the stack to see if it is empty.</li>
+                                <li>It will add the first waiting message.</li>
+                                <li>It will repeat steps 1 and 2 until the stack has cleared.</li>
+                            </ul>
+                        <br>Using things like asynchronous callbacks, and methods like setTimeout() and setInterval(), JavaScript is still single-threaded, but the event loop is enabling something called <strong>concurrency</strong>.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Concurrency</td>
+                    <td>Two or more procedures are executed at the same time on the same shared resources. Since JavaScript is single-threaded, we’ll never have that flavor of “true” concurrency.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>The Heap</td>
+                    <td>The heap is a block of memory where we store objects in an unordered manner. JavaScript variables and objects that are currently in use are stored in the heap.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>The Call Stack</td>
+                    <td>The stack, or call stack, tracks what function is currently being run in your code.
+                        <br>
+                        <br>When you invoke a function, a <strong>frame</strong> is added to the stack. Frames connect that function’s arguments and local variables from the heap. Frames enter the stack in a last in, first out (LIFO) order.
+                        <br>
+                        <br>When you first initiate a program, the global execution context is added to the call stack, which contains the global variable and lexical environment. Each subsequent frame for a called function has a function execution context that includes the function’s lexical and variable environment.
+                        <br>
+                        <br>So when we say the call stack tracks what function is currently being run in our code, what we are tracking is the current execution context. When a function runs to completion, it is popped off of the call stack. The memory, or the frame, is cleared.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>The Event Queue</td>
+                    <td>The event queue is a <strong>list of messages corresponding to functions that are waiting to be processed</strong>. In the diagram, these messages are entering the event queue from sources such as various web APIs or async functions that were called and are returning additional events to be handled by the stack. Messages enter the queue in a first in, first out (FIFO) order. No code is executed in the event queue; instead, it holds functions that are waiting to be added back into the stack.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Promise</td>
+                    <td>Promises are objects that represent the eventual outcome of an asynchronous operation. A <strong>Promise object</strong> can be in one of three states:
+                        <br>
+                        <br><ul>
+                                <li><strong>Pending:</strong> The initial state— the operation has not completed yet.</li>
+                                <li><strong>Fulfilled:</strong> The operation has completed successfully and the promise now has a resolved value. For example, a request’s promise might resolve with a JSON object as its value.</li>
+                                <li><strong>Rejected:</strong> The operation has failed and the promise has a reason for the failure. This reason is usually an Error of some kind.</li>
+                            </ul>
+                        <br>We refer to a promise as settled if it is no longer pending— it is either fulfilled or rejected.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const executorFunction = (resolve, reject) => {
+                        <br>&emsp;if (someCondition) {
+                        <br>&emsp;&emsp;resolve('I resolved!');
+                        <br>&emsp;} else {
+                        <br>&emsp;&emsp;reject('I rejected!'); 
+                        <br>&emsp;} 
+                        <br>}
+                        <br>
+                        <br>const myFirstPromise = new Promise(executorFunction);
+                    </td>
+                    <td>Constructing a Promise</td>
+                    <td>To create a new Promise object, we use the <strong>new</strong> keyword and the <strong>Promise</strong> constructor method. The Promise constructor method takes a function parameter called the <strong>executorFunction</strong> which runs automatically when the constructor is called. The executor function generally starts an asynchronous operation and dictates how the promise should be settled.
+                        <br>
+                        <br>The <strong>executorFunction</strong> has two function parameters, usually referred to as the <strong>resolve()</strong> and <strong>reject()</strong> functions. The resolve() and reject() functions <strong>aren’t defined by the programmer</strong>. When the Promise constructor runs, JavaScript will pass its own resolve() and reject() functions into the executor function.
+                        <br>
+                        <br><ul>
+                                <li><strong>resolve()</strong> is a function with one argument. Under the hood, if invoked, resolve() will change the promise’s status from pending to fulfilled, and the promise’s resolved value will be set to the argument passed into resolve().</li>
+                                <li><strong>reject()</strong> is a function that takes a reason or error as an argument. Under the hood, if invoked, reject() will change the promise’s status from pending to rejected, and the promise’s rejection reason will be set to the argument passed into reject().</li>
+                            </ul>
+                        <br>In practice, promises settle based on the results of asynchronous operations. For example, a database request may fulfill with the data from a query or reject with an error thrown. Most of the time, knowing how to consume, or use, promises will be key. Rather than constructing promises, you’ll be handling Promise objects returned to you as the result of an asynchronous operation. These promises will start off pending but settle eventually.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Consuming Promises</td>
+                    <td>The initial state of an asynchronous promise is <strong>pending</strong>, but we have a guarantee that it will settle. How do we tell the computer what should happen then? Promise objects come with an aptly named <strong>.then()</strong> method. It allows us to say, “I have a promise, when it settles, then here’s what I want to happen…”
+                        <br>
+                        <br><strong>.then()</strong> is a higher-order function— it takes two callback functions as arguments. We refer to these callbacks as handlers. When the promise settles, the appropriate handler will be invoked with that settled value. We can invoke .then() with one, both, or neither handler! This allows for flexibility, but it can also make for tricky debugging. If the appropriate handler is not provided, instead of throwing an error, .then() will just return a promise with the same settled value as the promise it was called on.
+                        <br>
+                        <br><ul>
+                                <li>The first handler, sometimes called <strong>onFulfilled</strong>, is a <em>success handler</em>, and it should contain the logic for the promise resolving.</li>
+                                <li>The second handler, sometimes called <strong>onRejected</strong>, is a <em>failure handler</em>, and it should contain the logic for the promise rejecting.</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"><img src="./Images/.then promise.png" alt="image of the .then promise code" class="example-img"></td>
+                    <td>Success and Failure Callback Functions</td>
+                    <td>To handle a “successful” promise, or a promise that resolved, we invoke .then() on the promise, passing in a success handler callback function.
+                        <br>
+                        <br>With typical promise consumption, we won’t know whether a promise will resolve or reject, so we’ll need to provide the logic for either case. We can pass both a success callback and a failure callback to .then().
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td class="vocab"></td>
