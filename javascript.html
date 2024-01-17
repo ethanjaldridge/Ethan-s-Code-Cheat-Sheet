@@ -323,6 +323,71 @@
             </tbody>
         </table>
 
+        <!-- Asynchronous JS -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Asynchronous JS</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Synchronous Code</td>
+                    <td>Executes in sequential order — it starts with the code at the top of the file and executes line by line until it gets to the end of the file. This type of behavior is known as <strong>blocking</strong> (or blocking code) since each line of code cannot execute until the previous line finishes.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Asynchronous Code</td>
+                    <td>Can be executed in parallel to other code that is already running. Without the need to wait for other code to finish before executing, our apps can save time and be more efficient. This type of behavior is considered <strong>non-blocking</strong>.
+                        <br>
+                        <br>For most programming languages, the ability to execute asynchronous code depends on the number of <strong>threads</strong> that an app has access to. We can think of a thread as a resource that a computer provides an app to do a task. Typically one thread allows for an app to complete one task.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">Event Listeners
+                        <br>
+                        <br>setTimeout(() => {
+                        <br>&emsp;console.log('Delay the printing of this string, please.');
+                        <br>}, 1000);
+                        <br>
+                        <br>setInterval(() => {
+                        <br>&emsp;alert('Are you paying attention???')
+                        <br>}, 300000);
+                    </td>
+                    <td>JavaScript and Asynchronous Code</td>
+                    <td>JavaScript is a <strong>single-threaded language</strong>. This means it has a single thread that can carry out one task at a time. However, Javascript has what is known as the <strong>event loop</strong>, a specific design that allows it to perform asynchronous tasks even while only using a single thread.
+                        <br>
+                        <br><ul>
+                                <li><strong>Asynchronous Callbacks:</strong> a type of callback function that executes after a specific condition is met and runs concurrently to any other code currently running.</li>
+                                <li><strong>setTimeout()</strong> tells our JavaScript program to wait a minimum amount of time before executing its callback function. Takes 2 arguments, a callback function and a number specifying how long to wait before executing the function (in milliseconds).</li>
+                                <li><strong>setInterval()</strong> takes a callback function and a number specifying how often the callback function should execute.</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Event Loop</td>
+                    <td>JavaScript is a single-threaded language, which means that two statements can’t be executed simultaneously. For example, if you have a for loop that takes a while to process, it’ll have to finish executing before the rest of your code runs. That results in blocking code. But as we already learned, we can run non-blocking code in JavaScript, which is where the Event Loop comes in. <strong>Input/output (I/O) is handled with events and callbacks so code execution can continue</strong>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
         <!-- Terminology -->
         <table>
             <thead>
@@ -1932,7 +1997,7 @@
                         <br>
                         <br><strong>The process for testing is as follows: write code changes, make pull request, run test(s), fix code, repeat until test passes, merge the pull request.</strong>
                         <br>
-                        <br><a href="https://www.codecademy.com/article/tdd-u1-good-test">The characteristics of a good test:</a> fast, complete, reliable, isolated, maintainable, and expressive.
+                        <br><a href="https://www.codecademy.com/article/tdd-u1-good-test" target="_blank">The characteristics of a good test:</a> fast, complete, reliable, isolated, maintainable, and expressive.
                     </td>
                 </tr>
                 <tr>
@@ -2217,8 +2282,18 @@
                 </tr>
                 <tr>
                     <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
+                    <td>Sinon.js</td>
+                    <td><strong>A JavaScript library that includes standalone fakes, spies, and mocks that can be used in any unit testing framework.</strong> <a href="https://sinonjs.org/releases/latest/spies/" target="_blank">Sinon.js spies documentation</a></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Spy</td>
+                    <td><strong>A function that observes and records information about another function’s calls</strong> including arguments, return value, the <strong>this</strong> value, and exceptions thrown (if any). The information that is observed by the spy can then be used in assertions for testing.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"><img src="./Images/sinon.spy.png" alt="image of sinon.spy code example" class="example-img-tall"></td>
+                    <td>How to Spy</td>
+                    <td>Many ways including anonymous functions and wrapping around a method. The <strong>sinon.spy()</strong> method is used to wrap the method in the example. To ensure that the method returns to its original, un-spied-on state, we use the <strong>.restore()</strong> method.</td>
                 </tr>
             </tbody>
         </table>
