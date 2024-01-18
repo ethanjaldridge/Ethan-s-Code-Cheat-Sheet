@@ -408,7 +408,7 @@
                 <tr>
                     <td class="vocab"></td>
                     <td>Promise</td>
-                    <td>Promises are objects that represent the eventual outcome of an asynchronous operation. A <strong>Promise object</strong> can be in one of three states:
+                    <td><strong>Promises are objects that represent the eventual outcome of an asynchronous operation</strong>. A Promise object can be in one of three states:
                         <br>
                         <br><ul>
                                 <li><strong>Pending:</strong> The initial state— the operation has not completed yet.</li>
@@ -459,8 +459,57 @@
                     <td>Success and Failure Callback Functions</td>
                     <td>To handle a “successful” promise, or a promise that resolved, we invoke .then() on the promise, passing in a success handler callback function.
                         <br>
-                        <br>With typical promise consumption, we won’t know whether a promise will resolve or reject, so we’ll need to provide the logic for either case. We can pass both a success callback and a failure callback to .then().
+                        <br>With typical promise consumption, we won’t know whether a promise will resolve or reject, so we’ll need to provide the logic for either case. We can pass both a success callback and a failure callback to .then(). To abide by the separation of concerns, use 2 different then() statements, one for success and one for failure.
                     </td>
+                </tr>
+                <tr>
+                    <td class="vocab"><img src="./Images/catch promise.png" alt="an image of catch example code" class="example-img"></td>
+                    <td>catch()</td>
+                    <td>The <strong>.catch()</strong> function takes only <strong>one argument, onRejected</strong>. In the case of a rejected promise, this failure handler will be invoked with the reason for rejection. Using .catch() accomplishes the same thing as using a .then() with only a failure handler.
+                        <br>
+                        <br>In the example, if the promise rejects, .then() will return a promise with the same rejection reason as the original promise and .catch()‘s failure handler will be invoked with that rejection reason.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"><img src="./Images/chaining promises.png" alt="an example of chaining promises in code" class="example-img"></td>
+                    <td>Chaining Multiple Promises</td>
+                    <td>The process of chaining promises together is called <em>composition</em>.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>Avoiding Common Mistakes</td>
+                    <td><ul>
+                            <li>Nesting Promises instead of chaining them: this is ugly and messy to debug.</li>
+                            <li>Forgetting to return a promise: since forgetting to return our promise won’t throw an error, this can be a really tricky thing to debug!</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"><img src="./Images/Promise.all().png" alt="example code using Promise.all()" class="example-img-tall"></td>
+                    <td>Promise.all()</td>
+                    <td>What if we’re dealing with multiple promises, but we don’t care about the order? <strong>Promise.all()</strong> accepts an array of promises as its argument and returns a single promise. That single promise will settle in one of two ways:
+                        <br>
+                        <br><ul>
+                                <li><strong>If every promise in the argument array resolves</strong>, the single promise returned from Promise.all() will resolve with an array containing the resolve value from each promise in the argument array.</li>
+                                <li><strong>If any promise from the argument array rejects</strong>, the single promise returned from Promise.all() will immediately reject with the reason that promise rejected. This behavior is sometimes referred to as <em>failing fast</em>.</li>
+                            </ul>
+                        <br>In the example, Promise.all() contains an array of three promises, which are the returned values from functions.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>async...await</td>
+                    <td>JavaScript is continually improving, and <strong>ES8</strong> provides a new syntax for handling our asynchronous action, <strong>async...await</strong>. The async...await syntax allows us to write asynchronous code that reads similarly to traditional synchronous, imperative programs (new syntax for promises and generators).</td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td class="vocab"></td>
