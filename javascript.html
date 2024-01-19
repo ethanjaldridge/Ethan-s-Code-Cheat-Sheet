@@ -502,19 +502,57 @@
                     <td>JavaScript is continually improving, and <strong>ES8</strong> provides a new syntax for handling our asynchronous action, <strong>async...await</strong>. The async...await syntax allows us to write asynchronous code that reads similarly to traditional synchronous, imperative programs (new syntax for promises and generators).</td>
                 </tr>
                 <tr>
-                    <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
+                    <td class="vocab">async function myFunc() {
+                        <br>&emsp;// Function body here
+                        <br>};
+                        <br>myFunc();
+                        <br>
+                        <br>const myFunc = async () => {
+                        <br>&emsp;// Function body here
+                        <br>};
+                        <br>myFunc();
+                        <br>
+                        <br>async function fivePromise() { 
+                        <br>&emsp;return 5;
+                        <br>}
+                        <br>
+                        <br>fivePromise()
+                        <br>&emsp;.then(resolvedValue => {
+                        <br>&emsp;&emsp;console.log(resolvedValue);
+                        <br>&emsp;})  // Prints 5
+                    </td>
+                    <td>async</td>
+                    <td>The <strong>async</strong> keyword is used to write functions that handle asynchronous actions. We wrap our asynchronous logic inside a function prepended with the async keyword. Then, we invoke that function.
+                        <br>
+                        <br><strong>async functions always return a promise</strong>. This means we can use traditional promise syntax, like .then() and .catch with our async functions. An async function will return in one of three ways:
+                        <br>
+                        <br><ul>
+                                <li>If there’s nothing returned from the function, it will return a promise with a resolved value of undefined.</li>
+                                <li>If there’s a non-promise value returned from the function, it will return a promise resolved to that value.</li>
+                                <li>If a promise is returned from the function, it will simply return that promise</li>
+                            </ul>
+                        <br>
+                        <br>In the third example, even though we return 5 inside the function body, what’s actually returned when we invoke fivePromise() is a promise with a resolved value of 5.
+                    </td>
                 </tr>
                 <tr>
-                    <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
+                    <td class="vocab">async function asyncFuncExample(){
+                        <br>&emsp;let resolvedValue = await myPromise();
+                        <br>&emsp;console.log(resolvedValue);
+                        <br>}
+                        <br>
+                        <br>asyncFuncExample(); // Prints: I am resolved now!
+                    </td>
+                    <td>await</td>
+                    <td><strong>async</strong> functions are almost always used with the additional keyword <strong>await</strong> inside the function body. The <em>await keyword can only be used inside an async function</em>. <strong>await is an operator: it returns the resolved value of a promise</strong>. Since promises resolve in an indeterminate amount of time, await halts, or pauses, the execution of our async function until a given promise is resolved.
+                        <br>
+                        <br>Within our async function, asyncFuncExample(), we use await to halt our execution until myPromise() is resolved and assign its resolved value to the variable resolvedValue.
+                    </td>
                 </tr>
                 <tr>
-                    <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
+                    <td class="vocab"><img src="./Images/async await dependent.png" alt="example of async await code" class="example-img"></td>
+                    <td>Handling Dependent Promises</td>
+                    <td>This async...await example more closely resembles synchronous code, which helps developers maintain and debug their code. The async...await syntax also makes it easy to store and refer to resolved values from promises further back in our chain which is a much more difficult task with native promise syntax.</td>
                 </tr>
                 <tr>
                     <td class="vocab"></td>
