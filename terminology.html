@@ -60,7 +60,120 @@
                 </tr>
                 <tr>
                     <td>API (Application Programming Interface)</td>
-                    <td>A set of defined rules that allow different applications to communicate with each other.</td>
+                    <td>A set of defined rules that allow different applications to communicate with each other. Each API has a specific structure and protocol that we have to follow in order to gain access to its functionality. Some of an API’s specifications relate to making a request for data. After we make a successful API request, the API sends back data. Many APIs format their data using <strong>JavaScript Object Notation (JSON)</strong> which looks like a JavaScript object.
+                        <br>
+                        <br>There are two main categories of web APIs: browser APIs and third-party APIs.
+                        <br>
+                        <br><ul>
+                                <li>Browser APIs are specific to writing code related to browsers and give developers access to information that the browser can also access. One example is the geolocation API which allows the program to know where a user is when accessing our app. This specific API requires that the user grant permissions to the browser to access their geolocation information. There are also browser APIs for audio, cryptography, VR, and much more. To see a comprehensive list of browser APIs and how to interact with them, check out MDN’s documentation of web APIs.</li>
+                                <li>Third-party APIs are apps that provide some type of functionality or information from a third-party, usually a company. For example, we could use the OpenWeather API to get in-depth information about the weather in an area, forecasts, historical weather data, and more! On our own, we wouldn’t even have access to this data and we would certainly not want to write up this code ourselves just for one app!</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>REST (Representational State Transfer)</td>
+                    <td>REST, or REpresentational State Transfer, is <strong>an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other.</strong> REST-compliant systems, often called RESTful systems, are characterized by how they are stateless and separate the concerns of client and server.
+                        <br>
+                        <br>In the REST architectural style, the implementation of the client and the implementation of the server can be done independently without each knowing about the other. This means that <strong>the code on the client side can be changed at any time without affecting the operation of the server, and the code on the server side can be changed without affecting the operation of the client</strong>. As long as each side knows what format of messages to send to the other, they can be kept modular and separate.
+                        <br>
+                        <br>Systems that follow the REST paradigm are <strong>stateless, meaning that the server does not need to know anything about what state the client is in and vice versa</strong>. In this way, both the server and the client can understand any message received, even without seeing previous messages. This constraint of statelessness is enforced through the use of resources, rather than commands. Resources are the nouns of the Web - they describe any object, document, or thing that you may need to store or send to other services. 
+                        <br>
+                        <br>Because REST systems interact through standard operations on resources, they <strong>do not rely on the implementation of interfaces</strong>.
+                        <br>
+                        <br>REST requires that a client make a request to the server in order to retrieve or modify data on the server. <strong>A request generally consists of:</strong>
+                        <br>
+                        <br><ul>
+                                <li>an HTTP verb, which defines what kind of operation to perform</li>
+                                <li>a header, which allows the client to pass along information about the request</li>
+                                <li>a path to a resource</li>
+                                <li>an optional message body containing data</li>
+                            </ul>
+                        <br>There are <strong>4 basic HTTP verbs</strong> we use in requests to interact with resources in a REST system:
+                        <br>
+                        <br><ul>
+                                <li>GET — retrieve a specific resource (by id) or a collection of resources</li>
+                                <li>POST — create a new resource</li>
+                                <li>PUT — update a specific resource (by id)</li>
+                                <li>DELETE — remove a specific resource by id</li>
+                            </ul>
+                        <br><strong>Headers and Accept parameters</strong>
+                        <br>
+                        <br>In the <strong>header</strong> of the request, the <strong>client sends the type of content that it is able to receive from the server</strong>. This is called the <strong>Accept field</strong>, and it <strong>ensures that the server does not send data that cannot be understood or processed by the client</strong>. 
+                        <br>
+                        <br>The options for types of content are <strong>MIME Types</strong> (or Multipurpose Internet Mail Extensions), which you can read more about in the MDN Web Docs. MIME Types consist of a type and a subtype. They are separated by a slash (/). For example, <strong>a text file containing HTML would be specified with the type text/html. CSS = text/css. Generic text file = text/plain. Other types = image, audio, video, application. These also have their own subtypes</strong>. For example, a client accessing a resource with id 23 in an articles resource on a server might send a GET request like this: 
+                        <br>
+                        <br>GET /articles/23
+                        <br>Accept: text/html, application/xhtml
+                        <br>
+                        <br><strong>Paths</strong>
+                        <br>
+                        <br>Requests must contain a path to a resource that the operation should be performed on. In RESTful APIs, paths should be designed to help the client know what is going on. Conventionally, the first part of the path should be the plural form of the resource. This keeps nested paths simple to read and easy to understand. <strong>fashionboutique.com/customers/223/orders/12</strong> we can see that we are accessing the order with id 12 for the customer with id 223. A POST request to the <strong>fashionboutique.com/customers</strong> path would not need an extra identifier (id), as the server will generate an id for the new object. If we are trying to access a single resource, we would need to append an id to the path. 
+                        <br>
+                        <br><strong>Sending Responses</strong>
+                        <br>
+                        <br>In cases where the server is sending a data payload to the client, the server must include a <strong>content-type</strong> in the header of the response. This content-type header field alerts the client to the type of data it is sending in the response body. These content types are MIME Types, just as they are in the accept field of the request header. The content-type that the server sends back in the response should be one of the options that the client specified in the accept field of the request.
+                        <br>
+                        <br><strong>Response Codes</strong>
+                        <br>
+                        <br>Responses from the server contain status codes to alert the client to information about the success of the operation.
+                        <br>
+                        <br><ul>
+                                <li>200 (OK)</li>
+                                <li>201 (CREATED)</li>
+                                <li>204 (NO CONTENT)</li>
+                                <li>400 (BAD REQUEST)</li>
+                                <li>403 (FORBIDDEN)</li>
+                                <li>404 (NOT FOUND)</li>
+                                <li>500 (INTERNAL SERVER ERROR)</li>
+                            </ul>
+                        <br>For each HTTP verb, there are expected status codes a server should return upon success:
+                        <br>
+                        <br><ul>
+                                <li>GET — return 200 (OK)</li>
+                                <li>POST — return 201 (CREATED)</li>
+                                <li>PUT — return 200 (OK)</li>
+                                <li>DELETE — return 204 (NO CONTENT) If the operation fails, return the most specific status code possible corresponding to the problem that was encountered.</li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>JSON (JavaScript Object Notatation)</td>
+                    <td>A popular, language-independent, standard format for storing and exchanging data. Adopted by ECMA International, an industry association founded in 1961 to standardize information and communication systems, JSON has become the de facto standard that <strong>facilitates storing and sending data between all programming languages</strong>.
+                        <br>
+                        <br>JSON is heavily used to facilitate data transfer in web applications between a client, such as a web browser, and a server. A typical example where such data transfer occurs is when you fill out a web form. <strong>The form data is converted from HTML to JavaScript objects to JSON objects and sent to a remote web server for processing</strong>. When companies make their data public for other applications, like Spotify sharing its music library or Google sharing its map data, the information is formatted in JSON. This way, any application, regardless of language, can collect and parse the data.
+                        <br>
+                        <br>Some of the popular web APIs that utilize JSON in data exchanges are:
+                        <br>
+                        <br><ul>
+                                <li>Google Maps</li>
+                                <li>Google Auth 2.0 Authentication</li>
+                                <li>Facebook Social Graph API</li>
+                                <li>Spotify Music Web API</li>
+                                <li>LinkedIn Profile API</li>
+                            </ul>   
+                        <br><strong>JSON Syntax</strong>
+                        <br>
+                        <br><img src="./Images/JSON syntax.png" alt="" class="example-img">
+                        <br>
+                        <br><ul>
+                                <li>The curly braces, {..}, hold objects.</li>
+                                <li>The square brackets, [..], hold arrays.</li>
+                                <li>Data is stored in name-value pairs separated by a colon, :.</li>
+                                <li>Every name-value pair is separated from another pair by a comma, ,. Similarly, every item in an array is delimited by a comma as well. Trailing commas are forbidden.</li>
+                                <li>JSON property names must be in double-quoted (" ") text even though JavaScript names do not hold by this stringency.</li>
+                            </ul>
+                        <br><strong>JSON Data Types</strong>
+                        <br>
+                        <br><ul>
+                                <li>string (double-quoted)</li>
+                                <li>number (integer or floating point)</li>
+                                <li>object (name-value pair)</li>
+                                <li>array (comma-delimited)</li>
+                                <li>boolean (true or false)</li>
+                                <li>null</li>
+                                <li>Dates would appear like this: "2014-01-01T23:28:56.782Z". Every programming language has built-in JSON facilities to convert this string into a more readable and usable format, such as: Wed Jan 01 2014 13:28:56 GMT-1000 (Hawaiian Standard Time).</li>
+                            </ul>
+                    </td>
                 </tr>
                 <tr>
                     <td>Stack</td>
@@ -96,11 +209,19 @@
                 </tr>
                 <tr>
                     <td>HTTP (HyperText Transfer Protocol)</td>
-                    <td>Browsers and servers communicate with each other using the HTTP protocol. The “s” in “https” refers to the secure nature of the data transfer. An HTTP request seeks to retrieve a file written in a given code (e.g. HTML). In most modern browsers, requests are made in parallel (at the same time). Information is displayed as soon as possible.</td>
+                    <td>Browsers and servers communicate with each other using the HTTP protocol. The “s” in “https” refers to the secure nature of the data transfer. In order to support HTTPS, the business must apply for a certificate from a Certificate Authority. An HTTP request seeks to retrieve a file written in a given code (e.g. HTML). In most modern browsers, requests are made in parallel (at the same time). Information is displayed as soon as possible.</td>
+                </tr>
+                <tr>
+                    <td>TCP (Transmission Control Protocol)</td>
+                    <td>The transfer of resources between browsers and servers is managed using TCP (Transmission Control Protocol).</td>
                 </tr>
                 <tr>
                     <td>Get request</td>
-                    <td>Retrieve information from the given server.</td>
+                    <td>Retrieve information from the given server. The GET request for codecademy.com contains the following text:
+                        <br>
+                        <br>GET / HTTP/1.1
+                        <br>Host: www.codecademy.com
+                    </td>
                 </tr>
                 <tr>
                     <td>Post request</td>

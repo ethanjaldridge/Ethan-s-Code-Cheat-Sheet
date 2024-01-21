@@ -23,6 +23,7 @@ h2 {
 
 ul li {
     margin-left: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 ol li {
@@ -35,12 +36,16 @@ ol li {
 
 header {
     background-image: url("./Images/th-3551178132");
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
 }
 
 nav ul {
     list-style: none;
     padding: 1rem;
+}
+
+nav ul li {
+    margin-bottom: 0;
 }
 
 li.headernav [href] {
@@ -58,7 +63,7 @@ li.headernav [href]:hover {
 
 table {
     margin: 0px auto;
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
     border: medium solid rgb(0, 0, 0);
     width: 100%;
 }

@@ -555,24 +555,29 @@
                     <td>This async...await example more closely resembles synchronous code, which helps developers maintain and debug their code. The async...await syntax also makes it easy to store and refer to resolved values from promises further back in our chain which is a much more difficult task with native promise syntax.</td>
                 </tr>
                 <tr>
-                    <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
+                    <td class="vocab"><img src="./Images/async await try catch.png" alt="example code for handling async...await errors" class="example-img-tall"></td>
+                    <td>Handling Errors</td>
+                    <td>With <strong>async...await</strong>, we use <strong>try...catch</strong> statements for error handling. By using this syntax, not only are we able to handle errors in the same way we do with synchronous code, but we can also catch both synchronous and asynchronous errors.</td>
                 </tr>
                 <tr>
-                    <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
+                    <td class="vocab"><img src="./Images/async independent promises.png" alt="example code for async independent promises" class="example-img-tall"></td>
+                    <td>Handling Independent Promises</td>
+                    <td>In the waiting() function, we pause our function until the first promise resolves, then we construct the second promise. Once that resolves, we print both resolved values to the console.
+                        <br>
+                        <br>In our concurrent() function, both promises are constructed without using await. We then await each of their resolutions to print them to the console. <strong>With our concurrent() function both promises’ asynchronous operations can be run simultaneously</strong>.
+                        <br>
+                        <br>Note: if we have multiple truly independent promises that we would like to execute fully in parallel, we must use individual .then() functions and avoid halting our execution with await.
+                    </td>
                 </tr>
                 <tr>
-                    <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td class="vocab"></td>
-                    <td></td>
-                    <td></td>
+                    <td class="vocab"><img src="./Images/Promise.all() independent.png" alt="" class="example-img"></td>
+                    <td>await Promise.all()</td>
+                    <td>Another way to take advantage of concurrency when we have multiple promises which can be executed simultaneously is to await a Promise.all(). <strong>Promise.all() is a good choice if multiple asynchronous tasks are all required, but none must wait for any other before executing.</strong>
+                        <br>
+                        <br>We can pass an array of promises as the argument to <strong>Promise.all(), and it will return a single promise</strong>. This promise will resolve when all of the promises in the argument array have resolved. <strong>This promise’s resolve value will be an array containing the resolved values of each promise from the argument array</strong>.
+                        <br>
+                        <br>In our example, we await the resolution of a Promise.all(). This Promise.all() was invoked with an argument array containing four promises (returned from required-in functions). Next, we loop through our resultArray, and log each item to the console. The first element in resultArray is the resolved value of the asyncTask1() promise, the second is the value of the asyncTask2() promise, and so on.
+                    </td>
                 </tr>
             </tbody>
         </table>
