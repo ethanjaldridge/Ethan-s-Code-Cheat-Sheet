@@ -323,6 +323,70 @@
             </tbody>
         </table>
 
+        <!-- JSON -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">JSON</td>
+                </tr>
+            </thead>
+            <tr>
+                <th scope="col" class="example">Example</th>
+                <th scope="col" class="name">Name</th>
+                <th scope="col" class="description">Description</th>
+            </tr>
+            <tbody>
+                <tr>
+                    <td class="vocab"></td>
+                    <td>JSON</td>
+                    <td>JSON, short for JavaScript Object Notation, is a language-independent data format that has been accepted as an industry standard.</td>
+                </tr>
+                <tr>
+                    <td class="vocab"><img src="./Images/JSON object.png" alt="" class="example-img"></td>
+                    <td>JSON Object</td>
+                    <td>The name portion in each JSON name-value pair and all string values must be enclosed in double-quotes while this is optional in JavaScript. </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const jsObject = JSON.parse(jsonData);</td>
+                    <td>Reading a JSON String</td>
+                    <td>In a typical web application, the JSON data that we receive from a web request comes in the form of a string. At other times, JSON data is stored in a file that is used for authentication, configuration, or database storage. <strong>These files typically have a .json extension</strong>, and they have to be opened in order to retrieve the JSON string in it. In either case, we will need to convert the string to a format that we can use in order to access its parts. Each programming language has its own mechanism to handle this conversion. <strong>In JavaScript, for example, we have a built-in JSON class with a method called .parse() that takes a JSON string as a parameter and returns a JavaScript object</strong>.
+                        <br>
+                        <br><strong>The following code converts a JSON string object, jsonData, into a JavaScript object, jsObject, and logs jsObject on the console.</strong>
+                        <br>
+                        <br>const jsonData = '{ "book": { "name": "JSON Primer", "price": 29.99, "inStock": true, "rating": null } }';
+                        <br>
+                        <br>const jsObject = JSON.parse(jsonData);
+                        <br>
+                        <br>console.log(jsObject);
+                        <br>
+                        <br><strong>This will print out jsObject as follows:</strong>
+                        <br>
+                        <br>{
+                        <br>&emsp;book: { name: 'JSON Primer', price: 29.99, inStock: true, rating: null }
+                        <br>}
+                        <br>
+                        <br>Once we have converted a JSON object to a JavaScript object, we can access the individual properties inside the JavaScript object. <strong>To access a value inside a JavaScript object based on its property name, we can either use dot notation, (.propertyName), or bracket notation, (['propertyName'])</strong>.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vocab">const jsonData = JSON.stringify(jsObject);</td>
+                    <td>Writing a JSON String</td>
+                    <td>Before we can send off our data across the web, we need to convert them to a JSON string. <strong>In JavaScript, we would use the built-in JSON class method, .stringify() to transform our JavaScript object to a JSON string</strong>.
+                        <br>
+                        <br><strong>The following code converts a JavaScript object, jsObject, into a JSON string, jsonData.</strong>
+                        <br>
+                        <br>const jsObject = { book: 'JSON Primer', price: 29.99, inStock: true, rating: null };
+                        <br>const jsonData = JSON.stringify(jsObject);
+                        <br>console.log(jsonData);
+                        <br>
+                        <br><strong>This will display the following output:</strong>
+                        <br>
+                        <br>{ "book": "JSON Primer", "price": 29.99, "inStock": true, "rating": null }
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
         <!-- Asynchronous JS -->
         <table>
             <thead>
@@ -578,6 +642,67 @@
                         <br>
                         <br>In our example, we await the resolution of a Promise.all(). This Promise.all() was invoked with an argument array containing four promises (returned from required-in functions). Next, we loop through our resultArray, and log each item to the console. The first element in resultArray is the resolved value of the asyncTask1() promise, the second is the value of the asyncTask2() promise, and so on.
                     </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Requests w/ ES6 -->
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="3">Requests with ES6</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col" class="example">Example</th>
+                    <th scope="col" class="name">Name</th>
+                    <th scope="col" class="description">Description</th>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="vocab"></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
